@@ -5,30 +5,30 @@
         .left
             .logo
                 img(src="../assets/images/logo-dently.png")
-            h1 {{homepage.maintext}}
-            p.lightblue {{homepage.goal_1}}
-            p.lightblue.next {{homepage.goal_2}}
+            h1 Bienvenue sur Dently
+            p.lightblue Web Application destinée à la gestion
+            p.lightblue.next à l'organisation et l'accès aux données médicales
 
-            p.pastelblue {{homepage.developed}}
-            p.pastelblue {{homepage.team}}
+            p.pastelblue Développée en 2017 - Bordeaux
+            p.pastelblue Nicolas Auger - Axel Masset - Pierre Leroy - Oscar Grainger
 
 
         .right
-            p.blue.first-right {{homepage.account.text}}
+            p.blue.first-right Vous avez déjà un compte ? Authentifiez-vous !
             a(href="/login-admin").button
                 i.fa.fa-lock
                 i.fa.fa-stethoscope
-                span {{homepage.account.admin}}
+                span Admin
             a(href="/login").button
                 i.fa.fa-user-md
-                span {{homepage.account.medecin}}
+                span Médecin
             .clear
 
-            p.pastelblue {{homepage.no_account.text}}
+            p.pastelblue Vous n'êtes pas inscrit ?
             a(href="/signup").button2
                 i.fa.fa-user-plus
-                span {{homepage.no_account.signin}}
+                span S'inscrire
             a(href="/guest").button2
                 i.fa.fa-user-o
-                span {{homepage.no_account.guest}}
+                span Visiteur
             .clear
