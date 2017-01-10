@@ -1,0 +1,34 @@
+.page.home
+
+    .contain.ng-show
+
+        .left
+            .logo
+                img(src="../assets/images/logo-dently.png")
+            h1 {{homepage.maintext}}
+            p.lightblue {{homepage.goal_1}}
+            p.lightblue.next {{homepage.goal_2}}
+
+            p.pastelblue {{homepage.developed}}
+            p.pastelblue {{homepage.team}}
+
+
+        .right
+            p.blue.first-right {{homepage.account.text}}
+            a(href="/login-admin").button
+                i.fa.fa-lock
+                i.fa.fa-stethoscope
+                span {{homepage.account.admin}}
+            a(href="/login").button
+                i.fa.fa-user-md
+                span {{homepage.account.medecin}}
+            .clear
+
+            p.pastelblue {{homepage.no_account.text}}
+            a(href="/signup").button2
+                i.fa.fa-user-plus
+                span {{homepage.no_account.signin}}
+            a(href="/guest").button2
+                i.fa.fa-user-o
+                span {{homepage.no_account.guest}}
+            .clear

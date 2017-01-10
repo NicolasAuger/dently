@@ -1,0 +1,155 @@
+.home
+
+    .contain
+        margin: 0
+        padding: 0
+
+//########################### PARTIE GAUCHE ###########################
+
+        .left
+            border-right: 3px dashed $color-pastelblue
+            width: 50%
+            height:100vh
+            float:left
+            padding: 30px
+            padding-top: 8vh
+
+            .lightblue
+                color: $color-lightblue
+                font-size: 35px
+                @media $md
+                    font-size: 25px
+            .next
+                padding-bottom: 8vh
+            .pastelblue
+                color: $color-pastelblue
+                @media $md
+                    font-size: 20px
+
+            .logo
+                width:25vw
+                margin: 0 auto
+                img
+                    width: 25vw
+                    height: 35vh
+                    max-width: 100%
+                    height: auto
+                    text-align: center
+            h1
+                text-align: center
+                padding-top: 8vh
+                padding-bottom: 3vh
+                color: $color-blue
+                font-size: 50px
+                @media $md
+                    font-size: 40px
+            p
+                text-align: center
+                font-size: 25px
+
+            .clear
+                clear:both
+
+
+//######################## PARTIE DROITE ##############################################
+        .right
+            width: 50%
+            height: 100vh
+            float:left
+            padding: 30px
+
+            .blue
+                color: $color-blue
+                font-size: 35px
+                @media $md
+                    font-size: 30px
+
+            .first-right
+                margin-top: 20vh
+                @media $md
+                    margin-top: 10vh
+
+            .lightblue
+                color: $color-lightblue
+                font-size: 35px
+                padding-top: 10vh
+
+            .pastelblue
+                color: $color-pastelblue
+                font-size: 35px
+                padding-top: 10vh
+                @media $md
+                    font-size: 30px
+
+            .clear
+                clear:both
+
+
+            img
+                width: 25vw
+                height: 35vh
+
+            p
+                text-align: center
+                font-size: 25px
+                @media $md
+                    font-size: 20px
+
+
+// ####################### Boutons partie droite ##############################
+
+            .button
+                border: 2px solid $color-lightblue
+                border-radius: 5px
+                float:left
+                width: 35%
+                margin-top: 8vh
+                text-align: center
+                height: 7vh
+                line-height: 7vh
+                vertical-align: middle
+                margin-left: 5vw
+                font-size: 25px
+                @media $md
+                    width: 60%
+                    margin-left: 8vw
+                    margin-top: 5vh
+                    font-size: 20px
+
+            i
+                margin-right: 1vw
+
+            a
+                cursor: pointer
+                color: $color-lightblue
+
+                &:hover
+                    background-color: $color-lightblue
+                    cursor: pointer
+                    color: $color-white
+                    text-decoration: none
+
+
+
+            .button2
+                border: 2px solid $color-pastelblue
+                border-radius: 5px
+                float:left
+                width: 35%
+                margin-top: 8vh
+                text-align: center
+                height: 7vh
+                line-height: 7vh
+                vertical-align: middle
+                margin-left: 5vw
+                font-size: 25px
+                color: $color-pastelblue
+                @media $md
+                    width: 60%
+                    margin-left: 8vw
+                    margin-top: 5vh
+                    font-size: 20px
+
+                &:hover
+                    color: $color-white
+                    background-color: $color-pastelblue
