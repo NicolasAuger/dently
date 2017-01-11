@@ -44,6 +44,13 @@ angular.module('dentlyApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-i
         }
       });
     });
+
+    // $rootScope.$on('$stateChangeSuccess', function(event, next) {
+    //     var element = document.createElement("script");
+    //     element.innerText = "$(document).ready(function () {  $('select').material_select(); });";
+    //     var main = document.getElementById('mainElementControl');
+    //     main.appendChild(element);
+    // });
   });
 
 angular.element(document)
