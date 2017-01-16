@@ -1,0 +1,21 @@
+.page.fiche_complete
+  .contain.ng-show
+    form.form-horizontal
+      .container
+        .row
+          h2 20. Usures dentaires / bruxismes :
+          fieldset
+            .form-group
+              input(value="" type="checkbox")
+              | test
+              h3 Examens complémentaires :
+              #examAnchor
+              br
+              input.btn.btn-default#addExBtn(type="button" value="Ajouter un examen" onclick="javascript:addExamSupp()")
+              br
+              br
+              input.btn.btn-default#remExBtn(type="button" value="Supprimer un examen" onclick="javascript:remExamSupp()")
+              h3 Diagnostic :
+              textarea.form-control(rows="3")
+              h3 Plan de traitement :
+              textarea.form-control(rows="3")
