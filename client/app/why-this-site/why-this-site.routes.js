@@ -5,7 +5,6 @@ export default function($stateProvider) {
   $stateProvider
     .state('why-this-site', {
       url: '/why-this-site',
-      template: '<why-this-site></why-this-site>',
-      authenticate: 'user'
+      template: '<why-this-site></why-this-site>'
     });
 }

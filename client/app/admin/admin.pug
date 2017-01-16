@@ -6,27 +6,22 @@
           img(src="../../assets/images/logo-dently.png")
       .content
         ul
-          a(href="/guest")
-            li Accueil Dashboard
-          a(href="/who-are-we")
-            li Qui sommes-nous ?
-          a(href="/why-this-site")
-            li Pourquoi ce site ?
+          a(href="/admin")
+            li.actual Accueil Dashboard
           a(href="/dam-diagnostic")
             li  Diagnostic DAM
-          a(href="/login")
-            li.actual  Connexion
-          a(href="/signup")
-            li  Inscription
-          a(href="/contact")
-            li  Contact
     .right
-        p.lightblue
+        p.white
           | Bienvenue dans la gestion des utilisateurs
-        p.pastelblue
-          | Voici la liste des utilisateurs :
+        p
+          | Vous êtes connecté en tant qu'Admin !
+          br
+          br
+          | Liste des utilisateurs :
         ul.list-group.lightblue
           li.list-group-item(ng-repeat='user in admin.users')
+            span.role {{user.role}}
+            br
             strong {{user.name}}
             br
             span.text-muted {{user.email}}

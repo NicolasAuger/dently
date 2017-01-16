@@ -29,6 +29,42 @@
       width : 25vw
       background-color: $color-white
       border-right: 1px solid $color-pastelblue
+
+      .head
+        .logo
+          img
+            width: 20vw
+            height: 25vh
+            padding: 20px
+            margin: 0 auto
+            height: auto
+            max-width: 100%
+          text-align: center
+
+      .content
+        margin-top: 5vh
+
+        ul
+          text-align: center
+          margin: 0
+
+          li
+            list-style: none
+            height: 8vh
+            line-height: 8vh
+            margin-left: -5vw
+            font-size: 20px
+            &:hover
+              background-color: $color-pastelblue
+              a
+                color: $color-white
+
+          .actual
+            background-color: $color-pastelblue
+            color: $color-white
+            a
+              color: $color-white
+
     .right
       background-color: $color-pastelblue
       float: left
@@ -37,8 +73,16 @@
       padding-left: 30px
       p
         text-align: justify
+        color: $color-white
+
       .lightblue
         color: $color-lightblue
+        font-size: 30px
+        padding-top: 2vh
+
+      .white
+        color: $color-white
+        padding-bottom: 3vh
         font-size: 30px
         padding-top: 2vh
 
@@ -51,3 +95,8 @@
 
       .list-group-item
         font-size: 12px
+
+        .role
+          color: $color-orange
+          font-size: 15px
+          text-transform: uppercase;
