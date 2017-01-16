@@ -1,25 +1,46 @@
 .page.guest
 
-    .menu
-        .head
-            .logo
-                img(src="../../assets/images/logo-dently.png")
-        .content
-            ul
-                a(href="/guest")
-                    li.actual Accueil Dashboard
-                a(href="/who-are-we")
-                    li Qui sommes-nous ?
-                a(href="/why-this-site")
-                    li Pourquoi ce site ?
-                a(href="/dam-diagnostic")
-                    li  Diagnostic DAM
-                a(href="/login")
-                    li  Connexion
-                a(href="/signup")
-                    li  Inscription
-                a(href="/contact")
-                    li  Contact
+    .contain
+        .menu
+            .head
+                .logo
+                    img(src="../../assets/images/logo-dently.png")
+            .content
+                ul
+                    a(href="/guest")
+                        li.actual Accueil Dashboard
+                    a(href="/who-are-we")
+                        li Qui sommes-nous ?
+                    a(href="/why-this-site")
+                        li Pourquoi ce site ?
+                    a(href="/dam-diagnostic")
+                        li  Diagnostic DAM
+                    a(href="/login")
+                        li  Connexion
+                    a(href="/signup")
+                        li  Inscription
+                    a(href="/contact")
+                        li  Contact
 
-    .right
-        p Salut
+        .right
+
+            .text-content
+
+                h1 Bienvenue Visiteur !
+                h2 Que souhaitez-vous faire ?
+                a(href="/depistage-systematique")
+                    p #[i.fa.fa-long-arrow-right] Fiche clinique dépistage systématique (données non enregistrées)
+                a(href="/fiche_complete")
+                    p #[i.fa.fa-long-arrow-right] Fiche clinique complète (données enregistrées pour les praticiens inscrits)
+                a(href="/etudes")
+                    p #[i.fa.fa-long-arrow-right] Études en cours
+                a(href="/protocoles")
+                    p #[i.fa.fa-long-arrow-right] Proposition de protocole d’étude
+                a(href="/fiches-annexes")
+                    p #[i.fa.fa-long-arrow-right] Accès aux fiches annexes de la fiche clinique
+                a(href="/suivi-patients")
+                    p #[i.fa.fa-long-arrow-right] Fiche de suivi des patients (pour les praticiens enregistrés et leur patients déjà enregistrés)
+                a(href="/statistiques")
+                    p #[i.fa.fa-long-arrow-right] Statistiques
+                a(href="/editeur-cas-clinique")
+                    p #[i.fa.fa-long-arrow-right] Éditeur de cas cliniques
