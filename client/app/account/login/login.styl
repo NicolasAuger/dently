@@ -1,69 +1,34 @@
 .page.login
 
-  .contain
-    margin: 0
-    padding: 0
-    background-color: $color-pastelblue
-    height: 100vh
-    width: 100vw
-    .menu
-      height: 100vh
-      float: left
-      width : 25vw
-      background-color: $color-white
-      border-right: 1px solid $color-pastelblue
+    .contain
+        margin: 0
+        padding: 0
+        background-color: $color-pastelblue
+        height: 100vh
+        width: 100vw
 
-      .head
-        .logo
-          img
-            width: 20vw
-            height: 25vh
-            padding: 20px
-            margin: 0 auto
-            height: auto
-            max-width: 100%
-          text-align: center
+        .content
+            padding: 50px
 
-      .content
-        margin-top: 5vh
+            input
+                width: 30vw
 
-        ul
-          text-align: center
-          margin: 0
-
-          li
-            list-style: none
-            height: 8vh
-            line-height: 8vh
-            margin-left: -5vw
-            font-size: 20px
-            &:hover
-              background-color: $color-pastelblue
-              a
+            .bigwhite
                 color: $color-white
+                font-size: 35px
+                padding-top: 2vh
+                padding-bottom: 3vh
+                margin: 0
 
-          .actual
-            background-color: $color-pastelblue
-            color: $color-white
-            a
-              color: $color-white
-    .right
-      background-color: $color-pastelblue
-      float: left
-      height: 100vh
-      width: 70vw
-      padding-left: 30px
-      p
-        text-align: justify
-      .bigwhite
-        color: $color-white
-        font-size: 35px
-        padding-top: 2vh
+            .white
+                color: $color-white
+                font-size: 20px
+                margin: 0
+                @media $md
+                    font-size: 18px
 
-      .white
-        color: $color-white
-        font-size: 20px
-        @media $md
-          font-size: 18px
-      .btn-register
-        margin-left: 5vw
+            .form-group
+                margin-top: 2vh
+
+            .btn-register
+                margin-left: 5vw
