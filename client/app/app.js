@@ -20,17 +20,21 @@ import {
 import _Auth from '../components/auth/auth.module';
 import account from './account';
 import admin from './admin';
+import user from './user/user.component';
 import navbar from '../components/navbar/navbar.component';
 import footer from '../components/footer/footer.component';
 import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
+//pages :
+
+import whoAreWe from './who-are-we/who-are-we.component';
 
 import './app.styl';
 
 angular.module('dentlyApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,
-  uiBootstrap, _Auth, account, admin, navbar, footer, main, constants, socket, util
+  uiBootstrap, _Auth, account, admin, user, navbar, footer, main, constants, socket, util, whoAreWe
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {

@@ -1,17 +1,40 @@
 .trash
-    color rgb(209, 91, 71)
+  color rgb(209, 91, 71)
 
-.user-list li 
-	display: flex
-	border: none
-	border-bottom: 1px lightgray solid
-	margin-bottom: 0
-	&:last-child 
-		border-bottom: none
+.user-list li
+  display: flex
+  border: none
+  border-bottom: 1px lightgray solid
+  margin-bottom: 0
+  &:last-child
+    border-bottom: none
 
-	.user-info
-		flex-grow: 1
-	.trash
-		display: flex
-		align-items: center
-		text-decoration: none
+  .user-info
+    flex-grow: 1
+  .trash
+    display: flex
+    align-items: center
+    text-decoration: none
+.admin
+
+  .contain
+      margin: 0
+      padding: 0
+    .menu
+      width: 25vh
+    .right
+      width: 75vh
+      .lightblue
+        color: $color-lightblue
+        font-size: 30px
+        padding-top: 2vh
+
+      .pastelblue
+        color: $color-pastelblue
+        font-size: 18px
+        padding-top: 5vh
+        @media $md
+          font-size: 18px
+
+      .list-group-item
+        font-size: 12px
