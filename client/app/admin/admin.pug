@@ -1,10 +1,17 @@
-.container
-  p
-    | The delete user and user index api routes are restricted to users with the 'admin' role.
-  ul.list-group
-    li.list-group-item(ng-repeat='user in admin.users')
-      strong {{user.name}}
-      br
-      span.text-muted {{user.email}}
-      a.trash(ng-click='admin.delete(user)')
-        span.glyphicon.glyphicon-trash.pull-right
+.page.admin
+
+  .contain.ng-show
+    .container
+      .menu
+      .right
+        p.lightblue
+          | Bienvenue dans la gestion des utilisateurs
+        p.pastelblue
+          | Voici la liste des utilisateurs :
+        ul.list-group.lightblue
+          li.list-group-item(ng-repeat='user in admin.users')
+            strong {{user.name}}
+            br
+            span.text-muted {{user.email}}
+            a.trash(ng-click='admin.delete(user)')
+              span.glyphicon.glyphicon-trash.pull-right
