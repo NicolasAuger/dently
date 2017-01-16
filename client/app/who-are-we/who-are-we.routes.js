@@ -5,6 +5,7 @@ export default function($stateProvider) {
   $stateProvider
     .state('who-are-we', {
       url: '/who-are-we',
-      template: '<who-are-we></who-are-we>'
+      template: '<who-are-we></who-are-we>',
+      authenticate: 'user'
     });
 }
