@@ -25,5 +25,11 @@
             strong {{user.name}}
             br
             span.text-muted {{user.email}}
+            a.users(ng-click='admin.hire(user)')
+              span.glyphicon.glyphicon-ok
             a.trash(ng-click='admin.delete(user)')
               span.glyphicon.glyphicon-trash.pull-right
+
+        ul.list-group.lightblue
+          li.list-group-item(ng-repeat='user in admin.users')
+            span.role {{user.role}}

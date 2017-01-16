@@ -1,5 +1,7 @@
 .trash
-  color rgb(209, 91, 71)
+  color: $color-orange
+.users
+  color $color-orange
 
 .user-list li
   display: flex
@@ -12,6 +14,10 @@
   .user-info
     flex-grow: 1
   .trash
+    display: flex
+    align-items: center
+    text-decoration: none
+  .users
     display: flex
     align-items: center
     text-decoration: none
@@ -96,6 +102,12 @@
       .list-group-item
         font-size: 12px
 
+        a
+          font-size: 15px
+          margin-right: 10vw
+
+          span
+            margin-left: 2vw
         .role
           color: $color-orange
           font-size: 15px
