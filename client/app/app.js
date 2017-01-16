@@ -31,7 +31,7 @@ import socket from '../components/socket/socket.service';
 //pages :
 
 import whoAreWe from './who-are-we/who-are-we.component';
-import whyThisSite from './why-this-site/why-this-sitz.component';
+import whyThisSite from './why-this-site/why-this-site.component';
 
 import './app.styl';
 

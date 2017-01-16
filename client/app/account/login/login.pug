@@ -1,39 +1,49 @@
-.container
-  .row
-    .col-sm-12
-      h1 Login
-      p
-        | Accounts are reset on server restart from
-        code server/config/seed.js
-        | . Default account is
-        code test@example.com
-        | /
-        code test
-      p
-        | Admin account is
-        code admin@example.com
-        | /
-        code admin
+.page.login
+  .contain.ng-show
+    .menu
+      .head
+        .logo
+          img(src="../../assets/images/logo-dently.png")
+      .content
+        ul
+          a(href="/guest")
+            li Accueil Dashboard
+          a(href="/who-are-we")
+            li Qui sommes-nous ?
+          a(href="/why-this-site")
+            li Pourquoi ce site ?
+          a(href="/dam-diagnostic")
+            li  Diagnostic DAM
+          a(href="/login")
+            li.actual  Connexion
+          a(href="/signup")
+            li  Inscription
+          a(href="/contact")
+            li  Contact
+    .right
+        h1.lightblue Formulaire de connexion
 
-    .col-sm-12
-      form.form(name='form', ng-submit='vm.login(form)', novalidate='')
-        .form-group
-          label Email
-          input.form-control(type='email', name='email', ng-model='vm.user.email')
-        .form-group
-          label Password
-          input.form-control(type='password', name='password', ng-model='vm.user.password')
 
-        .form-group.has-error
-          p.help-block(ng-show='form.email.$error.required && form.password.$error.required && vm.submitted')
-            | Please enter your email and password.
-          p.help-block {{ vm.errors.login }}
+        form.form(name='form', ng-submit='vm.login(form)', novalidate='')
+          .form-group
+            label.blue Email
+            input.form-control(type='email', name='email', ng-model='vm.user.email')
+          .form-group
+            label.blue Password
+            input.form-control(type='password', name='password', ng-model='vm.user.password')
 
-        div
-          button.btn.btn-inverse.btn-lg.btn-login(type='submit')
-            | Login
-          = ' '
-          a.btn.btn-default.btn-lg.btn-register(ui-sref='signup')
-            | Register
+          .form-group.has-error
+            p.help-block(ng-show='form.email.$error.required && form.password.$error.required && vm.submitted')
+              | S'il vous plaît entrez votre mot de passe et identifiant
+            p.help-block {{ vm.errors.login }}
 
-  hr
+          div
+            button.btn.btn-inverse.btn-lg.btn-login(type='submit')
+              i.fa.fa-sign-in
+              span Se connecter
+
+            a.btn.btn-default.btn-lg.btn-register(ui-sref='signup')
+              i.fa.fa-user-o
+              span S'enregistrer
+
+
