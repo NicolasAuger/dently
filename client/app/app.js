@@ -30,11 +30,12 @@ import socket from '../components/socket/socket.service';
 //pages :
 
 import whoAreWe from './who-are-we/who-are-we.component';
+import whyThisSite from './why-this-site/why-this-site.component';
 
 import './app.styl';
 
 angular.module('dentlyApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,
-  uiBootstrap, _Auth, account, admin, user, navbar, footer, main, constants, socket, util, whoAreWe
+  uiBootstrap, _Auth, account, admin, user, navbar, footer, main, constants, socket, util, whoAreWe, whyThisSite
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {

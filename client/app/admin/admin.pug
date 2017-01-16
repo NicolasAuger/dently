@@ -1,9 +1,26 @@
 .page.admin
-
   .contain.ng-show
-    .container
-      .menu
-      .right
+    .menu
+      .head
+        .logo
+          img(src="../../assets/images/logo-dently.png")
+      .content
+        ul
+          a(href="/guest")
+            li Accueil Dashboard
+          a(href="/who-are-we")
+            li Qui sommes-nous ?
+          a(href="/why-this-site")
+            li Pourquoi ce site ?
+          a(href="/dam-diagnostic")
+            li  Diagnostic DAM
+          a(href="/login")
+            li.actual  Connexion
+          a(href="/signup")
+            li  Inscription
+          a(href="/contact")
+            li  Contact
+    .right
         p.lightblue
           | Bienvenue dans la gestion des utilisateurs
         p.pastelblue
