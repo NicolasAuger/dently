@@ -21,6 +21,7 @@ import _Auth from '../components/auth/auth.module';
 import account from './account';
 import admin from './admin';
 import user from './user/user.component';
+import guest from './guest/guest.component';
 import navbar from '../components/navbar/navbar.component';
 import footer from '../components/footer/footer.component';
 import main from './main/main.component';
@@ -30,11 +31,12 @@ import socket from '../components/socket/socket.service';
 //pages :
 
 import whoAreWe from './who-are-we/who-are-we.component';
+import whyThisSite from './why-this-site/why-this-sitz.component';
 
 import './app.styl';
 
 angular.module('dentlyApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,
-  uiBootstrap, _Auth, account, admin, user, navbar, footer, main, constants, socket, util, whoAreWe
+  uiBootstrap, _Auth, account, admin, user, guest, whoAreWe, whyThisSite, navbar, footer, main, constants, socket, util
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
@@ -48,6 +50,13 @@ angular.module('dentlyApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-i
         }
       });
     });
+
+    // $rootScope.$on('$stateChangeSuccess', function(event, next) {
+    //     var element = document.createElement("script");
+    //     element.innerText = "$(document).ready(function () {  $('select').material_select(); });";
+    //     var main = document.getElementById('mainElementControl');
+    //     main.appendChild(element);
+    // });
   });
 
 angular.element(document)
