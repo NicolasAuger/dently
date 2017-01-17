@@ -31,6 +31,13 @@
           text-align: center
           margin: 0
 
+          i
+            position: absolute
+            left: 3vw
+            margin-top: 3vh
+            @media $icon
+                display: none
+
           li
             list-style: none
             height: 8vh
@@ -68,6 +75,7 @@
         font-size: 20px
         @media $md
           font-size: 18px
+
       .fa-chevron-circle-left
         color: $color-white
       a

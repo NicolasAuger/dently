@@ -1,29 +1,44 @@
 .page.who-are-we
 
-  .contain.ng-show
-      .menu
-        .head
-          .logo
-            img(src="../../assets/images/logo-dently.png")
-        .content
-          ul
-            a(href="/guest")
-              li Accueil Dashboard
-            a(href="/who-are-we")
-              li.actual Qui sommes-nous ?
-            a(href="/why-this-site")
-              li Pourquoi ce site ?
-            a(href="/dam-diagnostic")
-              li  Diagnostic DAM
-            a(href="/login")
-              li  Connexion
-            a(href="/signup")
-              li  Inscription
-            a(href="/contact")
-              li  Contact
-      .right
-        p.lightblue
-          | Qui sommes nous?
-        p.blue
-          | Nous sommes des chirurgiens dentistes exerçant une activité omnipratique hospitalo-universitaire et libérale. Ce site est gratuit à but non lucratif.
-          | Il a été réalisé par l’aide d’une bourse du Collège National d’Occlusodontologie en 2017.
+    .contain
+        .menu
+            .head
+                .logo
+                    img(src="../../assets/images/logo-dently.png")
+            .content
+                ul
+                    a(href="/guest")
+                        li
+                            i.fa.fa-home
+                            | Accueil Dashboard
+                    a(href="/who-are-we")
+                        li.actual
+                            i.fa.fa-hospital-o
+                            | Qui sommes-nous ?
+                    a(href="/why-this-site")
+                        li
+                            i.fa.fa-question-circle-o
+                            | Pourquoi ce site ?
+                    a(href="/dam-diagnostic")
+                        li
+                            i.fa.fa-file-o
+                            | Diagnostic DAM
+                    a(href="/login")
+                        li
+                            i.fa.fa-sign-in
+                            | Connexion
+                    a(href="/signup")
+                        li
+                            i.fa.fa-user-plus
+                            | Inscription
+                    a(href="/contact")
+                        li
+                            i.fa.fa-envelope-o
+                            | Contact
+
+        .right
+            p.lightblue
+                | Qui sommes nous?
+            p.blue
+                | Nous sommes des chirurgiens dentistes exerçant une activité omnipratique hospitalo-universitaire et libérale. Ce site est gratuit à but non lucratif.
+                | Il a été réalisé par l’aide d’une bourse du Collège National d’Occlusodontologie en 2017.

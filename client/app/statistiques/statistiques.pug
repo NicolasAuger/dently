@@ -1,30 +1,41 @@
 .page.statistiques
 
-  .contain.ng-show
-    .menu
-      .head
-        .logo
-          img(src="../../assets/images/logo-dently.png")
-      .content
-        ul
-          a(href="/guest")
-            li.actual Accueil Dashboard
-          a(href="/who-are-we")
-            li Qui sommes-nous ?
-          a(href="/why-this-site")
-            li Pourquoi ce site ?
-          a(href="/dam-diagnostic")
-            li  Diagnostic DAM
-          a(href="/login")
-            li Connexion
-          a(href="/signup")
-            li  Inscription
-          a(href="/contact")
-            li  Contact
-    .right
-      a(href="/guest")
-        i.fa.fa-chevron-circle-left
-        | Retour
-      p.lightblue
-
-      p.blue
+    .contain.ng-show
+        .menu
+            .head
+                .logo
+                    img(src="../../assets/images/logo-dently.png")
+            .content
+                ul
+                    a(href="/guest")
+                        li.actual
+                            i.fa.fa-home
+                            | Accueil Dashboard
+                    a(href="/who-are-we")
+                        li
+                            i.fa.fa-hospital-o
+                            | Qui sommes-nous ?
+                    a(href="/why-this-site")
+                        li
+                            i.fa.fa-question-circle-o
+                            | Pourquoi ce site ?
+                    a(href="/dam-diagnostic")
+                        li
+                            i.fa.fa-file-o
+                            | Diagnostic DAM
+                    a(href="/login")
+                        li
+                            i.fa.fa-sign-in
+                            | Connexion
+                    a(href="/signup")
+                        li
+                            i.fa.fa-user-plus
+                            | Inscription
+                    a(href="/contact")
+                        li
+                            i.fa.fa-envelope-o
+                            | Contact
+        .right
+            a(href="/guest")
+                i.fa.fa-chevron-circle-left
+                | Retour
