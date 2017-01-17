@@ -17,19 +17,28 @@
           | Vous êtes connecté en tant qu'Admin !
           br
           br
-          | Liste des utilisateurs :
-        ul.list-group.lightblue
-          li.list-group-item(ng-repeat='user in admin.users')
-            span.role {{user.role}}
-            br
-            strong {{user.name}}
-            br
-            span.text-muted {{user.email}}
-            a.users(ng-click='admin.hire(user)')
-              span.glyphicon.glyphicon-ok
-            a.trash(ng-click='admin.delete(user)')
-              span.glyphicon.glyphicon-trash.pull-right
+          | Cliquez sur #[span.glyphicon.glyphicon-trash] pour supprimer un user !
+          br
+          br
+          | Liste des Admins :
+        ul.list-group(ng-repeat='user in admin.users').lightblue-nospaced
+            li.list-group-item(class="{{user.role == 'admin' ? 'only-admin' : 'only-user'}}")
+              strong(class="{{user.role}}") {{user.name}}
+              br
+              span(class="{{user.role}}") {{user.role}}
+              br
+              span.text-muted {{user.email}}
+              a.trash(ng-click='admin.delete(user)')
+                span.glyphicon.glyphicon-trash.pull-right
 
-        ul.list-group.lightblue
-          li.list-group-item(ng-repeat='user in admin.users')
-            span.role {{user.role}}
+        p.white
+          | Liste des Utilisateurs :
+        ul.list-groupp(ng-repeat='user in admin.users').lightblue-nospaced
+            li.list-group-item(ng-class="user.role == 'user' ? 'only-user' : 'only-admin'")
+              strong.user {{user.name}}
+              br
+              span.user {{user.role}}
+              br
+              span.text-muted {{user.email}}
+              a.trash(ng-click='admin.delete(user)')
+                span.glyphicon.glyphicon-trash.pull-right

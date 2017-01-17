@@ -86,6 +86,10 @@
         font-size: 30px
         padding-top: 2vh
 
+      .lightblue-nospaced
+        color: $color-lightblue
+        font-size: 30px
+
       .white
         color: $color-white
         padding-bottom: 3vh
@@ -99,16 +103,59 @@
         @media $md
           font-size: 18px
 
-      .list-group-item
-        font-size: 12px
 
-        a
-          font-size: 15px
-          margin-right: 10vw
+/* LIste des Users */
 
-          span
-            margin-left: 2vw
-        .role
-          color: $color-orange
-          font-size: 15px
-          text-transform: uppercase;
+        .list-group
+          margin: 0
+
+          .list-group-item
+            font-size: 12px
+
+            a
+              font-size: 15px
+              margin-right: 10vw
+
+              span
+                margin-left: 2vw
+
+            .admin
+              color: $color-orange
+              font-size: 15px
+              text-transform: uppercase
+
+            .user
+              font-size: 15px
+              text-transform: uppercase;
+              margin-top: -3vh
+
+          .only-user
+            display:none
+
+
+        .list-groupp
+          margin: 0
+          margin-left: -2vw
+
+          .list-group-item
+            font-size: 12px
+
+            a
+              font-size: 15px
+              margin-right: 10vw
+
+              span
+                margin-left: 2vw
+
+            .admin
+              color: $color-orange
+              font-size: 15px
+              text-transform: uppercase
+
+            .user
+              font-size: 15px
+              text-transform: uppercase
+              margin-top: -3vh
+
+          .only-admin
+            display:none
