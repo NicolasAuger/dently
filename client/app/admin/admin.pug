@@ -7,9 +7,17 @@
       .content
         ul
           a(href="/admin")
-            li.actual Accueil Dashboard
+            li.actual
+                i.fa.fa-home
+                | Accueil Dashboard
           a(href="/dam-diagnostic")
-            li  Diagnostic DAM
+            li
+                i.fa.fa-file-o
+                | Diagnostic DAM
+          a(ng-sref="logout")
+            li
+                i.fa.fa-sign-out
+                | Se Déconnecter
     .right
         p.white
           | Bienvenue dans la gestion des utilisateurs
