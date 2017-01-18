@@ -148,11 +148,19 @@
                 |       Non renseigné
           hr
           div(ng-show="ficheCliniqueCompleteCtrl.partie4.Etat == 'renseigne'")
-            fieldset
-              legend Rachidienne
-              textarea.form-control(ng-model="ficheCliniqueCompleteCtrl.partie4.question1" rows="3")
-              legend Céphalique
-              textarea.form-control(ng-model="ficheCliniqueCompleteCtrl.partie4.question2" rows="3")
+            .form-group
+              label.col-md-4.control-label(for='4_1') Troubles possibles
+              .col-md-4
+                .checkbox
+                  label(for='4_1-0')
+                    input#4_1-0(type='checkbox' ng-model="ficheCliniqueCompleteCtrl.partie4.question1Check")
+                    |       Rachidienne
+                    textarea.form-control(rows="3" ng-show="ficheCliniqueCompleteCtrl.partie4.question1Check" ng-model="ficheCliniqueCompleteCtrl.partie4.question1")
+                .checkbox
+                  label(for='4_1-1')
+                    input#4_1-1(type='checkbox' ng-model="ficheCliniqueCompleteCtrl.partie4.question2Check")
+                    |       Céphalique
+                    textarea.form-control(rows="3" ng-show="ficheCliniqueCompleteCtrl.partie4.question2Check" ng-model="ficheCliniqueCompleteCtrl.partie4.question2")
 
         //- Partie 5
         .row
@@ -206,6 +214,43 @@
           div(ng-show="ficheCliniqueCompleteCtrl.partie6.Etat == 'renseigne'")
             textarea.form-control(ng-model="ficheCliniqueCompleteCtrl.partie6.question1" rows="3")
 
+        //- partie 7
+        .row
+          h2 {{ficheCliniqueCompleteCtrl.partie7.titre}}
+          .form-group
+            .col-md-4
+              label.radio-inline(for='7_0-0')
+                input#7_0-0(type='radio' value="renseigne" ng-model="ficheCliniqueCompleteCtrl.partie7.Etat")
+                |       Renseigné
+              label.radio-inline(for='7_0-1')
+                input#7_0-1(type='radio' value="negatif" ng-model="ficheCliniqueCompleteCtrl.partie7.Etat")
+                |       Négatif
+              label.radio-inline(for='7_0-2')
+                input#7_0-2(type='radio' value="nonRenseigne" ng-model="ficheCliniqueCompleteCtrl.partie7.Etat")
+                |       Non renseigné
+          hr
+          div(ng-show="ficheCliniqueCompleteCtrl.partie7.Etat == 'renseigne'")
+            .form-group
+              label.checkbox-inline(for='7_1-0')
+                input#7_1-0(type='checkbox' ng-model="ficheCliniqueCompleteCtrl.partie7.question1")
+                |       Onycophagie
+              label.checkbox-inline(for='7_1-1')
+                input#7_1-1(type='checkbox'  ng-model="ficheCliniqueCompleteCtrl.partie7.question2")
+                |       Mordillement des lèvres/stylos/objets
+              label.checkbox-inline(for='7_1-2')
+                input#7_1-2(type='checkbox'  ng-model="ficheCliniqueCompleteCtrl.partie7.question3")
+                |       Bruxisme d'eveille
+              label.checkbox-inline(for='7_1-3')
+                input#7_1-3(type='checkbox' ng-model="ficheCliniqueCompleteCtrl.partie7.question4")
+                |       Chewing-gum
+              label.checkbox-inline(for='7_1-4')
+                input#7_1-4(type='checkbox'  ng-model="ficheCliniqueCompleteCtrl.partie7.question5")
+                |       Tabac
+              label.checkbox-inline(for='7_1-5')
+                input#7_1-5(type='checkbox'  ng-model="ficheCliniqueCompleteCtrl.partie7.question6Checker")
+                |       Autres
+
+              textarea.form-control(ng-show="ficheCliniqueCompleteCtrl.partie7.question6Checker" ng-model="ficheCliniqueCompleteCtrl.partie7.question6")
 
 
         //---------------------------------------------------------------------

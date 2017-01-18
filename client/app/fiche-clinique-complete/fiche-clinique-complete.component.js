@@ -34,6 +34,10 @@ export class FicheCliniqueCompleteComponent {
       titre : "6. Troubles occulaires :",
       Etat : "renseigne",
     }
+    this.partie7 = {
+      titre : "7. Habitudes nocives :",
+      Etat : "renseigne",
+    }
   }
 }
 
