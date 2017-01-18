@@ -37,11 +37,12 @@ import etudes from './etudes/etudes.component';
 import fichesAnnexes from './fiches-annexes/fiches-annexes.component';
 import protocoles from './protocoles/protocoles.component';
 import statistiques from './statistiques/statistiques.component';
+import contact from './contact/contact.component';
 
 import './app.styl';
 
 angular.module('dentlyApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,  uiBootstrap, _Auth, account,
-  admin, user, guest, whoAreWe, whyThisSite,editeurCasClinique, etudes, fichesAnnexes, protocoles, statistiques
+  admin, user, guest, whoAreWe, whyThisSite,editeurCasClinique, etudes, fichesAnnexes, protocoles, statistiques, contact
   ,navbar, footer, main, constants, socket, util
 ])
   .config(routeConfig)
