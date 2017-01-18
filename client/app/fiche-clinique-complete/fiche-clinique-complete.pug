@@ -1,0 +1,260 @@
+.page.fiche_complete
+  .contain.ng-show
+    form.form-horizontal
+      .container
+        .row
+          h2 17. Test du bâtonnet :
+          .checkbox
+            label
+              input(type="checkbox")
+              span NEGATIF
+          .checkbox
+            label
+              input(type="checkbox")
+              span NON RENSEIGNE
+          hr
+          .col-md-10.col-md-offset-1
+            table.table.borderless
+              thead
+                tr
+                  th(rowspan="2") Bâtonnet
+                  th(colspan="2") Douleur
+                tr
+                  th Gauche
+                  th Droite
+
+              tbody
+                tr
+                  td Droite
+                  td
+                    .form-group
+                      .col-md-11
+                        select#17_1.form-control(name='17_1')
+                          option(value='0')
+                          option(value='1') M. temporal droit
+                          option(value='2') M.temporal gauche
+                          option(value='3') M. masséter droit
+                          option(value='4') M. masséter gauche
+                          option(value='5') Atm droite
+                          option(value='6') Atm gauche
+                          option(value='7') Autres...
+                  td
+                    .form-group
+                      .col-md-11
+                        select#17_2.form-control(name='17_2')
+                          option(value='0')
+                          option(value='1') M. temporal droit
+                          option(value='2') M.temporal gauche
+                          option(value='3') M. masséter droit
+                          option(value='4') M. masséter gauche
+                          option(value='5') Atm droite
+                          option(value='6') Atm gauche
+                          option(value='7') Autres...
+                tr
+                  td Gauche
+                  td
+                    .form-group
+                      .col-md-11
+                        select#17_3.form-control(name='17_3')
+                          option(value='0')
+                          option(value='1') M. temporal droit
+                          option(value='2') M.temporal gauche
+                          option(value='3') M. masséter droit
+                          option(value='4') M. masséter gauche
+                          option(value='5') Atm droite
+                          option(value='6') Atm gauche
+                          option(value='7') Autres...
+                  td
+                    .form-group
+                      .col-md-11
+                        select#17_4.form-control(name='17_4')
+                          option(value='0')
+                          option(value='1') M. temporal droit
+                          option(value='2') M.temporal gauche
+                          option(value='3') M. masséter droit
+                          option(value='4') M. masséter gauche
+                          option(value='5') Atm droite
+                          option(value='6') Atm gauche
+                          option(value='7') Autres...
+        .row
+          h2 18. Elasticité articulaire :
+          .checkbox
+            label
+              input(type="checkbox")
+              span NEGATIF
+          .checkbox
+            label
+              input(type="checkbox")
+              span NON RENSEIGNE
+          hr
+          .form-group
+            label.col-md-4.control-label(for='18_1') ATM Gauche :
+            .col-md-4
+              label.radio-inline(for='18_1-0')
+                input#18_1-0(type='radio', name='18_1', value='souple', checked='checked')
+                |       Souple
+              label.radio-inline(for='18_1-1')
+                input#18_1-1(type='radio', name='18_1', value='raide')
+                |       Raide
+          .form-group
+            label.col-md-4.control-label(for='18_2') ATM Droite :
+            .col-md-4
+              label.radio-inline(for='18_2-0')
+                input#18_2-0(type='radio', name='18_2', value='souple', checked='checked')
+                |       Souple
+              label.radio-inline(for='18_2-1')
+                input#18_2-1(type='radio', name='18_2', value='raide')
+                |       Raide
+        .row
+          h2 19. Examen endo-buccal :
+          .checkbox
+            label
+              input(type="checkbox")
+              span NEGATIF
+          .checkbox
+            label
+              input(type="checkbox")
+              span NON RENSEIGNE
+          hr
+          .form-group
+            label.col-md-4.control-label(for='19_2') Contacts en OIM :
+            .col-md-4
+              .radio
+                  input#19_2-0(type='radio', name='19_2', value='repartis', checked='checked')
+                  |       Répartis de manière équilibré
+              .radio
+                  input(name='19_2', type='radio')
+                  input#19_2-1.form-control(name='19_2', type='text', placeholder='Autre...')
+          br
+          .form-group
+            label.col-md-4.control-label(for='19_3') La position dans laquelle vous fermez vos dents vous paraît-elle confortable ?
+            .col-md-4
+              label.radio-inline(for='19_3-0')
+                input#19_3-0(type='radio', name='19_3', value='oui', checked='checked')
+                |       Oui
+              label.radio-inline(for='19_3-1')
+                input#19_3-1(type='radio', name='19_3', value='non')
+                |       Non
+          .form-group
+            label.col-md-4.control-label(for='19_4') Mastication unilatérale
+            .col-md-4
+              label.radio-inline(for='19_4-0')
+                input#19_4-0(type='radio', name='19_4', value='oui', checked='checked')
+                |       Oui
+              label.radio-inline(for='19_4-1')
+                input#19_4-1(type='radio', name='19_4', value='non')
+                |       Non
+          .form-group
+            label.col-md-4.control-label(for='19_5') Interférence(s) en latéralité droite :
+            .col-md-4
+              input#19_5.form-control.input-md(name='19_5', type='text', placeholder='')
+          .form-group
+            label.col-md-4.control-label(for='19_6') Interférence(s) en latéralité gauche :
+            .col-md-4
+              input#19_6.form-control.input-md(name='19_6', type='text', placeholder='')
+          .form-group
+            label.col-md-4.control-label(for='19_7') Interférence(s) en propulsion :
+            .col-md-4
+              input#19_7.form-control.input-md(name='19_7', type='text', placeholder='')
+          .form-group
+            label.col-md-4.control-label(for='19_8') Prématurités :
+            .col-md-4
+              input#19_8.form-control.input-md(name='19_8', type='text', placeholder='')
+          h3 Différentiel ORC-OIM
+          .form-group
+            label.col-md-4.control-label(for='19_9') dans le sens vertical :
+            .col-md-4
+              input#19_9.form-control.input-md(name='19_9', type='text', placeholder='')
+          .form-group
+            label.col-md-4.control-label(for='19_10') dans le sens antéro-postérieur :
+            .col-md-4
+              input#19_10.form-control.input-md(name='19_10', type='text', placeholder='')
+          .form-group
+            label.col-md-4.control-label(for='19_11') dans le sens latéral :
+            .col-md-4
+              input#19_11.form-control.input-md(name='19_11', type='text', placeholder='')
+
+        .row
+          h2 20. Usures dentaires / bruxismes :
+          .checkbox
+            label
+              input(type="checkbox")
+              span NEGATIF
+          .checkbox
+            label
+              input(type="checkbox")
+              span NON RENSEIGNE
+          hr
+          .col-md-6
+            .form-group
+              label.col-md-6.control-label(for='20_1') Erosion
+              .col-md-6
+                .input-group
+                  span.input-group-addon
+                    input(type='checkbox')
+                  input#20_1.form-control(name='20_1', type='text', placeholder='dents')
+            .form-group
+              label.col-md-6.control-label(for='20_2') Abrasion
+              .col-md-6
+                .input-group
+                  span.input-group-addon
+                    input(type='checkbox')
+                  input#20_2.form-control(name='20_2', type='text', placeholder='dents')
+            .form-group
+              label.col-md-6.control-label(for='20_3') Attrition
+              .col-md-6
+                .input-group
+                  span.input-group-addon
+                    input(type='checkbox')
+                  input#20_3.form-control(name='20_3', type='text', placeholder='dents')
+          .col-md-6
+            .form-group
+              label.col-md-6.control-label(for='20_4') Bruxisme de sommeil
+              .col-md-6
+                .input-group
+                  span.input-group-addon
+                    input(type='checkbox')
+                  select#20_4.form-control(name='20_4')
+                    option(value='possible') Diagnostic possible
+                    option(value='probable') Diagnostic probable
+                    option(value='defini') Diagnostic défini
+            .form-group
+              label.col-md-6.control-label(for='20_5') Bruxisme d'éveil
+              .col-md-6
+                .input-group
+                  span.input-group-addon
+                    input(type='checkbox')
+                  select#20_5.form-control(name='20_5')
+                    option(value='possible') Diagnostic possible
+                    option(value='probable') Diagnostic probable
+                    option(value='defini') Diagnostic défini
+        hr
+        .row
+          .col-md-12
+            .form-group
+              label.col-md-3.control-label(for='20_6') Informations complémentaires :
+              .col-md-9
+                textarea#20_6.form-control(name='20_6')
+          .col-md-12
+            .form-group
+              label.col-md-3.control-label(for='20_7') Examens complémentaires :
+              .col-md-9
+                textarea#20_7.form-control(name='20_7')
+          #examAnchor
+          .col-md-12
+            .form-group
+              .col-xs-3.col-xs-offset-3
+                button#butaddexam.btn.btn-primary(name='butaddexam') Ajouter un examen
+              .col-xs-3
+                button#butdelexam.btn.btn-danger(name='butdelexam') Supprimer un examen
+
+          .col-md-12
+            .form-group
+              label.col-md-3.control-label(for='20_8') Diagnostic :
+              .col-md-9
+                textarea#20_8.form-control(name='20_8')
+          .col-md-12
+            .form-group
+              label.col-md-3.control-label(for='20_9') Plan de traitement :
+              .col-md-9
+                textarea#20_8.form-control(name='20_9')

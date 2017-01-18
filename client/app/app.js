@@ -35,13 +35,14 @@ import whyThisSite from './why-this-site/why-this-site.component';
 import editeurCasClinique from './editeur-cas-clinique/editeur-cas-clinique.component';
 import etudes from './etudes/etudes.component';
 import fichesAnnexes from './fiches-annexes/fiches-annexes.component';
+import ficheCliniqueComplete from './fiche-clinique-complete/fiche-clinique-complete.component';
 import protocoles from './protocoles/protocoles.component';
 import statistiques from './statistiques/statistiques.component';
 
 import './app.styl';
 
 angular.module('dentlyApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,  uiBootstrap, _Auth, account,
-  admin, user, guest, whoAreWe, whyThisSite,editeurCasClinique, etudes, fichesAnnexes, protocoles, statistiques
+  admin, user, guest, whoAreWe, whyThisSite,editeurCasClinique, etudes, fichesAnnexes, ficheCliniqueComplete, protocoles, statistiques
   ,navbar, footer, main, constants, socket, util
 ])
   .config(routeConfig)
