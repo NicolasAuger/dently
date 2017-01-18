@@ -7,8 +7,19 @@ import routes from './contact.routes';
 export class ContactComponent {
   /*@ngInject*/
   constructor() {
-    this.message = 'Hello';
+    this.email = "";
+    this.message = "";
+    this.sujet = "";
   }
+
+  // sendMail(form){
+  //    if(form.$valid) {
+  //       this.$http({
+  //           method: "POST",
+  //           url: "/api/users/:id/:controller"
+  //       })
+  //    }
+  // }
 }
 
 export default angular.module('dentlyApp.contact', [uiRouter])
