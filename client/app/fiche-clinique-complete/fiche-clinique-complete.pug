@@ -1,7 +1,253 @@
-.page.fiche_complete
+.page.fiche-clinique-complete
   .contain.ng-show
     form.form-horizontal
       .container
+
+        //- Entête
+        .row
+          br
+          a.btn.btn-default(role="button" href="./") Accueil
+          h1 Fiche clinique DTM :
+          hr
+          .container
+            .row
+              .col-md-5
+                .form-group
+                  .input-group
+                    span.input-group-addon
+                      span.fa.fa-id-card.fa-fw
+                    input.form-control(ng-model="ficheCliniqueCompleteCtrl.patient.identifiant", placeholder='Identifiant du patient', type='text')
+              .col-md-1
+              .col-md-5
+                .form-group
+                  .input-group
+                    span.input-group-addon
+                      span.fa.fa-black-tie.fa-fw
+                    input.form-control(ng-model="ficheCliniqueCompleteCtrl.patient.profession", placeholder='Profession', type='text')
+            .row
+              .col-md-5
+                .form-group
+                  .input-group
+                    span.input-group-addon
+                      span.fa.fa-birthday-cake.fa-fw
+                    input.form-control(ng-model="ficheCliniqueCompleteCtrl.patient.dateDeNaissance", placeholder='Date de naissance', type='text')
+              .col-md-1
+              .col-md-5
+                .form-group
+                  .input-group
+                    span.input-group-addon
+                      span.fa.fa-calendar-check-o.fa-fw
+                    input.form-control(ng-model="ficheCliniqueCompleteCtrl.patient.derniereConsultation", placeholder='Dernière consultation', type='text')
+            .row
+              .col-md-5
+                .form-group
+                  .input-group
+                    span.input-group-addon
+                      span.fa.fa-mars-stroke-v.fa-fw
+                    select.form-control(ng-model="ficheCliniqueCompleteCtrl.patient.sexe")
+                      option(value='homme') Homme
+                      option(value='femme') Femme
+              .col-md-1
+              .col-md-5
+                .form-group
+                  button.btn.btn-primary(name='') Ajouter une photo
+            .row.form-group
+              label.col-md-4.control-label(for='bilanDeSante') Bilan de santé :
+              .col-md-7
+                textarea#bilanDeSante.form-control(ng-model="ficheCliniqueCompleteCtrl.patient.bilanDeSante")
+
+        //- partie 1
+        .row
+          h2 {{ficheCliniqueCompleteCtrl.partie1.titre}}
+          .form-group
+            .col-md-4
+              label.radio-inline(for='1_0-0')
+                input#1_0-0(type='radio' value="renseigne" ng-model="ficheCliniqueCompleteCtrl.partie1.Etat")
+                |       Renseigné
+              label.radio-inline(for='1_0-1')
+                input#1_0-1(type='radio' value="negatif" ng-model="ficheCliniqueCompleteCtrl.partie1.Etat")
+                |       Négatif
+              label.radio-inline(for='1_0-2')
+                input#1_0-2(type='radio' value="nonRenseigne" ng-model="ficheCliniqueCompleteCtrl.partie1.Etat")
+                |       Non renseigné
+          hr
+          div(ng-show="ficheCliniqueCompleteCtrl.partie1.Etat == 'renseigne'")
+            textarea.form-control(rows="3" ng-model="ficheCliniqueCompleteCtrl.partie1.question1")
+            .form-group.col-md-4.col-md-offset-4
+              .checkbox
+                label(for='1_2')
+                  input#1_2(type='checkbox' ng-model="ficheCliniqueCompleteCtrl.partie1.question2")
+                  |       Douleur
+
+        //- partie 2
+        .row
+          h2 {{ficheCliniqueCompleteCtrl.partie2.titre}}
+          .form-group
+            .col-md-4
+              label.radio-inline(for='2_0-0')
+                input#2_0-0(type='radio' value="renseigne" ng-model="ficheCliniqueCompleteCtrl.partie2.Etat")
+                |       Renseigné
+              label.radio-inline(for='2_0-1')
+                input#2_0-1(type='radio' value="negatif" ng-model="ficheCliniqueCompleteCtrl.partie2.Etat")
+                |       Négatif
+              label.radio-inline(for='2_0-2')
+                input#2_0-2(type='radio' value="nonRenseigne" ng-model="ficheCliniqueCompleteCtrl.partie2.Etat")
+                |       Non renseigné
+          hr
+          div(ng-show="ficheCliniqueCompleteCtrl.partie2.Etat == 'renseigne'")
+
+        //- partie 3
+        .row
+          h2 {{ficheCliniqueCompleteCtrl.partie3.titre}}
+          .form-group
+            .col-md-4
+              label.radio-inline(for='3_0-0')
+                input#3_0-0(type='radio' value="renseigne" ng-model="ficheCliniqueCompleteCtrl.partie3.Etat")
+                |       Renseigné
+              label.radio-inline(for='3_0-1')
+                input#3_0-1(type='radio' value="negatif" ng-model="ficheCliniqueCompleteCtrl.partie3.Etat")
+                |       Négatif
+              label.radio-inline(for='3_0-2')
+                input#3_0-2(type='radio' value="nonRenseigne" ng-model="ficheCliniqueCompleteCtrl.partie3.Etat")
+                |       Non renseigné
+          hr
+          div(ng-show="ficheCliniqueCompleteCtrl.partie3.Etat == 'renseigne'")
+            fieldset
+              legend Familial
+              textarea.form-control(ng-model="ficheCliniqueCompleteCtrl.partie3.question1" rows="3")
+              legend Social
+              textarea.form-control(ng-model="ficheCliniqueCompleteCtrl.partie3.question2" rows="3")
+              legend Professionel
+              textarea.form-control(ng-model="ficheCliniqueCompleteCtrl.partie3.question3" rows="3")
+              br
+              legend Score EDAS 21
+              a.btn.btn-default(role="button") Questionnaire
+              .form-group
+                label Anxiété :
+                input(ng-model="ficheCliniqueCompleteCtrl.partie3.question4" name="3_edas_a" style="withd:25px" type="text")
+              .form-group
+                label Dépression :
+                input(ng-model="ficheCliniqueCompleteCtrl.partie3.question5" name="3_edas_d" style="withd:25px" type="text")
+              .form-group
+                label Stress :
+                input(ng-model="ficheCliniqueCompleteCtrl.partie3.question6" name="3_edas_s" style="withd:25px" type="text")
+
+        //- Partie 4
+        .row
+          h2 {{ficheCliniqueCompleteCtrl.partie4.titre}}
+          .form-group
+            .col-md-4
+              label.radio-inline(for='4_0-0')
+                input#4_0-0(type='radio' value="renseigne" ng-model="ficheCliniqueCompleteCtrl.partie4.Etat")
+                |       Renseigné
+              label.radio-inline(for='4_0-1')
+                input#4_0-1(type='radio' value="negatif" ng-model="ficheCliniqueCompleteCtrl.partie4.Etat")
+                |       Négatif
+              label.radio-inline(for='4_0-2')
+                input#4_0-2(type='radio' value="nonRenseigne" ng-model="ficheCliniqueCompleteCtrl.partie4.Etat")
+                |       Non renseigné
+          hr
+          div(ng-show="ficheCliniqueCompleteCtrl.partie4.Etat == 'renseigne'")
+            fieldset
+              legend Rachidienne
+              textarea.form-control(ng-model="ficheCliniqueCompleteCtrl.partie4.question1" rows="3")
+              legend Céphalique
+              textarea.form-control(ng-model="ficheCliniqueCompleteCtrl.partie4.question2" rows="3")
+
+        //- Partie 5
+        .row
+          h2 {{ficheCliniqueCompleteCtrl.partie5.titre}}
+          .form-group
+            .col-md-4
+              label.radio-inline(for='5_0-0')
+                input#5_0-0(type='radio' value="renseigne" ng-model="ficheCliniqueCompleteCtrl.partie5.Etat")
+                |       Renseigné
+              label.radio-inline(for='5_0-1')
+                input#5_0-1(type='radio' value="negatif" ng-model="ficheCliniqueCompleteCtrl.partie5.Etat")
+                |       Négatif
+              label.radio-inline(for='5_0-2')
+                input#5_0-2(type='radio' value="nonRenseigne" ng-model="ficheCliniqueCompleteCtrl.partie5.Etat")
+                |       Non renseigné
+          hr
+          div(ng-show="ficheCliniqueCompleteCtrl.partie5.Etat == 'renseigne'")
+            label Souffrez vous du syndrome d'apnées/hypopnées obstructives du sommeil ?
+              input(type="radio" value="oui" ng-model="ficheCliniqueCompleteCtrl.partie5.question1")
+              span Oui
+              input(type="radio" value="non" ng-model="ficheCliniqueCompleteCtrl.partie5.question1")
+              span Non
+
+            legend Autre symptome
+            textarea.form-control(rows="3" ng-model="ficheCliniqueCompleteCtrl.partie5.question2")
+            legend Traitement
+            textarea.form-control(rows="3" ng-model="ficheCliniqueCompleteCtrl.partie5.question3")
+
+            a.btn.btn-default(role="button") Questionnaire PSQI
+            label Score PSQI :
+            input(ng-model="ficheCliniqueCompleteCtrl.partie5.question4" style="withd:25px" type="text")
+            a.btn.btn-default(role="button") Questionnaire ISI
+            label Score ISI :
+            input(ng-model="ficheCliniqueCompleteCtrl.partie5.question5" style="withd:25px" type="text")
+
+        //- partie 6
+        .row
+          h2 {{ficheCliniqueCompleteCtrl.partie6.titre}}
+          .form-group
+            .col-md-4
+              label.radio-inline(for='6_0-0')
+                input#6_0-0(type='radio' value="renseigne" ng-model="ficheCliniqueCompleteCtrl.partie6.Etat")
+                |       Renseigné
+              label.radio-inline(for='6_0-1')
+                input#6_0-1(type='radio' value="negatif" ng-model="ficheCliniqueCompleteCtrl.partie6.Etat")
+                |       Négatif
+              label.radio-inline(for='6_0-2')
+                input#6_0-2(type='radio' value="nonRenseigne" ng-model="ficheCliniqueCompleteCtrl.partie6.Etat")
+                |       Non renseigné
+          hr
+          div(ng-show="ficheCliniqueCompleteCtrl.partie6.Etat == 'renseigne'")
+            textarea.form-control(ng-model="ficheCliniqueCompleteCtrl.partie6.question1" rows="3")
+
+
+
+        //---------------------------------------------------------------------
+        //- Partie 16
+        .row
+          h2 16. Blocage articulaire :
+          .checkbox
+            label
+              input(type="checkbox" ng-model="16negatif")
+              span NEGATIF
+          .checkbox
+            label
+              input(type="checkbox")
+              span NON RENSEIGNE
+          hr
+          .form-group(ng-show="16negatif")
+            label.col-md-4.control-label(for='16_1') Vous est-il arrivé d'être bloqué(e) ?
+            .col-md-4
+              label.checkbox-inline(for='16_1-0')
+                input#16_1-0(type='checkbox', name='16_1', value='1')
+                |       Bouche ouverte
+              label.checkbox-inline(for='16_1-1')
+                input#16_1-1(type='checkbox', name='16_1', value='2')
+                |       Bouche fermée
+          .form-group
+            label.col-md-4.control-label(for='16_2')
+            .col-md-4
+              label.checkbox-inline(for='16_2-0')
+                input#16_2-0(type='checkbox', name='16_2', value='1')
+                |       ATM gauche
+              label.checkbox-inline(for='16_2-1')
+                input#16_2-1(type='checkbox', name='16_2', value='2')
+                |       ATM droite
+          .form-group
+            label.col-md-4.control-label(for='16_3') Fréquence :
+            .col-md-4
+              input#16_3.form-control.input-md(name='16_3', type='text', placeholder='')
+          .form-group
+            label.col-md-4.control-label(for='16_4') Dernier épisode :
+            .col-md-4
+              input#16_4.form-control.input-md(name='16_4', type='text', placeholder='')
+
         .row
           h2 17. Test du bâtonnet :
           .checkbox
@@ -38,6 +284,8 @@
                           option(value='5') Atm droite
                           option(value='6') Atm gauche
                           option(value='7') Autres...
+                        br
+                        input#17_1.form-control.input-md(name='17_1', type='text', placeholder='Autres..')
                   td
                     .form-group
                       .col-md-11
@@ -50,6 +298,8 @@
                           option(value='5') Atm droite
                           option(value='6') Atm gauche
                           option(value='7') Autres...
+                        br
+                        input#17_2.form-control.input-md(name='17_2', type='text', placeholder='Autres..')
                 tr
                   td Gauche
                   td
@@ -64,6 +314,8 @@
                           option(value='5') Atm droite
                           option(value='6') Atm gauche
                           option(value='7') Autres...
+                        br
+                        input#17_3.form-control.input-md(name='17_3', type='text', placeholder='Autres..')
                   td
                     .form-group
                       .col-md-11
@@ -76,6 +328,8 @@
                           option(value='5') Atm droite
                           option(value='6') Atm gauche
                           option(value='7') Autres...
+                        br
+                        input#17_4.form-control.input-md(name='17_4', type='text', placeholder='Autres..')
         .row
           h2 18. Elasticité articulaire :
           .checkbox
@@ -228,18 +482,24 @@
                     option(value='possible') Diagnostic possible
                     option(value='probable') Diagnostic probable
                     option(value='defini') Diagnostic défini
-        hr
-        .row
           .col-md-12
             .form-group
               label.col-md-3.control-label(for='20_6') Informations complémentaires :
               .col-md-9
                 textarea#20_6.form-control(name='20_6')
+
+        .row
+          h2 Examens complémentaires :
+          hr
           .col-md-12
             .form-group
-              label.col-md-3.control-label(for='20_7') Examens complémentaires :
+              label.col-md-3.control-label(for='Exam_1') Type d'examen :
               .col-md-9
-                textarea#20_7.form-control(name='20_7')
+                textarea#Exam_1.form-control(name='Exam_1')
+                br
+              .col-md-9.col-md-offset-3
+                button#butAddPhoto.btn.btn-primary(name='butAddPhoto') Ajouter une photo
+                hr
           #examAnchor
           .col-md-12
             .form-group
@@ -247,14 +507,15 @@
                 button#butaddexam.btn.btn-primary(name='butaddexam') Ajouter un examen
               .col-xs-3
                 button#butdelexam.btn.btn-danger(name='butdelexam') Supprimer un examen
-
-          .col-md-12
-            .form-group
-              label.col-md-3.control-label(for='20_8') Diagnostic :
-              .col-md-9
-                textarea#20_8.form-control(name='20_8')
-          .col-md-12
-            .form-group
-              label.col-md-3.control-label(for='20_9') Plan de traitement :
-              .col-md-9
-                textarea#20_8.form-control(name='20_9')
+        .row
+          h2 Diagnostic :
+          hr
+          .form-group
+            .col-md-10.col-md-offset-1
+              textarea.form-control(name='Diagnostic')
+        .row
+          h2 Plan de traitement :
+          hr
+          .form-group
+            .col-md-10.col-md-offset-1
+              textarea.form-control(name='PlanDeTraitement')
