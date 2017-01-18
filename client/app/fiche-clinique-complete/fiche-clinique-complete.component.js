@@ -38,6 +38,22 @@ export class FicheCliniqueCompleteComponent {
       titre : "7. Habitudes nocives :",
       Etat : "renseigne",
     }
+    this.partie8 = {
+      titre : "8. Dysfonctionnement oraux-linguaux :",
+      Etat : "renseigne",
+    }
+    this.partie9 = {
+      titre : "9. Traumatisme :",
+      Etat : "renseigne",
+    }
+    this.partie10 = {
+      titre : "10. Observations complémentaires :",
+      Etat : "renseigne",
+    }
+    this.partie11 = {
+      titre : "11. Palpation(s) douloureuse(s) des muscles masticateurs, des ATM, et des muscles cervico-scapulaires :",
+      Etat : "renseigne",
+    }
   }
 }
 
