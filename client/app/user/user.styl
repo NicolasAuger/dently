@@ -1,0 +1,168 @@
+.trash
+  color: $color-orange
+.users
+  color $color-orange
+
+.user-list li
+  display: flex
+  border: none
+  border-bottom: 1px lightgray solid
+  margin-bottom: 0
+  &:last-child
+    border-bottom: none
+
+  .user-info
+    flex-grow: 1
+  .trash
+    display: flex
+    align-items: center
+    text-decoration: none
+  .users
+    display: flex
+    align-items: center
+    text-decoration: none
+
+.page.user
+  .contain
+    margin: 0
+    padding: 0
+    background-color: $color-pastelblue
+    height: 100vh
+    width: 100vw
+    .menu
+      height: 100vh
+      float: left
+      width : 25vw
+      background-color: $color-white
+      border-right: 1px solid $color-pastelblue
+
+      .head
+        .logo
+          img
+            width: 20vw
+            height: 25vh
+            padding: 20px
+            margin: 0 auto
+            height: auto
+            max-width: 100%
+          text-align: center
+
+      .content
+        margin-top: 5vh
+
+        ul
+          text-align: center
+
+          i
+            position: absolute
+            left: 3vw
+            margin-top: 3vh
+            @media $icon
+                display: none
+
+
+          li
+            list-style: none
+            height: 8vh
+            line-height: 8vh
+            margin-left: -5vw
+            font-size: 20px
+            &:hover
+              background-color: $color-pastelblue
+              a
+                color: $color-white
+
+          .actual
+            background-color: $color-pastelblue
+            color: $color-white
+            a
+              color: $color-white
+
+    .right
+      background-color: $color-pastelblue
+      float: left
+      height: 100vh
+      width: 70vw
+      padding-left: 30px
+      p
+        text-align: justify
+        color: $color-white
+
+      .lightblue
+        color: $color-lightblue
+        font-size: 30px
+        padding-top: 2vh
+
+      .lightblue-nospaced
+        color: $color-lightblue
+        font-size: 30px
+
+      .white
+        color: $color-white
+        padding-bottom: 3vh
+        font-size: 30px
+        padding-top: 2vh
+
+      .pastelblue
+        color: $color-pastelblue
+        font-size: 18px
+        padding-top: 5vh
+        @media $md
+          font-size: 18px
+
+
+/* LIste des Users */
+
+        .list-group
+          margin: 0
+
+          .list-group-item
+            font-size: 12px
+
+            a
+              font-size: 15px
+              margin-right: 10vw
+
+              span
+                margin-left: 2vw
+
+            .admin
+              color: $color-orange
+              font-size: 15px
+              text-transform: uppercase
+
+            .user
+              font-size: 15px
+              text-transform: uppercase;
+              margin-top: -3vh
+
+          .only-user
+            display:none
+
+
+        .list-groupp
+          margin: 0
+          margin-left: -2vw
+
+          .list-group-item
+            font-size: 12px
+
+            a
+              font-size: 15px
+              margin-right: 10vw
+
+              span
+                margin-left: 2vw
+
+            .admin
+              color: $color-orange
+              font-size: 15px
+              text-transform: uppercase
+
+            .user
+              font-size: 15px
+              text-transform: uppercase
+              margin-top: -3vh
+
+          .only-admin
+            display:none

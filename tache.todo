@@ -5,15 +5,15 @@ DeadLine :
 
 ------------------------------------------------------
 Database:
-    ☐ Create User table in database MongoDB
-    ☐ Sessions ?
+    ✔ Create User table in database MongoDB @done(2017-01-18 01:02) @project(Database)
+    ✔ Sessions ? @done(2017-01-18 01:02) @project(Database)
     ☐ Medical Files ?
 
 ------------------------------------------------------
 Simple Visitor Access:
-    ☐ Access to homepage
-    ☐ Access to "Who are us ?" page
-    ☐ Access to "Why this webapp ?" page
+    ✔ Access to homepage @done(2017-01-18 01:02) @project(Simple Visitor Access)
+    ✔ Access to "Who are us ?" page @done(2017-01-18 01:02) @project(Simple Visitor Access)
+    ✔ Access to "Why this webapp ?" page @done(2017-01-18 01:02) @project(Simple Visitor Access)
     ☐ Access to contact page
     ☐ Complete and send contact form
     ☐ Access to clinical files page
@@ -22,11 +22,11 @@ Simple Visitor Access:
         ☐ PSQI
         ☐ ISI
     ☐ Complete and create a pdf file from consulted clinical file
-    ☐ Access to the connection/Signup page
+    ✔ Access to the connection/Signup page @done(2017-01-18 01:03) @project(Simple Visitor Access)
 
 ------------------------------------------------------
 Medical User Access:
-    ☐ Same Access as Simple Visitor
+    ✔ Same Access as Simple Visitor @done(2017-01-18 01:03) @project(Medical User Access)
     ☐ Access to his profil page
     ☐ Allowed to modify his profil (except email)
     ☐ Access to the medical files list (new page)
@@ -47,7 +47,7 @@ Admin-Medical User Access:
     ☐ Access to profil page of all users
     ☐ Validate a profil
     ☐ Modify a profil
-    ☐ Delete a profil
+    ✔ Delete a profil @done(2017-01-18 01:04) @project(Admin-Medical User Access)
     ☐ Access to the medical files list of users
     ☐ List files by user and record number
     ☐ Create a file
@@ -63,19 +63,18 @@ Admin-Medical User Access:
 Visuel :
     ☐ Forms
     ☐ Clinical Files Render
-    ☐ 404 Page
-    ☐ HomePage
-    ☐ Simple Visitor Access
-    ☐ Medical User Access
-    ☐ Admin-Medical User Access
+    ✔ HomePage @done(2017-01-18 01:04) @project(Visuel )
+    ✔ Simple Visitor Access @done(2017-01-18 01:04) @project(Visuel )
+    ✔ Medical User Access @done(2017-01-18 01:04) @project(Visuel )
+    ✔ Admin-Medical User Access @done(2017-01-18 01:04) @project(Visuel )
 
 
 ------------------------------------------------------
 More:
-    ☐ Use Git to version the code
-    ☐ Use Bootstrap
-    ☐ Use Yeoman to create a basic structure of project
-    ☐ Responsive WebDesign
+    ✔ Use Git to version the code @done(2017-01-18 01:04) @project(More)
+    ✔ Use Bootstrap @done(2017-01-18 01:04) @project(More)
+    ✔ Use Yeoman to create a basic structure of project @done(2017-01-18 01:04) @project(More)
+    ✔ Responsive WebDesign @done(2017-01-18 01:04) @project(More)
     ☐ Make a README File
     ☐ Comment All Files
-    ☐ Securised Access
+    ✔ Securised Access @done(2017-01-18 01:04) @project(More)

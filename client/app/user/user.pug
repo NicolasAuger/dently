@@ -1,1 +1,24 @@
-div This is the user view.
+.page.user
+    .contain.ng-show
+        .menu
+            .head
+                .logo
+                    img(src="../../assets/images/logo-dently.png")
+            .content
+                ul
+                    a(href="/user")
+                        li.actual
+                            i.fa.fa-home
+                            | Accueil Dashboard
+                    a(href="/dam-diagnostic")
+                        li
+                            i.fa.fa-file-o
+                            | Diagnostic DAM
+                    a(href="/settings")
+                        li
+                            i.fa.fa-cog
+                            | Paramètres
+                    a(ui-sref="logout")
+                        li
+                            i.fa.fa-sign-out
+                            | Se Déconnecter

@@ -1,11 +1,12 @@
-.container
-  .row
-    .col-sm-12
-      h1 Change Password
-    .col-sm-12
+.page.settings
+  .contain.ng-show
+    .content
+      h1.bigwhite Changer de mot de passe
+      p.white Remplissez ce formulaire pour changer de mot de passe
+
       form.form(name='form', ng-submit='vm.changePassword(form)', novalidate='')
         .form-group
-          label Current Password
+          label.white Mot de passe actuel
           input.form-control(type='password'
             name='password'
             ng-model='vm.user.oldPassword'
@@ -13,7 +14,7 @@
           p.help-block(ng-show='form.password.$error.mongoose')
             | {{ vm.errors.other }}
         .form-group
-          label New Password
+          label.white Nouveau mot de passe
           input.form-control(type='password'
             name='newPassword'
             ng-model='vm.user.newPassword'
@@ -21,7 +22,7 @@
           p.help-block(ng-show='(form.newPassword.$error.minlength || form.newPassword.$error.required) && (form.newPassword.$dirty || vm.submitted)')
             | Password must be at least 3 characters.
         .form-group
-          label Confirm New Password
+          label.white Confirmer le nouveau mot de passe
           input.form-control(type='password'
             name='confirmPassword'
             ng-model='vm.user.confirmPassword'
@@ -32,4 +33,5 @@
 
         p.help-block  {{ vm.message }}
 
-        button.btn.btn-lg.btn-primary(type='submit') Save changes
+        button.btn.btn-lg.btn-default(type='submit') Sauvegarder
+        a.btn.btn-default.btn-lg(href="/") Retour à l'accueil
