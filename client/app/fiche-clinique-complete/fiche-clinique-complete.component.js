@@ -53,6 +53,31 @@ export class FicheCliniqueCompleteComponent {
     this.partie11 = {
       titre : "11. Palpation(s) douloureuse(s) des muscles masticateurs, des ATM, et des muscles cervico-scapulaires :",
       Etat : "renseigne",
+      douleurs : [
+      {name: "M. Temporal droit", value : "mTemporalDroit"},
+      {name: "M. Temporal gauche", value : "mTemporalGauche"},
+      {name: "M. Masséter droit", value:"mMasseterDroit"},
+      {name: "M. Masséter gauche", value : "mMasseterGauche"},
+      {name: "ATM droite", value : "atmDroite"},
+      {name: "ATM gauche", value : "atmGauche"},
+      {name: "Autre", value : "autre"}
+      ]
+    }
+    this.partie12 = {
+      titre : "12. Rapports incisifs :",
+      Etat : "renseigne",
+    }
+    this.partie13 = {
+      titre : "13. Mouvements d'ouverture, latéralités et propulsion :",
+      Etat : "renseigne",
+    }
+    this.partie14 = {
+      titre : "14. Trajet d'ouverture/fermeture :",
+      Etat : "renseigne",
+    }
+    this.partie15 = {
+      titre : "15. Bruits articulaires lors des mouvements fonctionnels :",
+      Etat : "renseigne",
     }
   }
 }
