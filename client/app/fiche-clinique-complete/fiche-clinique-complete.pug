@@ -772,52 +772,66 @@
                 |       Non renseigné
           hr
           div(ng-show="vm.data.partie12.Etat == 'renseigne'")
-            .col-md-12
-              label.radio-inline
-                input#inlineRadio1(type='radio', name='inlineRadioOptions', value='option1')
-                | 11
-              label.radio-inline
-                input#inlineRadio2(type='radio', name='inlineRadioOptions', value='option2')
-                |  21
-              label.radio-inline
-                input#inlineRadio3(type='radio', name='inlineRadioOptions', value='option3')
-                |  Autre
-                input(style="withd:25px" type="text")
+            .form-group
+              label.col-md-4.control-label(for='12_1') Dent de référence :
+              .col-md-2
+                label.radio-inline(for='12_1-0')
+                  input#12_1-0(type='radio' value='11' ng-model="vm.data.partie12.question1")
+                  |       11
+                label.radio-inline(for='12_1-1')
+                  input#12_1-1(type='radio' value='21' ng-model="vm.data.partie12.question1")
+                  |       21
+              .col-md-2
+                .input-group
+                  span.input-group-addon
+                    input(type='radio' value="autre" ng-model="vm.data.partie12.question1")
+                  input.form-control(ng-disabled="vm.data.partie12.question1 != 'autre'" type='text' placeholder="Autre..."  ng-model="vm.data.partie12.question1other")
+            .form-group
+              label.col-md-4.control-label(for='12_1') Dent de référence :
+              .col-md-2
+                label.radio-inline(for='12_2-0')
+                  input#12_2-0(type='radio' value='11' ng-model="vm.data.partie12.question2")
+                  |       31
+                label.radio-inline(for='12_2-1')
+                  input#12_2-1(type='radio' value='21' ng-model="vm.data.partie12.question2")
+                  |       41
+              .col-md-2
+                .input-group
+                  span.input-group-addon
+                    input(type='radio' value="autre" ng-model="vm.data.partie12.question2")
+                  input.form-control(ng-disabled="vm.data.partie12.question2 != 'autre'" type='text' placeholder="Autre..."  ng-model="vm.data.partie12.question2other")
+            .form-group
+              label.col-md-4.control-label Surplomb horizontal :
+              .col-md-2
+                .input-group
+                  input.form-control(type='number' ng-model="vm.data.partie12.question3")
+                  span.input-group-addon mm
+              .col-md-2
+                input(type='checkbox' ng-model="vm.data.partie12.question3negatif")
+                |       Cocher si négatif
+            .form-group
+              label.col-md-4.control-label Recouvrement Vertical :
+              .col-md-2
+                .input-group
+                  input.form-control(type='number' ng-model="vm.data.partie12.question4")
+                  span.input-group-addon mm
+              .col-md-2
+                input(type='checkbox' ng-model="vm.data.partie12.question4negatif")
+                |       Cocher si négatif
+            .form-group
+              label.col-md-4.control-label Existe-t-il un décalage des milieux inter-incisifs ? :
+              .col-md-2
+                label.radio-inline(for="12_4-0")
+                  input#12_4-0(type='radio' value='oui' ng-model="vm.data.partie12.question4checker")
+                  |       Oui
+                label.radio-inline(for="12_4-1")
+                  input#12_4-1(type='radio' value='non' ng-model="vm.data.partie12.question4checker")
+                  |       Non
+              .col-md-2
+                .input-group
+                  input.form-control(ng-disabled="vm.data.partie12.question4checker == 'non'" type='number' ng-model="vm.data.partie12.question4")
+                  span.input-group-addon mm
 
-            .col-md-12
-              label.radio-inline
-                input#inlineRadio4(type='radio', name='inlineRadioOptions', value='option1')
-                | 31
-              label.radio-inline
-                input#inlineRadio5(type='radio', name='inlineRadioOptions', value='option2')
-                | 41
-              label.radio-inline
-                input#inlineRadio6(type='radio', name='inlineRadioOptions', value='option3')
-                |  Autre
-                input(style="withd:25px" type="text")
-
-            .col-md-12
-              | Surplomb Horizontal
-              input(style="withd:25px" type="number")
-              |mm
-              input(type="checkbox")
-              |Si négatif
-
-            .col-md-12
-              | Recouvrement Vertical
-              input(style="withd:25px" type="number")
-              | mm
-              input(type="checkbox")
-              | Si négatif
-
-            .col-md-12
-              | Existe-t-il un décalage des milieux inter-incisifs ?
-              input(type="checkbox")
-              | Oui(
-              input(style="withd:25px" type="number")
-              | mm)
-              input(type="checkbox")
-              | Non
         //- partie 13
         .row
           h2 {{vm.data.partie13.titre}}

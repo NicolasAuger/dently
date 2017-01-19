@@ -66,10 +66,11 @@ export class FicheCliniqueCompleteComponent {
         question1 : "non"
         }
       },
-    }
-    this.partie12 = {
+      partie12 : {
       titre : "12. Rapports incisifs :",
       Etat : "renseigne",
+      question4checker : "non"
+      },
     }
     this.partie13 = {
       titre : "13. Mouvements d'ouverture, latéralités et propulsion :",
