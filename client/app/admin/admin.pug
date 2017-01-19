@@ -10,10 +10,14 @@
             li.actual
                 i.fa.fa-home
                 | Accueil Dashboard
-          a(href="/dam-diagnostic")
+          a(href="/admin-fonction")
+            li
+                i.fa.fa-stethoscope
+                | Activités
+          a(href="/fiches")
             li
                 i.fa.fa-file-o
-                | Diagnostic DAM
+                | Fiches complètes
           a(href="/settings")
             li
                 i.fa.fa-cog
@@ -32,7 +36,7 @@
           | Cliquez sur #[span.glyphicon.glyphicon-trash] pour supprimer un user !
           br
           br
-          | Liste des Admins :
+          p Liste des Admins :
         ul.list-group(ng-repeat='user in admin.users').lightblue-nospaced
             li.list-group-item(class="{{user.role == 'admin' ? 'only-admin' : 'only-user'}}")
               strong(class="{{user.role}}") {{user.name}}
@@ -43,8 +47,7 @@
               a.trash(ng-click='admin.delete(user)')
                 span.glyphicon.glyphicon-trash.pull-right
 
-        p.white
-          | Liste des Utilisateurs :
+        p#escape Liste des Utilisateurs :
         ul.list-groupp(ng-repeat='user in admin.users').lightblue-nospaced
             li.list-group-item(ng-class="user.role == 'user' ? 'only-user' : 'only-admin'")
               strong.user {{user.name}}

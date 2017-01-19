@@ -22,7 +22,7 @@
     align-items: center
     text-decoration: none
 
-.page.admin
+.page.list-fiche
   .contain
     margin: 0
     padding: 0
@@ -36,16 +36,7 @@
       background-color: $color-white
       border-right: 1px solid $color-pastelblue
 
-      .head
-        .logo
-          img
-            width: 20vw
-            height: 25vh
-            padding: 20px
-            margin: 0 auto
-            height: auto
-            max-width: 100%
-          text-align: center
+
 
       .content
         margin-top: 5vh
@@ -85,9 +76,9 @@
       width: 70vw
       padding-left: 30px
 
-      #escape
-          margin-top: 5vh
-          
+      .bouton-accueil
+        margin-top: 5vh
+
       p
         text-align: justify
         color: $color-white
@@ -123,30 +114,20 @@
           .list-group-item
             font-size: 12px
 
+            .name
+                font-size: 15px
+                text-transform: uppercase
+
+            .medecin
+                font-size: 13px
+                text-transform: uppercase
+
             a
               font-size: 15px
               margin-right: 10vw
 
               span
                 margin-left: 2vw
-
-            .admin
-              color: $color-orange
-              font-size: 15px
-              text-transform: uppercase
-
-            .user
-              font-size: 15px
-              text-transform: uppercase;
-              margin-top: -3vh
-
-          .only-user
-            display:none
-
-
-        .list-groupp
-          margin: 0
-          margin-left: -2vw
 
           .list-group-item
             font-size: 12px
@@ -157,16 +138,3 @@
 
               span
                 margin-left: 2vw
-
-            .admin
-              color: $color-orange
-              font-size: 15px
-              text-transform: uppercase
-
-            .user
-              font-size: 15px
-              text-transform: uppercase
-              margin-top: -3vh
-
-          .only-admin
-            display:none

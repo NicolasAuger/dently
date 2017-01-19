@@ -5,63 +5,86 @@ const uiRouter = require('angular-ui-router');
 
 import routes from './fiche-clinique-complete.routes';
 
-export class FicheCliniqueCompleteComponent {
-  /*@ngInject*/
-  constructor() {
-    this.partie1 = {
-      titre : "1. Motif de la consultation :",
-      Etat : "renseigne",
-      question2 : false
-    }
-    this.partie2 = {
-      titre : "2. Evaluation de la douleur :",
-      Etat : "renseigne",
-    }
-    this.partie3 = {
-      titre : "3. Environnement :",
-      Etat : "renseigne",
-    }
-    this.partie4 = {
-      titre : "4. Trouble de la posture :",
-      Etat : "renseigne",
-    }
-    this.partie5 = {
-      titre : "5. Trouble du sommeil :",
-      Etat : "renseigne",
-      question1 : "non",
-    }
-    this.partie6 = {
-      titre : "6. Troubles occulaires :",
-      Etat : "renseigne",
-    }
-    this.partie7 = {
-      titre : "7. Habitudes nocives :",
-      Etat : "renseigne",
-    }
-    this.partie8 = {
-      titre : "8. Dysfonctionnement oraux-linguaux :",
-      Etat : "renseigne",
-    }
-    this.partie9 = {
-      titre : "9. Traumatisme :",
-      Etat : "renseigne",
-    }
-    this.partie10 = {
-      titre : "10. Observations complémentaires :",
-      Etat : "renseigne",
-    }
-    this.partie11 = {
-      titre : "11. Palpation(s) douloureuse(s) des muscles masticateurs, des ATM, et des muscles cervico-scapulaires :",
-      Etat : "renseigne",
+type Fiche = {
+  author: string,
+  data: {
+    patient: {
+      gender: string,
+      name: string,
+      birthdate: string,
+      job: string,
+      last_visit: string,
+      health_report: string
     }
   }
-}
+};
+
+export class FicheCliniqueCompleteComponent {
+  /*@ngInject*/
+  fiche: Fiche = {
+    author: "",
+    data: {
+      patient: {
+        gender: "",
+        name: "",
+        birthdate: "",
+        job: "",
+        last_visit: "",
+        health_report: ""
+      }
+    }
+  };
+  errors = {};
+  submitted = false;
+  Auth;
+  $state;
+
+  /*@ngInject*/
+  constructor(Fichier, $state) {
+    this.Fichier = Fichier;
+    this.$state = $state;
+  }
+
+  register(form) {
+    this.submitted = true;
+
+    if(form.$valid) {
+      return this.Fichier.createFiche({
+        author: this.fiche.author,
+        data: {
+            patient: {
+                gender: this.fiche.data.patient.gender,
+                name: this.fiche.data.patient.name,
+                birthdate: this.fiche.data.patient.birthdate,
+                job: this.fiche.data.patient.job,
+                last_visit: this.fiche.data.patient.last_visit,
+                health_report: this.fiche.data.patient.health_report
+            }
+        }
+
+      })
+        .then(() => {
+          // Fiche created, redirect to guest
+          this.$state.go('main');
+        })
+        .catch(err => {
+          err = err.data;
+          this.errors = {};
+          // Update validity of form fields that match the mongoose errors
+          angular.forEach(err.errors, (error, field) => {
+            form[field].$setValidity('mongoose', false);
+            this.errors[field] = error.message;
+          });
+        });
+    }
+  }
+ }
 
 export default angular.module('dentlyApp.fiche-clinique-complete', [uiRouter])
   .config(routes)
   .component('ficheCliniqueComplete', {
     template: require('./fiche-clinique-complete.pug'),
     controller: FicheCliniqueCompleteComponent,
-    controllerAs: 'ficheCliniqueCompleteCtrl'
+    controllerAs: 'vm'
   })
   .name;

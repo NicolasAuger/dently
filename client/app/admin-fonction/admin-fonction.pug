@@ -1,34 +1,35 @@
-.page.user
-    .contain.ng-show
-        .menu
-            .head
-                .logo
-                    img(src="../../assets/images/logo-dently.png")
-            .content
-                ul
-                    a(href="/user")
-                        li.actual
-                            i.fa.fa-home
-                            | Accueil Dashboard
-                    a(href="/fiches")
-                        li
-                            i.fa.fa-file-o
-                            | Fiches Complètes
-                    a(href="/dam-diagnostic")
-                        li
-                            i.fa.fa-file-o
-                            | Diagnostic DAM
-                    a(href="/settings")
-                        li
-                            i.fa.fa-cog
-                            | Paramètres
-                    a(ui-sref="logout")
-                        li
-                            i.fa.fa-sign-out
-                            | Se Déconnecter
+.page.admin-fonction
+  .contain.ng-show
+    .menu
+      .head
+        .logo
+          img(src="../../assets/images/logo-dently.png")
+      .content
+        ul
+          a(href="/admin")
+            li
+                i.fa.fa-home
+                | Accueil Dashboard
+          a(href="/admin-fonction")
+            li.actual
+                i.fa.fa-stethoscope
+                | Activités
+          a(href="/fiches")
+            li
+                i.fa.fa-file-o
+                | Fiches complètes
+          a(href="/settings")
+            li
+                i.fa.fa-cog
+                | Paramètres
+          a(ui-sref="logout")
+            li
+                i.fa.fa-sign-out
+                | Se Déconnecter
+    .right
+        .text-content
 
-        .right
-            h1.bigwhite Bienvenue ! Vous êtes connecté en tant qu'utilisateur !
+            h1.bigwhite Bienvenue ! Vous êtes connecté en tant qu'admin !
             h2.white Que souhaitez-vous faire ?
             a(href="/depistage-systematique")
                 p #[i.fa.fa-long-arrow-right] Fiche clinique dépistage systématique (données non enregistrées)
