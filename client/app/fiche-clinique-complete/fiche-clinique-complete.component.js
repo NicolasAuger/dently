@@ -54,15 +54,18 @@ export class FicheCliniqueCompleteComponent {
       partie9 : {
       titre : "9. Traumatisme :",
       Etat : "renseigne",
-    },
+      },
     partie10 : {
       titre : "10. Observations complémentaires :",
       Etat : "renseigne",
-      }
-    }
-    this.partie11 = {
+    },
+    partie11 : {
       titre : "11. Palpation(s) douloureuse(s) des muscles masticateurs, des ATM, et des muscles cervico-scapulaires :",
       Etat : "renseigne",
+      ligne4 : {
+        question1 : "non"
+        }
+      },
     }
     this.partie12 = {
       titre : "12. Rapports incisifs :",

@@ -24,6 +24,8 @@
           span {{vm.data.partie9}}
           hr
           span {{vm.data.partie10}}
+          hr
+          span {{vm.data.partie11}}
 
         //- Entête
         .row
@@ -402,345 +404,357 @@
                 |       Non renseigné
           hr
           div(ng-show="vm.data.partie11.Etat == 'renseigne'")
-            table.table.table-striped.table-hover.table-responsive
+            table.table.table-striped.table-hover.table-responsive.table-condensed
               thead
                 tr
                   th
-                  th(colspan="3")
-                    | Coté Gauche
-                  th(colspan="3")
-                    | Coté Droit
+                  th(colspan="3") Coté Gauche
+                  th(colspan="3") Coté Droit
               tbody
                 tr
-                  td
-                    | Muscles 1Kg
-                  td
-                    | Douleur provoquée
-                  td
-                    | Est elle identique à la douleur habituelle ?
-                  td
-                    | Douleur(s) référée(s)
-                  td
-                    | Douleur provoquée
-                  td
-                    | Est elle identique à la douleur habituelle ?
-                  td
-                    | Douleur(s) référée(s)
+                  td.firstCol Muscles 1Kg
+                  td Douleur provoquée
+                  td Est elle identique à la douleur habituelle ?
+                  td Douleur(s) référée(s)
+                  td Douleur provoquée
+                  td Est elle identique à la douleur habituelle ?
+                  td Douleur(s) référée(s)
                 tr
+                  td.firstCol Temporale postérieur
                   td
-                    | Temporale postérieur
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne1.question1")
                   td
-                    input(type="checkbox" ng-model="vm.data.partie11.douleurProvoqueeTemporalPosterieurGauche")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne1.question2")
                   td
-                    input(type="checkbox" ng-model="vm.data.partie11.douleurIdentiqueTemporalPosterieurGauche")
+                      select.form-control( ng-model="vm.data.partie11.ligne1.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne1.question3 != 'autre'" ng-model="vm.data.partie11.ligne1.question3other" placeholder='Autre...', type='text')
                   td
-                    select.form-control( ng-model="vm.data.partie11.douleurRefereeTemporalPosterieurGauche" ng-options="item.name for item in vm.data.partie11.douleurs" ng-value="item.value")
-                    //- input.form-control(ng-model="vm.data.partie11.douleurRefereeTemporalPosterieurGauche.other"placeholder='Autre...', type='text')
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne1.question4")
                   td
-                    input(type="checkbox" ng-model="vm.data.partie11.douleurProvoqueeTemporalPosterieurDroit")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne1.question5")
                   td
-                    input(type="checkbox" ng-model="vm.data.partie11.douleurIdentiqueTemporalPosterieurDroit")
-                  td
-                    select.form-control( ng-model="vm.data.partie11.douleurRefereeTemporalPosterieurDroit" ng-options="item.name for item in vm.data.partie11.douleurs")
+                      select.form-control( ng-model="vm.data.partie11.ligne1.question6" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne1.question6 != 'autre'" ng-model="vm.data.partie11.ligne1.question6other" placeholder='Autre...', type='text')
                 tr
+                  td.firstCol Temporale moyen
                   td
-                    | Temporale moyen
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne2.question1")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne2.question2")
                   td
-                    input(type="checkbox")
+                      select.form-control( ng-model="vm.data.partie11.ligne2.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne2.question3 != 'autre'" ng-model="vm.data.partie11.ligne2.question3other" placeholder='Autre...', type='text')
                   td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne2.question4")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne2.question5")
                   td
-                    input(type="checkbox")
-                  td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                      select.form-control( ng-model="vm.data.partie11.ligne2.question6" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne2.question6 != 'autre'" ng-model="vm.data.partie11.ligne2.question6other" placeholder='Autre...', type='text')
                 tr
+                  td.firstCol Temporale antérieure
                   td
-                    | Temporale antérieure
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne3.question1")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne3.question2")
                   td
-                    input(type="checkbox")
+                      select.form-control( ng-model="vm.data.partie11.ligne3.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne3.question3 != 'autre'" ng-model="vm.data.partie11.ligne3.question3other" placeholder='Autre...', type='text')
                   td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne3.question4")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne3.question5")
                   td
-                    input(type="checkbox")
-                  td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                      select.form-control( ng-model="vm.data.partie11.ligne3.question6" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne3.question6 != 'autre'" ng-model="vm.data.partie11.ligne3.question6other" placeholder='Autre...', type='text')
                 tr
+                  td(colspan="2")
+                    label.control-label(for='ligne4')
+                      | Est-ce que la palpation des muscles temporaux provoque des maux de tête identiques à ceux ressentis habituellement ?
                   td
-                    | Est-ce que la palpation des muscles temporaux provoque des maux de tête identiques à ceux ressentis habituellement ?
+                    label.radio-inline(for='ligne4-0')
+                      input#ligne4-0(type='radio' ng-model="vm.data.partie11.ligne4.question1" value='oui')
+                      |       Oui
                   td
-                    label.radio-inline
-                      input(type='radio', name='inlineRadioOptions', value='option1')
-                      |  Oui
-                  td
-                    label.radio-inline
-                      input(type='radio', name='inlineRadioOptions', value='option1')
-                      |  non
-                  td
-                  td
-                  td
-                  td
+                    label.radio-inline(for='ligne4-1')
+                      input#ligne4-1(type='radio'  ng-model="vm.data.partie11.ligne4.question1" value='non')
+                      |       Non
+                  td(colspan="3")
                 tr
+                  td.firstCol Masséter (origine angle mdb)
                   td
-                    | Masséter (origine angle mdb)
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne5.question1")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne5.question2")
                   td
-                    input(type="checkbox")
+                      select.form-control( ng-model="vm.data.partie11.ligne5.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne5.question3 != 'autre'" ng-model="vm.data.partie11.ligne5.question3other" placeholder='Autre...', type='text')
                   td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne5.question4")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne5.question5")
                   td
-                    input(type="checkbox")
-                  td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                      select.form-control( ng-model="vm.data.partie11.ligne5.question6" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne5.question6 != 'autre'" ng-model="vm.data.partie11.ligne5.question6other" placeholder='Autre...', type='text')
                 tr
+                  td.firstCol Masséter (corps)
                   td
-                    | Masséter (corps)
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne6.question1")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne6.question2")
                   td
-                    input(type="checkbox")
+                      select.form-control( ng-model="vm.data.partie11.ligne6.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne6.question3 != 'autre'" ng-model="vm.data.partie11.ligne6.question3other" placeholder='Autre...', type='text')
                   td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne6.question4")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne6.question5")
                   td
-                    input(type="checkbox")
-                  td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                      select.form-control( ng-model="vm.data.partie11.ligne6.question6" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne6.question6 != 'autre'" ng-model="vm.data.partie11.ligne6.question6other" placeholder='Autre...', type='text')
                 tr
+                  td.firstCol Masséter (insertion zygomatique)
                   td
-                    | Masséter (insertion zygomatique)
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne7.question1")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne7.question2")
                   td
-                    input(type="checkbox")
+                      select.form-control( ng-model="vm.data.partie11.ligne7.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne7.question3 != 'autre'" ng-model="vm.data.partie11.ligne7.question3other" placeholder='Autre...', type='text')
                   td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne7.question4")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne7.question5")
                   td
-                    input(type="checkbox")
-                  td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                      select.form-control( ng-model="vm.data.partie11.ligne7.question6" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne7.question6 != 'autre'" ng-model="vm.data.partie11.ligne7.question6other" placeholder='Autre...', type='text')
                 tr
-                  td
-                  td
-                  td
-                  td
-                  td
-                  td
-                  td
+                  td(colspan="7")
                 tr
-                  td
-                    | ATM
-                  td
-                  td
-                  td
-                  td
-                  td
-                  td
+                  th ATM
+                  td(colspan="6")
                 tr
+                  td.firstCol Pôle latérale 0,5 Kg
                   td
-                    | Pôle latérale 0,5 Kg
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne8.question1")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne8.question2")
                   td
-                    input(type="checkbox")
+                      select.form-control( ng-model="vm.data.partie11.ligne8.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne8.question3 != 'autre'" ng-model="vm.data.partie11.ligne8.question3other" placeholder='Autre...', type='text')
                   td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne8.question4")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne8.question5")
                   td
-                    input(type="checkbox")
-                  td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                      select.form-control( ng-model="vm.data.partie11.ligne8.question6" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne8.question6 != 'autre'" ng-model="vm.data.partie11.ligne8.question6other" placeholder='Autre...', type='text')
                 tr
+                  td.firstCol Autour du pôle latéral 1Kg
                   td
-                    | Autour du pôle latéral 1Kg
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne9.question1")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne9.question2")
                   td
-                    input(type="checkbox")
+                      select.form-control( ng-model="vm.data.partie11.ligne9.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne9.question3 != 'autre'" ng-model="vm.data.partie11.ligne9.question3other" placeholder='Autre...', type='text')
                   td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne9.question4")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne9.question5")
                   td
-                    input(type="checkbox")
-                  td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                      select.form-control( ng-model="vm.data.partie11.ligne9.question6" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne9.question6 != 'autre'" ng-model="vm.data.partie11.ligne9.question6other" placeholder='Autre...', type='text')
                 tr
-                  td
-                    | Autres muscles masticateurs
-                  td
-                  td
-                  td
-                  td
-                  td
-                  td
+                  th Autres muscles masticateurs
+                  td(colspan="6")
                 tr
+                  td.firstCol Digastrique (région md post)
                   td
-                    | Digastrique (région md post)
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne10.question1")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne10.question2")
                   td
-                    input(type="checkbox")
+                      select.form-control( ng-model="vm.data.partie11.ligne10.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne10.question3 != 'autre'" ng-model="vm.data.partie11.ligne10.question3other" placeholder='Autre...', type='text')
                   td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne10.question4")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne10.question5")
                   td
-                    input(type="checkbox")
-                  td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                      select.form-control( ng-model="vm.data.partie11.ligne10.question6" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne10.question6 != 'autre'" ng-model="vm.data.partie11.ligne10.question6other" placeholder='Autre...', type='text')
                 tr
+                  td.firstCol Ptérygoïdien médial (région submd)
                   td
-                    | Ptérygoïdien médial (région submd)
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne11.question1")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne11.question2")
                   td
-                    input(type="checkbox")
+                      select.form-control( ng-model="vm.data.partie11.ligne11.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne11.question3 != 'autre'" ng-model="vm.data.partie11.ligne11.question3other" placeholder='Autre...', type='text')
                   td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne11.question4")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne11.question5")
                   td
-                    input(type="checkbox")
-                  td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                      select.form-control( ng-model="vm.data.partie11.ligne11.question6" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne11.question6 != 'autre'" ng-model="vm.data.partie11.ligne11.question6other" placeholder='Autre...', type='text')
                 tr
+                  td.firstCol Aire du ptérygoïdien latéral
                   td
-                    | Aire du ptérygoïdien latéral
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne12.question1")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne12.question2")
                   td
-                    input(type="checkbox")
+                      select.form-control( ng-model="vm.data.partie11.ligne12.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne12.question3 != 'autre'" ng-model="vm.data.partie11.ligne12.question3other" placeholder='Autre...', type='text')
                   td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne12.question4")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne12.question5")
                   td
-                    input(type="checkbox")
-                  td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                      select.form-control( ng-model="vm.data.partie11.ligne12.question6" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne12.question6 != 'autre'" ng-model="vm.data.partie11.ligne12.question6other" placeholder='Autre...', type='text')
                 tr
+                  td.firstCol Tendon du temporal
                   td
-                    | Tendon du temporal
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne13.question1")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne13.question2")
                   td
-                    input(type="checkbox")
+                      select.form-control( ng-model="vm.data.partie11.ligne13.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne13.question3 != 'autre'" ng-model="vm.data.partie11.ligne13.question3other" placeholder='Autre...', type='text')
                   td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne13.question4")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne13.question5")
                   td
-                    input(type="checkbox")
-                  td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                      select.form-control( ng-model="vm.data.partie11.ligne13.question6" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne13.question6 != 'autre'" ng-model="vm.data.partie11.ligne13.question6other" placeholder='Autre...', type='text')
                 tr
-                  td
-                    | Autres muscles cervico-scapulaires 0,5kg
-                  td
-                  td
-                  td
-                  td
-                  td
-                  td
+                  th.firstCol Autres muscles cervico-scapulaires 0,5kg
+                  td(colspan="6")
                 tr
+                  td.firstCol Sterno-cléido-mastoïdien
                   td
-                    | Sterno-cléido-mastoïdien
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne14.question1")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne14.question2")
                   td
-                    input(type="checkbox")
+                      select.form-control( ng-model="vm.data.partie11.ligne14.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne14.question3 != 'autre'" ng-model="vm.data.partie11.ligne14.question3other" placeholder='Autre...', type='text')
                   td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne14.question4")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne14.question5")
                   td
-                    input(type="checkbox")
-                  td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                      select.form-control( ng-model="vm.data.partie11.ligne14.question6" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne14.question6 != 'autre'" ng-model="vm.data.partie11.ligne14.question6other" placeholder='Autre...', type='text')
                 tr
+                  td.firstCol Trapèze
                   td
-                    | Trapèze
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne15.question1")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne15.question2")
                   td
-                    input(type="checkbox")
+                      select.form-control( ng-model="vm.data.partie11.ligne15.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne15.question3 != 'autre'" ng-model="vm.data.partie11.ligne15.question3other" placeholder='Autre...', type='text')
                   td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne15.question4")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne15.question5")
                   td
-                    input(type="checkbox")
-                  td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                      select.form-control( ng-model="vm.data.partie11.ligne15.question6" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne15.question6 != 'autre'" ng-model="vm.data.partie11.ligne15.question6other" placeholder='Autre...', type='text')
                 tr
-                  td
-                    | Autre(s) muscle(s)
-                  td
-                  td
-                  td
-                  td
-                  td
-                  td
+                  th.firstCol Autre(s) muscle(s) :
+                  td(colSpan="6")
                 tr
+                  td.firstCol
+                    input(type="text" ng-model="vm.data.partie11.ligne16.muscle")
                   td
-                    input(style="withd:25px" type="text")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne16.question1")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne16.question2")
                   td
-                    input(type="checkbox")
+                      select.form-control( ng-model="vm.data.partie11.ligne16.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne16.question3 != 'autre'" ng-model="vm.data.partie11.ligne16.question3other" placeholder='Autre...', type='text')
                   td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne16.question4")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne16.question5")
                   td
-                    input(type="checkbox")
-                  td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                      select.form-control( ng-model="vm.data.partie11.ligne16.question6" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne16.question6 != 'autre'" ng-model="vm.data.partie11.ligne16.question6other" placeholder='Autre...', type='text')
                 tr
+                  td.firstCol
+                    input(type="text" ng-model="vm.data.partie11.ligne17.muscle")
                   td
-                    input(style="withd:25px" type="text")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne17.question1")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne17.question2")
                   td
-                    input(type="checkbox")
+                      select.form-control( ng-model="vm.data.partie11.ligne17.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne17.question3 != 'autre'" ng-model="vm.data.partie11.ligne17.question3other" placeholder='Autre...', type='text')
                   td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne17.question4")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne17.question5")
                   td
-                    input(type="checkbox")
-                  td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                      select.form-control( ng-model="vm.data.partie11.ligne17.question6" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne17.question6 != 'autre'" ng-model="vm.data.partie11.ligne17.question6other" placeholder='Autre...', type='text')
                 tr
+                  td.firstCol
+                    input(type="text" ng-model="vm.data.partie11.ligne18.muscle")
                   td
-                    input(style="withd:25px" type="text")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne18.question1")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne18.question2")
                   td
-                    input(type="checkbox")
+                      select.form-control( ng-model="vm.data.partie11.ligne18.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne18.question3 != 'autre'" ng-model="vm.data.partie11.ligne18.question3other" placeholder='Autre...', type='text')
                   td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne18.question4")
                   td
-                    input(type="checkbox")
+                    input(type="checkbox" ng-model="vm.data.partie11.ligne18.question5")
                   td
-                    input(type="checkbox")
-                  td
-                    select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+                      select.form-control( ng-model="vm.data.partie11.ligne18.question6" ng-options="item.value as item.name for item in vm.douleurs")
+                      br
+                      input.form-control(ng-disabled="vm.data.partie11.ligne18.question6 != 'autre'" ng-model="vm.data.partie11.ligne18.question6other" placeholder='Autre...', type='text')
 
         //- partie 12
         .row
