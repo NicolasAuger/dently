@@ -79,6 +79,18 @@ export class FicheCliniqueCompleteComponent {
         titre : "17. Test du bâtonnet :",
         Etat : "renseigne"
       },
+      partie18 : {
+        titre : "18. Elasticité articulaire :",
+        Etat : "renseigne"
+      },
+      partie19 : {
+        titre : "19. Examen endo-buccal :",
+        Etat : "renseigne"
+      },
+      partie20 : {
+        titre : "20. Usures dentaires / bruxismes :",
+        Etat : "renseigne"
+      }
     }
     this.partie13 = {
       titre : "13. Mouvements d'ouverture, latéralités et propulsion :",
@@ -92,7 +104,6 @@ export class FicheCliniqueCompleteComponent {
       titre : "15. Bruits articulaires lors des mouvements fonctionnels :",
       Etat : "renseigne",
     }
-
   }
 }
 
