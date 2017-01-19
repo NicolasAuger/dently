@@ -14,6 +14,16 @@
           span {{vm.data.partie4}}
           hr
           span {{vm.data.partie5}}
+          hr
+          span {{vm.data.partie6}}
+          hr
+          span {{vm.data.partie7}}
+          hr
+          span {{vm.data.partie8}}
+          hr
+          span {{vm.data.partie9}}
+          hr
+          span {{vm.data.partie10}}
 
         //- Entête
         .row
@@ -64,9 +74,10 @@
                 .form-group
                   button.btn.btn-primary(name='') Ajouter une photo
             br
+            br
             .row.form-group
-              label.col-md-4.control-label(for='bilanDeSante') Bilan de santé :
-              .col-md-7
+              label.col-md-2.control-label(for='bilanDeSante') Bilan de santé :
+              .col-md-10
                 textarea#bilanDeSante.form-control(ng-model="vm.data.patient.health_report")
 
         //- partie 1
@@ -278,7 +289,6 @@
               label.checkbox-inline(for='7_1-5')
                 input#7_1-5(type='checkbox'  ng-model="vm.data.partie7.question6Checker")
                 |       Autres
-
               textarea.form-control(ng-show="vm.data.partie7.question6Checker" ng-model="vm.data.partie7.question6")
 
         //- partie 8
@@ -298,21 +308,47 @@
           hr
           div(ng-show="vm.data.partie8.Etat == 'renseigne'")
             .form-group
-              label.checkbox-inline(for='checkboxes-6')
-                input#checkboxes-6(type='checkbox', name='checkboxes', value='')
+              label.checkbox-inline(for='8_1-1')
+                input#8_1-1(type='checkbox' ng-model="vm.data.partie8.question1")
                 |       Dysfonctionnement Orolinguaux
-              label.checkbox-inline(for='checkboxes-7')
-                input#checkboxes-7(type='checkbox', name='checkboxes', value='')
+              label.checkbox-inline(for='8_1-2')
+                input#8_1-2(type='checkbox' ng-model="vm.data.partie8.question2_0")
                 |       Déglutition atypique
+            .well(ng-show="vm.data.partie8.question2_0")
+              .form-group
+                label.checkbox-inline(for='8_2-1')
+                  input#8_2-1(type='checkbox' ng-model="vm.data.partie8.question2_1")
+                  |       Contraction excessive des muscles des lèvres
+                label.checkbox-inline(for='8_2-2')
+                  input#8_2-2(type='checkbox' ng-model="vm.data.partie8.question2_2")
+                  |       Interposition linguale entre les arcades dentaires
+                label.checkbox-inline(for='8_2-3')
+                  input#8_2-3(type='checkbox' ng-model="vm.data.partie8.question2_3")
+                  |       Pulsion antérieure de la pointe de la langue sur les incisives
+                label.checkbox-inline(for='8_2-4')
+                  input#8_2-4(type='checkbox' ng-model="vm.data.partie8.question2_4")
+                  |       Ventilation buccale ou mixte
+                label.checkbox-inline(for='8_2-5')
+                  input#8_2-5(type='checkbox' ng-model="vm.data.partie8.question2_5Checker")
+                  |       Autre...
+              textarea.form-control(rows="1" ng-show="vm.data.partie8.question2_5Checker" ng-model="vm.data.partie8.question2_5" placeholder="Autre...")
+            br
 
-              textarea#textarea.form-control(name='textarea')
-
-              a.btn.btn-default(role="button") Score de Friedman
-              label Score de Friedman :
-              input(name="ScoreDeFriedman" style="withd:25px" type="text")
-              a.btn.btn-default(role="button") Score de Mallanpati
-              label Score de Mallanpati :
-              input(name="ScoreDeMallanpati" style="withd:25px" type="text")
+            textarea.form-control(ng-model="vm.data.partie8.question3")
+            br
+            .row
+              .col-lg-6
+                .input-group
+                  span.input-group-btn
+                    button.btn.btn-default(type='button') Test de Friedman
+                  input.form-control(type='text' placeholder='Résultat' ng-model="vm.data.partie8.question4")
+                br
+              .col-lg-6
+                .input-group
+                  span.input-group-btn
+                    button.btn.btn-default(type='button') Test de Mallanpati
+                  input.form-control(type='text' placeholder='Résultat' ng-model="vm.data.partie8.question5")
+                br
 
         //- partie 9
         .row
