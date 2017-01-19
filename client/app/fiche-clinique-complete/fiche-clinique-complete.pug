@@ -1409,130 +1409,104 @@
                         input(type='checkbox')
                       select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
 
-
-
-        //---------------------------------------------------------------------
         //- Partie 16
         .row
-          h2 16. Blocage articulaire :
-          .checkbox
-            label
-              input(type="checkbox" ng-model="16negatif")
-              span NEGATIF
-          .checkbox
-            label
-              input(type="checkbox")
-              span NON RENSEIGNE
+          h2 {{vm.data.partie16.titre}}
+          .form-group
+            .col-md-4
+              label.radio-inline(for='16_0-0')
+                input#16_0-0(type='radio' value="renseigne" ng-model="vm.data.partie16.Etat")
+                |       Renseigné
+              label.radio-inline(for='16_0-1')
+                input#16_0-1(type='radio' value="negatif" ng-model="vm.data.partie16.Etat")
+                |       Négatif
+              label.radio-inline(for='16_0-2')
+                input#16_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie16.Etat")
+                |       Non renseigné
           hr
-          .form-group(ng-show="16negatif")
-            label.col-md-4.control-label(for='16_1') Vous est-il arrivé d'être bloqué(e) ?
-            .col-md-4
-              label.checkbox-inline(for='16_1-0')
-                input#16_1-0(type='checkbox', name='16_1', value='1')
-                |       Bouche ouverte
-              label.checkbox-inline(for='16_1-1')
-                input#16_1-1(type='checkbox', name='16_1', value='2')
-                |       Bouche fermée
-          .form-group
-            label.col-md-4.control-label(for='16_2')
-            .col-md-4
-              label.checkbox-inline(for='16_2-0')
-                input#16_2-0(type='checkbox', name='16_2', value='1')
-                |       ATM gauche
-              label.checkbox-inline(for='16_2-1')
-                input#16_2-1(type='checkbox', name='16_2', value='2')
-                |       ATM droite
-          .form-group
-            label.col-md-4.control-label(for='16_3') Fréquence :
-            .col-md-4
-              input#16_3.form-control.input-md(name='16_3', type='text', placeholder='')
-          .form-group
-            label.col-md-4.control-label(for='16_4') Dernier épisode :
-            .col-md-4
-              input#16_4.form-control.input-md(name='16_4', type='text', placeholder='')
+          div(ng-show="vm.data.partie16.Etat == 'renseigne'")
+            .form-group(ng-show="16negatif")
+              label.col-md-4.control-label(for='16_1') Vous est-il arrivé d'être bloqué(e) ?
+              .col-md-4
+                label.checkbox-inline(for='16_1-0')
+                  input#16_1-0(type='checkbox' ng-model="vm.data.partie16.question1")
+                  |       Bouche ouverte
+                label.checkbox-inline(for='16_1-1')
+                  input#16_1-1(type='checkbox' ng-model="vm.data.partie16.question2")
+                  |       Bouche fermée
+            .form-group
+              label.col-md-4.control-label(for='16_2')
+              .col-md-4
+                label.checkbox-inline(for='16_2-0')
+                  input#16_2-0(type='checkbox' ng-model="vm.data.partie16.question3")
+                  |       ATM gauche
+                label.checkbox-inline(for='16_2-1')
+                  input#16_2-1(type='checkbox' ng-model="vm.data.partie16.question4")
+                  |       ATM droite
+            .form-group
+              label.col-md-4.control-label(for='16_3') Fréquence :
+              .col-md-4
+                input#16_3.form-control.input-md(type='text' ng-model="vm.data.partie16.question5")
+            .form-group
+              label.col-md-4.control-label(for='16_4') Dernier épisode :
+              .col-md-4
+                input#16_4.form-control.input-md(type='text' ng-model="vm.data.partie16.question6")
 
+        //- Partie 17
         .row
-          h2 17. Test du bâtonnet :
-          .checkbox
-            label
-              input(type="checkbox")
-              span NEGATIF
-          .checkbox
-            label
-              input(type="checkbox")
-              span NON RENSEIGNE
+          h2 {{vm.data.partie17.titre}}
+          .form-group
+            .col-md-4
+              label.radio-inline(for='17_0-0')
+                input#17_0-0(type='radio' value="renseigne" ng-model="vm.data.partie17.Etat")
+                |       Renseigné
+              label.radio-inline(for='17_0-1')
+                input#17_0-1(type='radio' value="negatif" ng-model="vm.data.partie17.Etat")
+                |       Négatif
+              label.radio-inline(for='17_0-2')
+                input#17_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie17.Etat")
+                |       Non renseigné
           hr
-          .col-md-10.col-md-offset-1
-            table.table.borderless
-              thead
-                tr
-                  th(rowspan="2") Bâtonnet
-                  th(colspan="2") Douleur
-                tr
-                  th Gauche
-                  th Droite
+          div(ng-show="vm.data.partie17.Etat == 'renseigne'")
+            .col-md-10.col-md-offset-1
+              table.table.borderless
+                thead
+                  tr
+                    th(rowspan="2") Bâtonnet
+                    th(colspan="2") Douleur
+                  tr
+                    th Gauche
+                    th Droite
 
-              tbody
-                tr
-                  td Droite
-                  td
-                    .form-group
-                      .col-md-11
-                        select#17_1.form-control(name='17_1')
-                          option(value='0')
-                          option(value='1') M. temporal droit
-                          option(value='2') M.temporal gauche
-                          option(value='3') M. masséter droit
-                          option(value='4') M. masséter gauche
-                          option(value='5') Atm droite
-                          option(value='6') Atm gauche
-                          option(value='7') Autres...
-                        br
-                        input#17_1.form-control.input-md(name='17_1', type='text', placeholder='Autres..')
-                  td
-                    .form-group
-                      .col-md-11
-                        select#17_2.form-control(name='17_2')
-                          option(value='0')
-                          option(value='1') M. temporal droit
-                          option(value='2') M.temporal gauche
-                          option(value='3') M. masséter droit
-                          option(value='4') M. masséter gauche
-                          option(value='5') Atm droite
-                          option(value='6') Atm gauche
-                          option(value='7') Autres...
-                        br
-                        input#17_2.form-control.input-md(name='17_2', type='text', placeholder='Autres..')
-                tr
-                  td Gauche
-                  td
-                    .form-group
-                      .col-md-11
-                        select#17_3.form-control(name='17_3')
-                          option(value='0')
-                          option(value='1') M. temporal droit
-                          option(value='2') M.temporal gauche
-                          option(value='3') M. masséter droit
-                          option(value='4') M. masséter gauche
-                          option(value='5') Atm droite
-                          option(value='6') Atm gauche
-                          option(value='7') Autres...
-                        br
-                        input#17_3.form-control.input-md(name='17_3', type='text', placeholder='Autres..')
-                  td
-                    .form-group
-                      .col-md-11
-                        select#17_4.form-control(name='17_4')
-                          option(value='0')
-                          option(value='1') M. temporal droit
-                          option(value='2') M.temporal gauche
-                          option(value='3') M. masséter droit
-                          option(value='4') M. masséter gauche
-                          option(value='5') Atm droite
-                          option(value='6') Atm gauche
-                          option(value='7') Autres...
-                        br
-                        input#17_4.form-control.input-md(name='17_4', type='text', placeholder='Autres..')
+                tbody
+                  tr
+                    td Droite
+                    td
+                      .form-group
+                        .col-md-11
+                          select.form-control( ng-model="vm.data.partie17.question1" ng-options="item.value as item.name for item in vm.douleurs")
+                          br
+                          input.form-control(ng-disabled="vm.data.partie17.question1 != 'autre'" ng-model="vm.data.partie17.question1other" placeholder='Autre...', type='text')
+                    td
+                      .form-group
+                        .col-md-11
+                          select.form-control( ng-model="vm.data.partie17.question2" ng-options="item.value as item.name for item in vm.douleurs")
+                          br
+                          input.form-control(ng-disabled="vm.data.partie17.question2 != 'autre'" ng-model="vm.data.partie17.question2other" placeholder='Autre...', type='text')
+                  tr
+                    td Gauche
+                    td
+                      .form-group
+                        .col-md-11
+                          select.form-control( ng-model="vm.data.partie17.question3" ng-options="item.value as item.name for item in vm.douleurs")
+                          br
+                          input.form-control(ng-disabled="vm.data.partie17.question3 != 'autre'" ng-model="vm.data.partie17.question3other" placeholder='Autre...', type='text')
+                    td
+                      .form-group
+                        .col-md-11
+                          select.form-control( ng-model="vm.data.partie17.question4" ng-options="item.value as item.name for item in vm.douleurs")
+                          br
+                          input.form-control(ng-disabled="vm.data.partie17.question4 != 'autre'" ng-model="vm.data.partie17.question4other" placeholder='Autre...', type='text')
         .row
           h2 18. Elasticité articulaire :
           .checkbox

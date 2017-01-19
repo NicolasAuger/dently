@@ -71,6 +71,14 @@ export class FicheCliniqueCompleteComponent {
       Etat : "renseigne",
       question4checker : "non"
       },
+      partie16 : {
+        titre : "16. Blocage articulaire :",
+        Etat : "renseigne"
+      },
+      partie17 : {
+        titre : "17. Test du bâtonnet :",
+        Etat : "renseigne"
+      },
     }
     this.partie13 = {
       titre : "13. Mouvements d'ouverture, latéralités et propulsion :",
@@ -84,6 +92,7 @@ export class FicheCliniqueCompleteComponent {
       titre : "15. Bruits articulaires lors des mouvements fonctionnels :",
       Etat : "renseigne",
     }
+
   }
 }
 
