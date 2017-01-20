@@ -11,7 +11,9 @@ class _Fiche {
             birthdate: '',
             job: '',
             last_visit: '',
-            health_report: ''
+            health_report: '',
+            diagnostic: '',
+            plan_de_traitement: ''
         },
         consultation: { // Partie 1 : Motif de la consultation
             etat: '',
@@ -48,6 +50,9 @@ class _Fiche {
         trouble_occulaire:{ // Troubles occulaires
             etat: '',
             text: ''
+        },
+        examens_complementaires:{ // Partie 20 : Examens complémentaires
+          type_d_examen1: ''
         }
 
     }

@@ -14,7 +14,9 @@ type Fiche = {
       birthdate: string,
       job: string,
       last_visit: string,
-      health_report: string
+      health_report: string,
+      diagnostic: string,
+      plan_de_traitement: string,
     },
     consultation: { // Partie 1 : Motif de la consultation
         etat: string,
@@ -51,7 +53,10 @@ type Fiche = {
     trouble_occulaire:{ // Partie 6 : Troubles occulaires
         etat: string,
         text: string
-    }
+    },
+    examens_complementaires:{ // Partie 20 : Examens complémentaires
+      type_d_examen1: string
+    },
   }
 };
 
@@ -66,7 +71,9 @@ export class FicheCliniqueCompleteComponent {
         birthdate: "",
         job: "",
         last_visit: "",
-        health_report: ""
+        health_report: "",
+        diagnostic: "",
+        plan_de_traitement: "",
       },
       consultation: { // Partie 1 : Motif de la consultation
           etat: "",
@@ -103,7 +110,10 @@ export class FicheCliniqueCompleteComponent {
       trouble_occulaire:{ // Partie 6 : Troubles occulaires
           etat: "",
           text: ""
-      }
+      },
+      examens_complementaires:{ // Partie 20 : Examens complémentaires
+        type_d_examen1: "",
+      },
     }
   };
   errors = {};
@@ -130,7 +140,9 @@ export class FicheCliniqueCompleteComponent {
                 birthdate: this.fiche.data.patient.birthdate,
                 job: this.fiche.data.patient.job,
                 last_visit: this.fiche.data.patient.last_visit,
-                health_report: this.fiche.data.patient.health_report
+                health_report: this.fiche.data.patient.health_report,
+                diagnostic: this.fiche.data.patient.diagnostic,
+                plan_de_traitement: this.fiche.data.patient.plan_de_traitement,
             },
             consultation: { // Partie 1 : Motif de la consultation
                 etat: this.data.consultation.etat,
@@ -167,6 +179,9 @@ export class FicheCliniqueCompleteComponent {
             trouble_occulaire:{ // Partie 6 : Troubles occulaires
                 etat: this.data.trouble_occulaire.etat,
                 text: this.data.trouble_occulaire.text
+            },
+            examens_complementaires:{ // Partie 20 : Examens complémentaires
+              type_d_examen1: this.data.examens_complementaires.type_d_examen1,
             }
         }
 
