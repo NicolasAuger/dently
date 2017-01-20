@@ -87,6 +87,7 @@ export function AuthService($location, $http, $cookies, $q, appConfig, Util, Use
         .$promise;
     },
 
+
     /**
      * Change password
      *
