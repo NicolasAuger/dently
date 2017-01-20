@@ -34,6 +34,114 @@ var FicheSchema = new Schema({
               required: true
           }
 
+      },
+      consultation: { // Partie 1 : Motif de la consultation
+          etat: {
+              type: String,
+              required: true
+          },
+          motif: {
+              type: String,
+              required: false
+          },
+          douleur: {
+              type: Boolean,
+              required: false
+          }
+      },
+      evaluation_douleur: { // Partie 2 : Evaluation de la douleur
+          etat: {
+              type: String,
+              required: true
+          }
+      },
+      environnement: { // partie 3 : Environnement
+          etat: {
+              type: String,
+              required: true
+          },
+          familial: {
+              type: String,
+              required: false
+          },
+          social: {
+              type: String,
+              required: false
+          },
+          professional: {
+              type: String,
+              required: false
+          },
+          anxiete: {
+              type: String,
+              required: false
+          },
+          depression: {
+              type: String,
+              required: false
+          },
+          stress: {
+              type: String,
+              required: false
+          }
+      },
+      trouble_posture: { // Partie 4: Troubles de la posture
+          etat: {
+              type: String,
+              required: true
+          },
+          rachidien_check: {
+              type: Boolean,
+              required: false
+          },
+          rachidien_text: {
+              type: String,
+              required: false
+          },
+          cephalie_check: {
+              type: Boolean,
+              required: false
+          },
+          cephalie_text: {
+              type: String,
+              required: false
+          }
+      },
+      trouble_sommeil: { // partie 5: Troubles du sommeil
+          etat: {
+              type: String,
+              required: true
+          },
+          apnee: {
+              type: String,
+              required: false
+          },
+          symptome: {
+              type: String,
+              required: false
+          },
+          traitement: {
+              type: String,
+              required: false
+          },
+          psqi: {
+              type: String,
+              required: false
+          },
+          isi: {
+              type: String,
+              required: false
+          }
+      },
+      trouble_occulaire: { // Troubles occulaires
+          etat: {
+              type: String,
+              required: true
+          },
+          text: {
+              type: String,
+              required: false
+          }
       }
   }
 });

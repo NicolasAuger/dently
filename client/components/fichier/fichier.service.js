@@ -12,7 +12,44 @@ class _Fiche {
             job: '',
             last_visit: '',
             health_report: ''
+        },
+        consultation: { // Partie 1 : Motif de la consultation
+            etat: '',
+            motif: '',
+            douleur: false
+        },
+        evaluation_douleur: { // Partie 2: Evaluation de la douleur
+            etat: '',
+        },
+        environnement: { // partie 3 : Environnement
+            etat: '',
+            familial: '',
+            social: '',
+            professional: '',
+            anxiete: '',
+            depression: '',
+            stress: ''
+        },
+        trouble_posture: { // Partie 4: Troubles de la posture
+            etat: '',
+            rachidien_check: false,
+            rachidien_text: '',
+            cephalie_check: false,
+            cephalie_text: ''
+        },
+        trouble_sommeil: { // partie 5: Troubles du sommeil
+            etat: '',
+            apnee: '',
+            symptome: '',
+            traitement: '',
+            psqi: '',
+            isi: ''
+        },
+        trouble_occulaire:{ // Troubles occulaires
+            etat: '',
+            text: ''
         }
+
     }
     $promise = undefined
 }
