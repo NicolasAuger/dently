@@ -51,6 +51,36 @@ type Fiche = {
     trouble_occulaire:{ // Partie 6 : Troubles occulaires
         etat: string,
         text: string
+    },
+    habitude_nocive: { // Partie 7 : Habitudes nocives
+        etat: string,
+        onycophagie: string,
+        mordillement: string,
+        bruxisme: string,
+        chewingum: string,
+        tabac: string,
+        autre_check: boolean,
+        autre_text: string
+    },
+    dysfonctionnement_oraux_lingaux: { // Partie 8 : Dysfonctionnement Oraux-Linguaux
+        etat: string,
+        dysfonctionnement_orolingaux: boolean,
+        deglutition_atypique: boolean,
+        contraction_muscle: string,
+        interposition_linguale: string,
+        pulsion_linguale: string,
+        ventilation_buccale: string,
+        autre_check: boolean,
+        autre_text: string,
+        text:string
+    },
+    traumatisme: { // Partie 9 : Traumatisme
+        etat: string,
+        text: string
+    },
+    observations: { // Partie 10 : Observations complémentaires
+        etat: string,
+        text: string
     }
   }
 };
@@ -101,6 +131,36 @@ export class FicheCliniqueCompleteComponent {
           isi: ""
       },
       trouble_occulaire:{ // Partie 6 : Troubles occulaires
+          etat: "",
+          text: ""
+      },
+      habitude_nocive: { // Partie 7 : Habitudes nocives
+          etat: "",
+          onycophagie: "",
+          mordillement: "",
+          bruxisme: "",
+          chewingum: "",
+          tabac: "",
+          autre_check: false,
+          autre_text: ""
+      },
+      dysfonctionnement_oraux_lingaux: { // Partie 8 : Dysfonctionnement Oraux-Linguaux
+          etat: "",
+          dysfonctionnement_orolingaux: false,
+          deglutition_atypique: false,
+          contraction_muscle: "",
+          interposition_linguale: "",
+          pulsion_linguale: "",
+          ventilation_buccale: "",
+          autre_check: false,
+          autre_text: "",
+          text:""
+      },
+      traumatisme: { // Partie 9 : Traumatisme
+          etat: "",
+          text: ""
+      },
+      observations: { // Partie 10 : Observations complémentaires
           etat: "",
           text: ""
       }
@@ -167,6 +227,36 @@ export class FicheCliniqueCompleteComponent {
             trouble_occulaire:{ // Partie 6 : Troubles occulaires
                 etat: this.data.trouble_occulaire.etat,
                 text: this.data.trouble_occulaire.text
+            },
+            habitude_nocive: { // Partie 7 : Habitudes nocives
+                etat: this.data.habitude_nocive.etat,
+                onycophagie: this.data.habitude_nocive.onycophagie,
+                mordillement: this.data.habitude_nocive.mordillement,
+                bruxisme: this.data.habitude_nocive.bruxisme,
+                chewingum: this.data.habitude_nocive.chewingum,
+                tabac: this.data.habitude_nocive.tabac,
+                autre_check: this.data.habitude_nocive.autre_check,
+                autre_text: this.data.habitude_nocive.autre_text
+            },
+            dysfonctionnement_oraux_lingaux: { // Partie 8 : Dysfonctionnement Oraux-Linguaux
+                etat: this.data.dysfonctionnement_oraux_lingaux.etat,
+                dysfonctionnement_orolingaux: this.data.dysfonctionnement_oraux_lingaux.dysfonctionnement_orolingaux,
+                deglutition_atypique: this.data.dysfonctionnement_oraux_lingaux.deglutition_atypique,
+                contraction_muscle: this.data.dysfonctionnement_oraux_lingaux.contraction_muscle,
+                interposition_linguale: this.data.dysfonctionnement_oraux_lingaux.interposition_linguale,
+                pulsion_linguale: this.data.dysfonctionnement_oraux_lingaux.pulsion_linguale,
+                ventilation_buccale: this.data.dysfonctionnement_oraux_lingaux.ventilation_buccale,
+                autre_check: this.data.dysfonctionnement_oraux_lingaux.autre_check,
+                autre_text: this.data.dysfonctionnement_oraux_lingaux.autre_text,
+                text: this.data.dysfonctionnement_oraux_lingaux.text
+            },
+            traumatisme: { // Partie 9 : Traumatisme
+                etat: this.data.traumatisme.etat,
+                text: this.data.traumatisme.text
+            },
+            observations: { // Partie 10 : Observations complémentaires
+                etat: this.data.observations.etat,
+                text: this.data.observations.text
             }
         }
 

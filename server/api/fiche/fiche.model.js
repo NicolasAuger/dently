@@ -133,7 +133,103 @@ var FicheSchema = new Schema({
               required: false
           }
       },
-      trouble_occulaire: { // Troubles occulaires
+      trouble_occulaire: { // Partie 6 : Troubles occulaires
+          etat: {
+              type: String,
+              required: true
+          },
+          text: {
+              type: String,
+              required: false
+          }
+      },
+      habitude_nocive: { // Partie 7 : Habitudes nocives
+          etat: {
+              type: String,
+              required: true
+          },
+          onycophagie: {
+              type: String,
+              required: false
+          },
+          mordillement: {
+              type: String,
+              required: false
+          },
+          bruxisme: {
+              type: String,
+              required: false
+          },
+          chewingum: {
+              type: String,
+              required: false
+          },
+          tabac: {
+              type: String,
+              required: false
+          },
+          autre_check: {
+              type: Boolean,
+              required: false
+          },
+          autre_text: {
+              type: String,
+              required: false
+          }
+      },
+      dysfonctionnement_oraux_lingaux: { // Partie 8 : Dysfonctionnement Oraux-Linguaux
+          etat: {
+              type: String,
+              required: true
+          },
+          dysfonctionnement_orolingaux: {
+              type: Boolean,
+              required: false
+          },
+          deglutition_atypique: {
+              type: Boolean,
+              required: false
+          },
+          contraction_muscle: {
+              type: String,
+              required: false
+          },
+          interposition_linguale: {
+              type: String,
+              required: false
+          },
+          pulsion_linguale: {
+              type: String,
+              required: false
+          },
+          ventilation_buccale: {
+              type: String,
+              required: false
+          },
+          autre_check: {
+              type: Boolean,
+              required: false
+          },
+          autre_text: {
+              type: String,
+              required: false
+          },
+          text:{
+              type: String,
+              required: false
+          }
+      },
+      traumatisme: { // Partie 9 : Traumatisme
+          etat: {
+              type: String,
+              required: true
+          },
+          text: {
+              type: String,
+              required: false
+          }
+      },
+      observations: { // Partie 10 : Observations complémentaires
           etat: {
               type: String,
               required: true

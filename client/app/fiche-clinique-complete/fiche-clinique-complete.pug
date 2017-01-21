@@ -242,6 +242,139 @@
           div(ng-show="vm.data.trouble_occulaire.etat == 'renseigne'")
             textarea.form-control(ng-model="vm.data.trouble_occulaire.text" rows="3")
 
+
+        //- partie 7
+        .row
+          h2 7. Habitudes nocives :
+          .form-group
+            .col-md-4
+              label.radio-inline(for='7_0-0')
+                input#7_0-0(type='radio' value="renseigne" ng-model="vm.data.habitude_nocive.etat")
+                |       Renseigné
+              label.radio-inline(for='7_0-1')
+                input#7_0-1(type='radio' value="negatif" ng-model="vm.data.habitude_nocive.etat")
+                |       Négatif
+              label.radio-inline(for='7_0-2')
+                input#7_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.habitude_nocive.etat")
+                |       Non renseigné
+          hr
+          div(ng-show="vm.data.habitude_nocive.etat == 'renseigne'")
+            .form-group
+              label.checkbox-inline(for='7_1-0')
+                input#7_1-0(type='checkbox' ng-model="vm.data.habitude_nocive.onycophagie")
+                |       Onycophagie
+              label.checkbox-inline(for='7_1-1')
+                input#7_1-1(type='checkbox'  ng-model="vm.data.habitude_nocive.mordillement")
+                |       Mordillement des lèvres/stylos/objets
+              label.checkbox-inline(for='7_1-2')
+                input#7_1-2(type='checkbox'  ng-model="vm.data.habitude_nocive.bruxisme")
+                |       Bruxisme d'eveille
+              label.checkbox-inline(for='7_1-3')
+                input#7_1-3(type='checkbox' ng-model="vm.data.habitude_nocive.chewingum")
+                |       Chewing-gum
+              label.checkbox-inline(for='7_1-4')
+                input#7_1-4(type='checkbox'  ng-model="vm.data.habitude_nocive.tabac")
+                |       Tabac
+              label.checkbox-inline(for='7_1-5')
+                input#7_1-5(type='checkbox'  ng-model="vm.data.habitude_nocive.autre_check")
+                |       Autres
+              textarea.form-control(ng-show="vm.data.habitude_nocive.autre_check" ng-model="vm.data.habitude_nocive.autre_text")
+
+        //- partie 8
+        .row
+          h2 8. Dysfonctionnement oraux-linguaux :
+          .form-group
+            .col-md-4
+              label.radio-inline(for='8_0-0')
+                input#8_0-0(type='radio' value="renseigne" ng-model="vm.data.dysfonctionnement_oraux_lingaux.etat")
+                |       Renseigné
+              label.radio-inline(for='8_0-1')
+                input#8_0-1(type='radio' value="negatif" ng-model="vm.data.dysfonctionnement_oraux_lingaux.etat")
+                |       Négatif
+              label.radio-inline(for='8_0-2')
+                input#8_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.dysfonctionnement_oraux_lingaux.etat")
+                |       Non renseigné
+          hr
+          div(ng-show="vm.data.dysfonctionnement_oraux_lingaux.etat == 'renseigne'")
+            .form-group
+              label.checkbox-inline(for='8_1-1')
+                input#8_1-1(type='checkbox' ng-model="vm.data.dysfonctionnement_oraux_lingaux.dysfonctionnement_orolingaux")
+                |       Dysfonctionnement Orolinguaux
+              label.checkbox-inline(for='8_1-2')
+                input#8_1-2(type='checkbox' ng-model="vm.data.dysfonctionnement_oraux_lingaux.deglutition_atypique")
+                |       Déglutition atypique
+            .well(ng-show="vm.data.dysfonctionnement_oraux_lingaux.deglutition_atypique")
+              .form-group
+                label.checkbox-inline(for='8_2-1')
+                  input#8_2-1(type='checkbox' ng-model="vm.data.dysfonctionnement_oraux_lingaux.contraction_muscle")
+                  |       Contraction excessive des muscles des lèvres
+                label.checkbox-inline(for='8_2-2')
+                  input#8_2-2(type='checkbox' ng-model="vm.data.dysfonctionnement_oraux_lingaux.interposition_linguale")
+                  |       Interposition linguale entre les arcades dentaires
+                label.checkbox-inline(for='8_2-3')
+                  input#8_2-3(type='checkbox' ng-model="vm.data.dysfonctionnement_oraux_lingaux.pulsion_linguale")
+                  |       Pulsion antérieure de la pointe de la langue sur les incisives
+                label.checkbox-inline(for='8_2-4')
+                  input#8_2-4(type='checkbox' ng-model="vm.data.dysfonctionnement_oraux_lingaux.ventilation_buccale")
+                  |       Ventilation buccale ou mixte
+                label.checkbox-inline(for='8_2-5')
+                  input#8_2-5(type='checkbox' ng-model="vm.data.dysfonctionnement_oraux_lingaux.autre_check")
+                  |       Autre...
+              textarea.form-control(rows="1" ng-show="vm.data.dysfonctionnement_oraux_lingaux.autre_check" ng-model="vm.data.dysfonctionnement_oraux_lingaux.autre_text" placeholder="Autre...")
+            br
+
+            textarea.form-control(ng-model="vm.data.dysfonctionnement_oraux_lingaux.text")
+            br
+            .row
+              .col-lg-6
+                .input-group
+                  span.input-group-btn
+                    button.btn.btn-default(type='button') Test de Friedman
+                  input.form-control(type='text' placeholder='Résultat' ng-model="vm.data.dysfonctionnement_oraux_lingaux.friedman")
+                br
+              .col-lg-6
+                .input-group
+                  span.input-group-btn
+                    button.btn.btn-default(type='button') Test de Mallanpati
+                  input.form-control(type='text' placeholder='Résultat' ng-model="vm.data.dysfonctionnement_oraux_lingaux.mallanpati")
+                br
+
+        //- partie 9
+        .row
+          h2 9. Traumatisme :
+          .form-group
+            .col-md-4
+              label.radio-inline(for='9_0-0')
+                input#9_0-0(type='radio' value="renseigne" ng-model="vm.data.traumatisme.etat")
+                |       Renseigné
+              label.radio-inline(for='9_0-1')
+                input#9_0-1(type='radio' value="negatif" ng-model="vm.data.traumatisme.etat")
+                |       Négatif
+              label.radio-inline(for='9_0-2')
+                input#9_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.traumatisme.etat")
+                |       Non renseigné
+          hr
+          div(ng-show="vm.data.traumatisme.etat == 'renseigne'")
+            textarea.form-control(ng-model="vm.data.traumatisme.text")
+
+        //- partie 10
+        .row
+          h2 10. Observations complémentaires :
+          .form-group
+            .col-md-4
+              label.radio-inline(for='10_0-0')
+                input#10_0-0(type='radio' value="renseigne" ng-model="vm.data.observations.etat")
+                |       Renseigné
+              label.radio-inline(for='10_0-1')
+                input#10_0-1(type='radio' value="negatif" ng-model="vm.data.observations.etat")
+                |       Négatif
+              label.radio-inline(for='10_0-2')
+                input#10_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.observations.etat")
+                |       Non renseigné
+          hr
+          div(ng-show="vm.data.observations.etat == 'renseigne'")
+            textarea.form-control(ng-model="vm.data.observations.text")
+
         br
         br
         div
@@ -254,139 +387,9 @@
             i.fa.fa-home
             | Accueil
 
+        br
+        br
 
-        //- //- partie 7
-        //- .row
-        //-   h2 7. Habitudes nocives :
-        //-   .form-group
-        //-     .col-md-4
-        //-       label.radio-inline(for='7_0-0')
-        //-         input#7_0-0(type='radio' value="renseigne" ng-model="vm.data.partie7.Etat")
-        //-         |       Renseigné
-        //-       label.radio-inline(for='7_0-1')
-        //-         input#7_0-1(type='radio' value="negatif" ng-model="vm.data.partie7.Etat")
-        //-         |       Négatif
-        //-       label.radio-inline(for='7_0-2')
-        //-         input#7_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie7.Etat")
-        //-         |       Non renseigné
-        //-   hr
-        //-   div(ng-show="vm.data.partie7.Etat == 'renseigne'")
-        //-     .form-group
-        //-       label.checkbox-inline(for='7_1-0')
-        //-         input#7_1-0(type='checkbox' ng-model="vm.data.partie7.question1")
-        //-         |       Onycophagie
-        //-       label.checkbox-inline(for='7_1-1')
-        //-         input#7_1-1(type='checkbox'  ng-model="vm.data.partie7.question2")
-        //-         |       Mordillement des lèvres/stylos/objets
-        //-       label.checkbox-inline(for='7_1-2')
-        //-         input#7_1-2(type='checkbox'  ng-model="vm.data.partie7.question3")
-        //-         |       Bruxisme d'eveille
-        //-       label.checkbox-inline(for='7_1-3')
-        //-         input#7_1-3(type='checkbox' ng-model="vm.data.partie7.question4")
-        //-         |       Chewing-gum
-        //-       label.checkbox-inline(for='7_1-4')
-        //-         input#7_1-4(type='checkbox'  ng-model="vm.data.partie7.question5")
-        //-         |       Tabac
-        //-       label.checkbox-inline(for='7_1-5')
-        //-         input#7_1-5(type='checkbox'  ng-model="vm.data.partie7.question6Checker")
-        //-         |       Autres
-        //-       textarea.form-control(ng-show="vm.data.partie7.question6Checker" ng-model="vm.data.partie7.question6")
-        //-
-        //- //- partie 8
-        //- .row
-        //-   h2 8. Dysfonctionnement oraux-linguaux :
-        //-   .form-group
-        //-     .col-md-4
-        //-       label.radio-inline(for='8_0-0')
-        //-         input#8_0-0(type='radio' value="renseigne" ng-model="vm.data.partie8.Etat")
-        //-         |       Renseigné
-        //-       label.radio-inline(for='8_0-1')
-        //-         input#8_0-1(type='radio' value="negatif" ng-model="vm.data.partie8.Etat")
-        //-         |       Négatif
-        //-       label.radio-inline(for='8_0-2')
-        //-         input#8_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie8.Etat")
-        //-         |       Non renseigné
-        //-   hr
-        //-   div(ng-show="vm.data.partie8.Etat == 'renseigne'")
-        //-     .form-group
-        //-       label.checkbox-inline(for='8_1-1')
-        //-         input#8_1-1(type='checkbox' ng-model="vm.data.partie8.question1")
-        //-         |       Dysfonctionnement Orolinguaux
-        //-       label.checkbox-inline(for='8_1-2')
-        //-         input#8_1-2(type='checkbox' ng-model="vm.data.partie8.question2_0")
-        //-         |       Déglutition atypique
-        //-     .well(ng-show="vm.data.partie8.question2_0")
-        //-       .form-group
-        //-         label.checkbox-inline(for='8_2-1')
-        //-           input#8_2-1(type='checkbox' ng-model="vm.data.partie8.question2_1")
-        //-           |       Contraction excessive des muscles des lèvres
-        //-         label.checkbox-inline(for='8_2-2')
-        //-           input#8_2-2(type='checkbox' ng-model="vm.data.partie8.question2_2")
-        //-           |       Interposition linguale entre les arcades dentaires
-        //-         label.checkbox-inline(for='8_2-3')
-        //-           input#8_2-3(type='checkbox' ng-model="vm.data.partie8.question2_3")
-        //-           |       Pulsion antérieure de la pointe de la langue sur les incisives
-        //-         label.checkbox-inline(for='8_2-4')
-        //-           input#8_2-4(type='checkbox' ng-model="vm.data.partie8.question2_4")
-        //-           |       Ventilation buccale ou mixte
-        //-         label.checkbox-inline(for='8_2-5')
-        //-           input#8_2-5(type='checkbox' ng-model="vm.data.partie8.question2_5Checker")
-        //-           |       Autre...
-        //-       textarea.form-control(rows="1" ng-show="vm.data.partie8.question2_5Checker" ng-model="vm.data.partie8.question2_5" placeholder="Autre...")
-        //-     br
-        //-
-        //-     textarea.form-control(ng-model="vm.data.partie8.question3")
-        //-     br
-        //-     .row
-        //-       .col-lg-6
-        //-         .input-group
-        //-           span.input-group-btn
-        //-             button.btn.btn-default(type='button') Test de Friedman
-        //-           input.form-control(type='text' placeholder='Résultat' ng-model="vm.data.partie8.question4")
-        //-         br
-        //-       .col-lg-6
-        //-         .input-group
-        //-           span.input-group-btn
-        //-             button.btn.btn-default(type='button') Test de Mallanpati
-        //-           input.form-control(type='text' placeholder='Résultat' ng-model="vm.data.partie8.question5")
-        //-         br
-        //-
-        //- //- partie 9
-        //- .row
-        //-   h2 9. Traumatisme :
-        //-   .form-group
-        //-     .col-md-4
-        //-       label.radio-inline(for='9_0-0')
-        //-         input#9_0-0(type='radio' value="renseigne" ng-model="vm.data.partie9.Etat")
-        //-         |       Renseigné
-        //-       label.radio-inline(for='9_0-1')
-        //-         input#9_0-1(type='radio' value="negatif" ng-model="vm.data.partie9.Etat")
-        //-         |       Négatif
-        //-       label.radio-inline(for='9_0-2')
-        //-         input#9_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie9.Etat")
-        //-         |       Non renseigné
-        //-   hr
-        //-   div(ng-show="vm.data.partie9.Etat == 'renseigne'")
-        //-     textarea.form-control(ng-model="vm.data.partie9.question1")
-        //-
-        //- //- partie 10
-        //- .row
-        //-   h2 10. Observations complémentaires :
-        //-   .form-group
-        //-     .col-md-4
-        //-       label.radio-inline(for='10_0-0')
-        //-         input#10_0-0(type='radio' value="renseigne" ng-model="vm.data.partie10.Etat")
-        //-         |       Renseigné
-        //-       label.radio-inline(for='10_0-1')
-        //-         input#10_0-1(type='radio' value="negatif" ng-model="vm.data.partie10.Etat")
-        //-         |       Négatif
-        //-       label.radio-inline(for='10_0-2')
-        //-         input#10_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie10.Etat")
-        //-         |       Non renseigné
-        //-   hr
-        //-   div(ng-show="vm.data.partie10.Etat == 'renseigne'")
-        //-     textarea.form-control(ng-model="vm.data.partie10.question1")
-        //-
         //- //- partie 11
         //- .row
         //-   h2 11. Palpation(s) douloureuse(s) des muscles masticateurs, des ATM, et des muscles cervico-scapulaires :

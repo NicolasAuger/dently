@@ -45,11 +45,41 @@ class _Fiche {
             psqi: '',
             isi: ''
         },
-        trouble_occulaire:{ // Troubles occulaires
+        trouble_occulaire:{ // partie 6 Troubles occulaires
+            etat: '',
+            text: ''
+        },
+        habitude_nocive: { // Partie 7 : Habitudes nocives
+            etat: '',
+            onycophagie: '',
+            mordillement: '',
+            bruxisme: '',
+            chewingum: '',
+            tabac: '',
+            autre_check: false,
+            autre_text: ''
+        },
+        dysfonctionnement_oraux_lingaux: { // Partie 8 : Dysfonctionnement Oraux-Linguaux
+            etat: '',
+            dysfonctionnement_orolingaux: false,
+            deglutition_atypique: false,
+            contraction_muscle: '',
+            interposition_linguale: '',
+            pulsion_linguale: '',
+            ventilation_buccale: '',
+            autre_check: false,
+            autre_text: '',
+            text:''
+        },
+        traumatisme: { // Partie 9 : Traumatisme
+            etat: '',
+            text: ''
+        },
+        observations: { // Partie 10 : Observations complémentaires
             etat: '',
             text: ''
         }
-
+        
     }
     $promise = undefined
 }
