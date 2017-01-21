@@ -1,0 +1,31 @@
+.page.dam
+  .contain.ng-show
+      .content
+          .right
+            p.white
+              | Bienvenue dans la gestion des fiches
+            p
+              | Vous êtes connecté en tant qu'Admin !
+              br
+              br
+              | Cliquez sur #[span.glyphicon.glyphicon-trash] pour supprimer une fiche !
+              br
+              br
+              | Liste des fiches :
+            ul.list-group.lightblue-nospaced
+                li.list-group-item(ng-repeat='fiche in fiches')
+                  strong.name {{fiche.data.patient.name}}
+                  .space
+                  br
+                  span.text-muted Dernière consultation : {{fiche.data.patient.last_visit}}
+                  br
+                  br
+                  span.medecin Médecin : {{fiche.author}}
+                  br
+                  span.text-muted Bilan :  {{fiche.data.patient.health_report}}
+                  a.trash(ng-click='list-fiche.delete(fiche)')
+                    span.glyphicon.glyphicon-trash.pull-right
+
+            a.bouton-accueil.btn.btn-default.btn-lg(href='/')
+              i.fa.fa-home
+              | Retour vers l'accueil

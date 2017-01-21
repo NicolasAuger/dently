@@ -1,14 +1,14 @@
 'use strict';
 
-describe('Component: StatistiquesComponent', function() {
+describe('Component: DamDiagnosticComponent', function() {
   // load the controller's module
-  beforeEach(module('dentlyApp.statistiques'));
+  beforeEach(module('dentlyApp.dam-diagnostic'));
 
-  var StatistiquesComponent;
+  var DamDiagnosticComponent;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function($componentController) {
-    StatistiquesComponent = $componentController('statistiques', {});
+    DamDiagnosticComponent = $componentController('dam-diagnostic', {});
   }));
 
   it('should ...', function() {
