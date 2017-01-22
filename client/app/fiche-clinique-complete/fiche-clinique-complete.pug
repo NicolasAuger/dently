@@ -6,7 +6,7 @@
         //- Entête
         .row
           br
-          a.btn.btn-default(role="button" href="./") Accueil
+          a.btn.btn-default.no-print(role="button" href="./") Accueil
           h1 Fiche clinique DTM :
           hr
           .container
@@ -30,7 +30,7 @@
                   .input-group
                     span.input-group-addon
                       span.fa.fa-birthday-cake.fa-fw
-                    input.form-control(ng-model="vm.fiche.data.patient.birthdate", placeholder='Date de naissance (ex: 28/02/1996)', type='text')
+                    input.form-control(ng-model="vm.fiche.data.patient.birthdate", placeholder='Date de naissance (ex: 28/02/1980)', type='text')
               .col-md-1
               .col-md-5
                 .form-group
@@ -56,7 +56,7 @@
                     input.form-control(ng-model="vm.fiche.author", placeholder='Médecin prenant en charge ce patient (ex: Mme Geaugeais)', type='text')
             .row
               .col-md-5
-                .form-group
+                .form-group.no-print
                   button.btn.btn-primary(name='') Ajouter une photo
             .row.form-group
               label.col-md-4.control-label(for='bilanDeSante') Bilan de santé :
@@ -67,7 +67,7 @@
         //- partie 1 Motif de la consultation
         .row
           h2 1. Motif de la consultation :
-          .form-group
+          .form-group.no-print
             .col-md-4
               label.radio-inline(for='1_0-0')
                 input#1_0-0(type='radio' value="renseigne" ng-model="vm.data.consultation.etat")
@@ -91,7 +91,7 @@
         //- partie 2 : Evaluation de la douleur
         .row
           h2 2. Evaluation de la douleur :
-          .form-group
+          .form-group.no-print
             .col-md-4
               label.radio-inline(for='2_0-0')
                 input#2_0-0(type='radio' value="renseigne" ng-model="vm.data.evaluation_douleur.etat")
@@ -110,7 +110,7 @@
         //- partie 3 : Environnement
         .row
           h2 3. Environnement :
-          .form-group
+          .form-group.no-print
             .col-md-4
               label.radio-inline(for='3_0-0')
                 input#3_0-0(type='radio' value="renseigne" ng-model="vm.data.environnement.etat")
@@ -133,7 +133,7 @@
               br
               legend Score EDAS 21
               .row
-                .col-md-4.col-md-offset-4
+                .col-md-4.col-md-offset-4.no-print
                   a.btn.btn-default(role="button") Questionnaire
               br
               .form-group
@@ -153,7 +153,7 @@
         //- Partie 4
         .row
           h2 4. Trouble de la posture :
-          .form-group
+          .form-group.no-print
             .col-md-4
               label.radio-inline(for='4_0-0')
                 input#4_0-0(type='radio' value="renseigne" ng-model="vm.data.trouble_posture.etat")
@@ -183,7 +183,7 @@
         //- Partie 5
         .row
           h2 5. Trouble du sommeil :
-          .form-group
+          .form-group.no-print
             .col-md-4
               label.radio-inline(for='5_0-0')
                 input#5_0-0(type='radio' value="renseigne" ng-model="vm.data.trouble_sommeil.etat")
@@ -227,7 +227,7 @@
         //- partie 6
         .row
           h2 6. Troubles occulaires :
-          .form-group
+          .form-group.no-print
             .col-md-4
               label.radio-inline(for='6_0-0')
                 input#6_0-0(type='radio' value="renseigne" ng-model="vm.data.trouble_occulaire.etat")
@@ -376,19 +376,18 @@
             textarea.form-control(ng-model="vm.data.observations.text")
 
         br
+        .row
+          .col-md-4
+            a.btn.btn-default.btn-lg(href='/')
+              i.fa.fa-home
+              | Accueil
+          .col-md-4
+            button.btn.btn-primary.btn-lg.btn-register(type='submit')
+              i.fa.fa-file-o
+              | Enregistrer cette fiche
+            = ' '
         br
-        div
-          button.btn.btn-inverse.btn-lg.btn-register(type='submit')
-            i.fa.fa-file-o
-            | Enregistrer cette fiche
-          = ' '
 
-          a.btn.btn-default.btn-lg(href='/')
-            i.fa.fa-home
-            | Accueil
-
-        br
-        br
 
         //- //- partie 11
         //- .row

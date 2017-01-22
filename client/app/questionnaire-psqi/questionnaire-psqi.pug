@@ -1,0 +1,358 @@
+.page.questionnaire-psqi
+  .container.ng-show
+
+    h1.first-title Index de Qualité du Sommeil de Pittsburgh (PSQI)
+
+      form
+        fieldset.row
+          legend Information patient
+          div.col-md-6.form-group
+            .input-group
+              span.input-group-addon
+                i.fa.fa-user-circle
+              input(type="text" placeholder="Nom").form-control
+
+          div.col-md-6.form-group
+            .input-group
+              span.input-group-addon
+                i.fa.fa-user-circle-o
+              input(type="text" placeholder="Prénom").form-control
+
+          div.col-md-6.form-group
+            .input-group
+              span.input-group-addon
+                i.fa.fa-birthday-cake
+              input(type="text" placeholder="Date de naissance").form-control
+
+          div.col-md-6.form-group
+            .input-group
+              span.input-group-addon
+                i.fa.fa-calendar
+              input(type="text" placeholder="Date de ce jour").form-control
+
+    //Titre 1
+    form
+      fieldset
+        legend 1. Au cours du mois dernier, quand êtes-vous habituellement allé(e) vous coucher le soir ?
+        span Heure habituelle de coucher :
+          input(type="text")
+          | (l'heure doit être au format 24h)
+
+    //Titre 2
+    form
+      fieldset
+        legend 2. Au cours du mois dernier, combien vous a-t-il habituellement fallu de temps (en minutes) pour vous endormir chaque soir ?
+        span Nombre de minutes :
+          input(type="text")
+
+    //Titre 3
+    form
+      fieldset
+        legend 3. Au cours du mois dernier, quand vous êtes-vous habituellement levé(e) le matin ?
+        span Heure habituelle de coucher :
+          input(type="text")
+          | (l'heure doit être au format 24h)
+
+    //Titre 4
+    form
+      fieldset
+        legend 4. Au cours du mois dernier, combien d'heures de sommeil effectif avez-vous eues chaque nuit ? (Ce nombre peut être différent du nombre d'heures que vous avez passées au lit) ?
+        span Nombre d'heures de sommeil par nuit :
+          input(type="text")
+
+    //Titre 5
+    form
+      fieldset
+        legend 5. Au cours du mois dernier, avec quelle fréquence avez-vous eu des troubles de sommeil car...
+
+    table.table.table-striped
+      thead
+        tr
+          th
+          th
+            | Pas au cours du dernier mois
+          th
+            | Moins d'1 fois par semaine
+          th
+            | 1 ou 2 fois par semaine
+          th
+            | 3 ou 4 fois par semaine
+      tbody
+        tr
+          td
+            | a) vous n'avez pas pu vous endormir en moins de 30mn
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+        tr
+          td
+            | b) vous vous êtes réveillé(e) au milieu de la nuit ou précocement le matin
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+        tr
+          td
+            | c) vous avez dû vous lever pour aller aux toilettes
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+        tr
+          td
+            | d) vous n'avez pas pu respirer correctement
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+        tr
+          td
+            | e) vous avez toussé
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+        tr
+          td
+            | f) vous avez eu trop froid
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+        tr
+          td
+            | g) vous avez eu trop chaud
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+        tr
+          td
+            | h) vous avez eu de mauvais rêves
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+        tr
+          td
+            | i) vous avez eu des douleurs
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+        tr
+          td
+            | j) pour d'autre(s) raison(s). Donnez une description :
+            textarea
+            | Indiquez la fréquence des troubles du sommeil pour ces raisons
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+
+    //Titre 6
+    form
+      fieldset
+        legend 6. Au cours du mois dernier, comment évalueriez-vous globalement la qualité de votre sommeil ?
+
+        label.radio-inline
+          input(type='radio')
+          |  Très bonne
+        label.radio-inline
+          input(type='radio')
+          |  Assez bonne
+        label.radio-inline
+          input(type='radio')
+          |  Assez mauvaise
+        label.radio-inline
+          input(type='radio')
+          |  Très mauvaise
+
+    //Titre 7
+    form
+      fieldset
+        legend 7. Au cours du mois dernier, combien de fois avez-vous pris des médicaments (prescrits par votre médecin ou achetés sans ordonnance) pour faciliter votre sommeil ?
+
+      label.radio-inline
+        input(type='radio')
+        |  Pas au cours du dernier mois
+      label.radio-inline
+        input(type='radio')
+        |  Moins d'1 fois par semaine
+      label.radio-inline
+        input(type='radio')
+        |  1 ou 2 fois par semaine
+      label.radio-inline
+        input(type='radio')
+        |  3 ou 4 fois par semaine
+
+
+    //Titre 8
+    form
+      fieldset
+        legend 8. Au cours du mois dernier, combien de fois avez-vous pris des médicaments (prescrits par votre médecin ou achetés sans ordonnance) pour faciliter votre sommeil ?
+
+      label.radio-inline
+        input(type='radio')
+        |  Pas au cours du dernier mois
+      label.radio-inline
+        input(type='radio')
+        |  Moins d'1 fois par semaine
+      label.radio-inline
+        input(type='radio')
+        |  1 ou 2 fois par semaine
+      label.radio-inline
+        input(type='radio')
+        |  3 ou 4 fois par semaine
+
+    //Titre 9
+    form
+      fieldset
+        legend 9. Au cours du mois dernier, à quel degré cela a-t-il représenté un problème pour vous d'avoir assez d'enthousiasme pour faire ce que vous aviez à faire ?
+
+      label.radio-inline
+        input(type='radio')
+        |  Pas de problème du tout
+      label.radio-inline
+        input(type='radio')
+        |  Seulement un tout petit problème
+      label.radio-inline
+        input(type='radio')
+        |  Un certain problème
+      label.radio-inline
+        input(type='radio')
+        |  Un très gros problème
+
+    //Titre 10
+    form
+      fieldset
+        legend 10. Avez vous un conjoint ou un camarade de chambre ?
+
+      label.radio-inline
+        input(type='radio')
+        |  Ni l'un, ni l'autre
+      label.radio-inline
+        input(type='radio')
+        |  Oui, mais dans une chambre différente
+      label.radio-inline
+        input(type='radio')
+        |  Oui, dans la même chambre mais pas dans le même lit
+      label.radio-inline
+        input(type='radio')
+        |  Oui, dans le même lit
+
+    //Titre 11
+    form
+      fieldset
+        legend 10. Avez vous un conjoint ou un camarade de chambre ?
+
+
+    table.table.table-striped
+      thead
+        tr
+          th
+          th
+            | Pas au cours du dernier mois
+          th
+            | Moins d'1 fois par semaine
+          th
+            | 1 ou 2 fois par semaine
+          th
+            | 3 ou 4 fois par semaine
+      tbody
+        tr
+          td
+            | a) un ronflement fort
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+        tr
+          td
+            | b) de longues pauses respiratoires pendant votre sommeil
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+        tr
+          td
+            | c) des saccades ou des secousses des jambes pendant que vous dormiez
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+        tr
+          td
+            | d) des épisodes de désorientation ou de confusion pendant le sommeil
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+        tr
+          td
+            | e) d'autres motifs d'agitation pendant le sommeil
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
+          td
+            input(type="radio")
