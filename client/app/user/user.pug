@@ -18,10 +18,14 @@
                         li
                             i.fa.fa-file-o
                             | Diagnostic DAM
+                    a(href="/guest")
+                        li
+                            i.fa.fa-question-circle-o
+                            | A propos
                     a(href="/settings")
                         li
-                            i.fa.fa-cog
-                            | Paramètres
+                          i.fa.fa-cog
+                          | Paramètres
                     a(ui-sref="logout")
                         li
                             i.fa.fa-sign-out
@@ -29,20 +33,20 @@
 
         .right
             h1.bigwhite Bienvenue ! Vous êtes connecté en tant qu'utilisateur !
-            h2.white Que souhaitez-vous faire ?
+            h2.white.u Que souhaitez-vous faire ?
             a(href="/depistage-systematique")
-                p #[i.fa.fa-long-arrow-right] Fiche clinique dépistage systématique (données non enregistrées)
+                p     #[i.fa.fa-long-arrow-right] Fiche clinique dépistage systématique (données non enregistrées)
             a(href="/fiche-clinique-complete")
-                p #[i.fa.fa-long-arrow-right] Fiche clinique complète (données enregistrées pour les praticiens inscrits)
+                p     #[i.fa.fa-long-arrow-right] Fiche clinique complète (données enregistrées pour les praticiens inscrits)
             a(href="/etudes")
-                p #[i.fa.fa-long-arrow-right] Voir les études en cours
+                p     #[i.fa.fa-long-arrow-right] Voir les études en cours
             a(href="/protocoles")
-                p #[i.fa.fa-long-arrow-right] Proposition de protocole d’étude
+                p     #[i.fa.fa-long-arrow-right] Proposition de protocole d’étude
             a(href="/fiches-annexes")
-                p #[i.fa.fa-long-arrow-right] Accès aux fiches annexes de la fiche clinique
+                p     #[i.fa.fa-long-arrow-right] Accès aux fiches annexes de la fiche clinique
             a(href="/suivi-patients")
-                p #[i.fa.fa-long-arrow-right] Fiche de suivi des patients (pour les praticiens enregistrés et leur patients déjà enregistrés)
-            a(href="/statistiques")
-                p #[i.fa.fa-long-arrow-right] Statistiques
+                p     #[i.fa.fa-long-arrow-right] Fiche de suivi des patients (pour les praticiens enregistrés et leur patients déjà enregistrés)
+            a( onclick="javascript:window.open('http://wv0vurme.i.cloud.dataiku.com/projects/DENTLY/pinboard/');")
+                p     #[i.fa.fa-long-arrow-right] Statistiques
             a(href="/editeur-cas-clinique")
-                p #[i.fa.fa-long-arrow-right] Éditeur de cas cliniques
+                p     #[i.fa.fa-long-arrow-right] Éditeur de cas cliniques

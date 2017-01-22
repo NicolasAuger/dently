@@ -40,13 +40,13 @@ import etudes from './etudes/etudes.component';
 import fichesAnnexes from './fiches-annexes/fiches-annexes.component';
 import ficheCliniqueComplete from './fiche-clinique-complete/fiche-clinique-complete.component';
 import protocoles from './protocoles/protocoles.component';
-import statistiques from './statistiques/statistiques.component';
 import contact from './contact/contact.component';
+import dam_diagnostic from './dam-diagnostic/dam-diagnostic.component';
 
 import './app.styl';
 
 angular.module('dentlyApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,  uiBootstrap, _Auth, _Fiche, account,
-  admin, admin_fonction, list_fiche, user, guest, whoAreWe, whyThisSite,editeurCasClinique, etudes, fichesAnnexes, ficheCliniqueComplete, protocoles, statistiques, contact
+  admin, admin_fonction, list_fiche, user, guest, whoAreWe, whyThisSite,editeurCasClinique, etudes, fichesAnnexes, ficheCliniqueComplete, protocoles, contact, dam_diagnostic
   ,navbar, footer, main, constants, socket, util
 ])
   .config(routeConfig)

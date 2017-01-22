@@ -1,5 +1,22 @@
-.page.statistiques
-  text-align:justify
+.trash
+  color: $color-orange
+.users
+  color $color-orange
+
+
+
+  .user-info
+    flex-grow: 1
+  .trash
+    display: flex
+    align-items: center
+    text-decoration: none
+  .users
+    display: flex
+    align-items: center
+    text-decoration: none
+
+.page.dam
   .contain
     margin: 0
     padding: 0
@@ -13,23 +30,13 @@
       background-color: $color-white
       border-right: 1px solid $color-pastelblue
 
-      .head
-        .logo
-          img
-            width: 20vw
-            height: 25vh
-            padding: 20px
-            margin: 0 auto
-            height: auto
-            max-width: 100%
-          text-align: center
+
 
       .content
         margin-top: 5vh
 
         ul
           text-align: center
-          margin: 0
 
           i
             position: absolute
@@ -37,6 +44,7 @@
             margin-top: 3vh
             @media $icon
                 display: none
+
 
           li
             list-style: none
@@ -54,36 +62,39 @@
             color: $color-white
             a
               color: $color-white
+
     .right
       background-color: $color-pastelblue
       float: left
       height: 100vh
       width: 70vw
       padding-left: 30px
+
+      .bouton-accueil
+        margin-top: 5vh
+
       p
         text-align: justify
-        padding: 20px
+        color: $color-white
 
       .lightblue
-        color: $color-white
-        font-size: 35px
+        color: $color-lightblue
+        font-size: 30px
         padding-top: 2vh
-        text-align: center
 
-      .blue
+      .lightblue-nospaced
+        color: $color-lightblue
+        font-size: 30px
+
+      .white
         color: $color-white
-        font-size: 20px
+        padding-bottom: 3vh
+        font-size: 30px
+        padding-top: 2vh
+
+      .pastelblue
+        color: $color-pastelblue
+        font-size: 18px
+        padding-top: 5vh
         @media $md
           font-size: 18px
-
-      .fa-chevron-circle-left
-        color: $color-white
-      a
-        color: $color-white
-        padding: 0px
-        margin: 0px
-        font-size: 25px
-        &:hover
-          text-decoration: none
-          background-color : $color-pastelblue
-          color: $color-black
