@@ -6,7 +6,7 @@
         //- Entête
         .row
           br
-          a.btn.btn-default(role="button" href="./") Accueil
+          a.btn.btn-default.no-print(role="button" href="./") Accueil
           h1 Fiche clinique - dépistage systématique :
           hr
           .container
@@ -56,7 +56,7 @@
                     input.form-control(ng-model="vm.fiche.author", placeholder='Médecin prenant en charge ce patient (ex: Mme Geaugeais)', type='text')
             .row
               .col-md-5
-                .form-group
+                .form-group.no-print
                   button.btn.btn-primary(name='') Ajouter une photo
             .row.form-group
               label.col-md-4.control-label(for='bilanDeSante') Bilan de santé :
@@ -67,7 +67,7 @@
         //- partie 1 Entretien
         .row
           h2 1. Entretien :
-          .form-group
+          .form-group.no-print
             .col-md-4
               label.radio-inline(for='1_0-0')
                 input#1_0-0(type='radio' value="renseigne" ng-model="vm.data.consultation.etat")
@@ -92,7 +92,7 @@
         //- partie 2 Palpation(s)
         .row
           h2 2. Palpation(s) douloureuse(s) des muscles masticateurs, des ATM, et des muscles cervico-scapulaires :
-          .form-group
+          .form-group.no-print
             .col-md-4
               label.radio-inline(for='11_0-0')
                 input#11_0-0(type='radio' value="renseigne" ng-model="vm.data.partie11.Etat")
@@ -322,10 +322,10 @@
                       br
                       input.form-control(ng-disabled="vm.data.partie11.ligne11.question6 != 'autre'" ng-model="vm.data.partie11.ligne11.question6other" placeholder='Autre...', type='text')
 
-        //- partie 2
+        //- partie 3
         .row
           h2 2. Rapports incisifs :
-          .form-group
+          .form-group.no-print
             .col-md-4
               label.radio-inline(for='12_0-0')
                 input#12_0-0(type='radio' value="renseigne" ng-model="vm.data.partie12.Etat")
@@ -398,10 +398,10 @@
                   input.form-control(ng-disabled="vm.data.partie12.question4checker == 'non'" type='number' ng-model="vm.data.partie12.question4")
                   span.input-group-addon mm
 
-        //- partie 3
+        //- partie 4
         .row
           h2 3. Mouvements d'ouverture, latéralités et propulsion :
-          .form-group
+          .form-group.no-print
             .col-md-4
               label.radio-inline(for='13_0-0')
                 input#13_0-0(type='radio' value="renseigne" ng-model="vm.data.partie13.Etat")
@@ -605,10 +605,10 @@
                   td
                     select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
 
-        //- partie 4
+        //- partie 5
         .row
           h2 4. Trajet d'ouverture/fermeture :
-          .form-group
+          .form-group.no-print
             .col-md-4
               label.radio-inline(for='14_0-0')
                 input#14_0-0(type='radio' value="renseigne" ng-model="vm.data.partie14.Etat")
@@ -622,10 +622,10 @@
           hr
           div(ng-show="vm.data.partie14.Etat == 'renseigne'")
 
-        //- partie 5
+        //- partie 6
         .row
           h2 5. Bruits articulaires lors des mouvements fonctionnels :
-          .form-group
+          .form-group.no-print
             .col-md-4
               label.radio-inline(for='15_0-0')
                 input#15_0-0(type='radio' value="renseigne" ng-model="vm.data.partie15.Etat")
@@ -863,10 +863,10 @@
                         input(type='checkbox')
                       select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
 
-        //- Partie 6
+        //- Partie 7
         .row
           h2 6. Blocage articulaire :
-          .form-group
+          .form-group.no-print
             .col-md-4
               label.radio-inline(for='16_0-0')
                 input#16_0-0(type='radio' value="renseigne" ng-model="vm.data.partie16.Etat")
@@ -913,12 +913,11 @@
           .form-group
             .col-md-10.col-md-offset-1
               textarea.form-control(ng-model="vm.data.diagnostic")
-        .row
+        .row.no-print
           hr
           button.btn.btn-primary(onclick="window.print();")
             i.fa.fa-floppy-o.fa-lg
             |      Sauvegarder / Imprimer
-          br
           br
           br
           br
