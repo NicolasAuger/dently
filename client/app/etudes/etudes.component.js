@@ -7,11 +7,12 @@ import routes from './etudes.routes';
 
 export class EtudesComponent {
   /*@ngInject*/
-  constructor() {
-    this.message = 'Hello';
-    this.back=function(){
-      $window.history.back()
-    };
+  constructor($scope) {
+  }
+
+  back($window){
+      console.log("Hello");
+    $window.history.back()
   }
 }
 
@@ -20,6 +21,6 @@ export default angular.module('dentlyApp.etudes', [uiRouter])
   .component('etudes', {
     template: require('./etudes.pug'),
     controller: EtudesComponent,
-    controllerAs: 'etudesCtrl'
+    controllerAs: 'pn'
   })
   .name;
