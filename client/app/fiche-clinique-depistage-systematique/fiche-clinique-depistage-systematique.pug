@@ -1,0 +1,1720 @@
+.page.fiche-clinique-depistage-systematique
+  .contain.ng-show
+    form.form-horizontal(name='form')
+      .container
+
+        //- Entête
+        .row
+          br
+          a.btn.btn-default(role="button" href="./") Accueil
+          h1 Fiche clinique DTM :
+          hr
+          .container
+            .row
+              .col-md-5
+                .form-group
+                  .input-group
+                    span.input-group-addon
+                      span.fa.fa-id-card.fa-fw
+                    input.form-control(ng-model="vm.fiche.data.patient.name", placeholder='Nom et prénom (ex: Dupont Philippe)', type='text')
+              .col-md-1
+              .col-md-5
+                .form-group
+                  .input-group
+                    span.input-group-addon
+                      span.fa.fa-black-tie.fa-fw
+                    input.form-control(ng-model="vm.fiche.data.patient.job", placeholder='Profession (ex: Ingénieur informatique, Etudiant...)', type='text')
+            .row
+              .col-md-5
+                .form-group
+                  .input-group
+                    span.input-group-addon
+                      span.fa.fa-birthday-cake.fa-fw
+                    input.form-control(ng-model="vm.fiche.data.patient.birthdate", placeholder='Date de naissance (ex: 28/02/1996)', type='text')
+              .col-md-1
+              .col-md-5
+                .form-group
+                  .input-group
+                    span.input-group-addon
+                      span.fa.fa-calendar-check-o.fa-fw
+                    input.form-control(ng-model="vm.fiche.data.patient.last_visit", placeholder='Dernière consultation (ex: 12/12/2016)', type='text')
+            .row
+              .col-md-5
+                .form-group
+                  .input-group
+                    span.input-group-addon
+                      span.fa.fa-mars-stroke-v.fa-fw
+                    select.form-control(ng-model="vm.fiche.data.patient.gender")
+                      option(value='homme') Homme
+                      option(value='femme') Femme
+              .col-md-1
+              .col-md-5
+                .form-group
+                  .input-group
+                    span.input-group-addon
+                      span.fa.fa-user-md.fa-fw
+                    input.form-control(ng-model="vm.fiche.author", placeholder='Médecin prenant en charge ce patient (ex: Mme Geaugeais)', type='text')
+            .row
+              .col-md-5
+                .form-group
+                  button.btn.btn-primary(name='') Ajouter une photo
+            .row.form-group
+              label.col-md-4.control-label(for='bilanDeSante') Bilan de santé :
+              .col-md-7
+                textarea#bilanDeSante.form-control(ng-model="vm.fiche.data.patient.health_report" placeholder="Bilan de santé (ex: Patient souffrant de douleurs aux pré-molaires inférieures)")
+
+
+        //- partie 1 Motif de la consultation
+        .row
+          h2 1. Motif de la consultation :
+          .form-group
+            .col-md-4
+              label.radio-inline(for='1_0-0')
+                input#1_0-0(type='radio' value="renseigne" ng-model="vm.data.consultation.etat")
+                |       Renseigné
+              label.radio-inline(for='1_0-1')
+                input#1_0-1(type='radio' value="negatif" ng-model="vm.data.consultation.etat")
+                |       Négatif
+              label.radio-inline(for='1_0-2')
+                input#1_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.consultation.etat")
+                |       Non renseigné
+          hr
+          div(ng-show="vm.data.consultation.etat == 'renseigne'")
+            textarea.form-control(rows="3" ng-model="vm.data.consultation.motif")
+            .form-group.col-md-4.col-md-offset-4
+              .checkbox
+                label(for='1_2')
+                  input#1_2(type='checkbox' ng-model="vm.data.consultation.douleur")
+                  |       Douleur
+
+
+        //- partie 2 : Evaluation de la douleur
+        .row
+          h2 2. Evaluation de la douleur :
+          .form-group
+            .col-md-4
+              label.radio-inline(for='2_0-0')
+                input#2_0-0(type='radio' value="renseigne" ng-model="vm.data.evaluation_douleur.etat")
+                |       Renseigné
+              label.radio-inline(for='2_0-1')
+                input#2_0-1(type='radio' value="negatif" ng-model="vm.data.evaluation_douleur.etat")
+                |       Négatif
+              label.radio-inline(for='2_0-2')
+                input#2_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.evaluation_douleur.etat")
+                |       Non renseigné
+          hr
+          div(ng-show="vm.data.evaluation_douleur.etat == 'renseigne'")
+
+
+
+        //- partie 3 : Environnement
+        .row
+          h2 3. Environnement :
+          .form-group
+            .col-md-4
+              label.radio-inline(for='3_0-0')
+                input#3_0-0(type='radio' value="renseigne" ng-model="vm.data.environnement.etat")
+                |       Renseigné
+              label.radio-inline(for='3_0-1')
+                input#3_0-1(type='radio' value="negatif" ng-model="vm.data.environnement.etat")
+                |       Négatif
+              label.radio-inline(for='3_0-2')
+                input#3_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.environnement.etat")
+                |       Non renseigné
+          hr
+          div(ng-show="vm.data.environnement.etat == 'renseigne'")
+            fieldset
+              legend Familial
+              textarea.form-control(ng-model="vm.data.environnement.familial" rows="3")
+              legend Social
+              textarea.form-control(ng-model="vm.data.environnement.social" rows="3")
+              legend Professionel
+              textarea.form-control(ng-model="vm.data.environnement.professional" rows="3")
+              br
+              legend Score EDAS 21
+              .row
+                .col-md-4.col-md-offset-4
+                  a.btn.btn-default(role="button") Questionnaire
+              br
+              .form-group
+                label.col-md-4.control-label(for='3_4') Anxiété :
+                .col-md-2
+                  input#3_4.form-control.input-md(type='text' ng-model="vm.data.environnement.anxiete")
+              .form-group
+                label.col-md-4.control-label(for='3_5') Dépression :
+                .col-md-2
+                  input#3_5.form-control.input-md(type='text' ng-model="vm.data.environnement.depression")
+              .form-group
+                label.col-md-4.control-label(for='3_6') Stress :
+                .col-md-2
+                  input#3_6.form-control.input-md(type='text' ng-model="vm.data.environnement.stress")
+
+
+        //- Partie 4
+        .row
+          h2 4. Trouble de la posture :
+          .form-group
+            .col-md-4
+              label.radio-inline(for='4_0-0')
+                input#4_0-0(type='radio' value="renseigne" ng-model="vm.data.trouble_posture.etat")
+                |       Renseigné
+              label.radio-inline(for='4_0-1')
+                input#4_0-1(type='radio' value="negatif" ng-model="vm.data.trouble_posture.etat")
+                |       Négatif
+              label.radio-inline(for='4_0-2')
+                input#4_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.trouble_posture.etat")
+                |       Non renseigné
+          hr
+          div(ng-show="vm.data.trouble_posture.etat == 'renseigne'")
+            .form-group
+              label.col-md-4.control-label(for='4_1') Troubles possibles
+              .col-md-4
+                .checkbox
+                  label(for='4_1-0')
+                    input#4_1-0(type='checkbox' ng-model="vm.data.trouble_posture.rachidien_check")
+                    |       Rachidienne
+                    textarea.form-control(rows="3" ng-show="vm.data.trouble_posture.rachidien_check" ng-model="vm.data.trouble_posture.rachidien_text")
+                .checkbox
+                  label(for='4_1-1')
+                    input#4_1-1(type='checkbox' ng-model="vm.data.trouble_posture.cephalie_check")
+                    |       Céphalique
+                    textarea.form-control(rows="3" ng-show="vm.data.trouble_posture.cephalie_check" ng-model="vm.data.trouble_posture.cephalie_text")
+
+        //- Partie 5
+        .row
+          h2 5. Trouble du sommeil :
+          .form-group
+            .col-md-4
+              label.radio-inline(for='5_0-0')
+                input#5_0-0(type='radio' value="renseigne" ng-model="vm.data.trouble_sommeil.etat")
+                |       Renseigné
+              label.radio-inline(for='5_0-1')
+                input#5_0-1(type='radio' value="negatif" ng-model="vm.data.trouble_sommeil.etat")
+                |       Négatif
+              label.radio-inline(for='5_0-2')
+                input#5_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.trouble_sommeil.etat")
+                |       Non renseigné
+          hr
+          div(ng-show="vm.data.trouble_sommeil.etat == 'renseigne'")
+            .form-group
+              label.col-md-4.control-label(for='radios') Souffrez vous du syndrome d'apnées/hypopnées obstructives du sommeil ?
+              .col-md-4
+                label.radio-inline(for='5_1-0')
+                  input#5_1-0(type='radio' ng-model="vm.data.trouble_sommeil.apnee" value="oui")
+                  |       Oui
+                label.radio-inline(for='5_1-1')
+                  input#5_1-1(type='radio' ng-model="vm.data.trouble_sommeil.apnee" value="non")
+                  |       Non
+            legend Autre symptome
+            textarea.form-control(rows="3" ng-model="vm.data.trouble_sommeil.symptome")
+            legend Traitement
+            textarea.form-control(rows="3" ng-model="vm.data.trouble_sommeil.traitement")
+            br
+            .row
+              .col-lg-6
+                .input-group
+                  span.input-group-btn
+                    button.btn.btn-default(type='button') Questionnaire PSQI
+                  input.form-control(type='text' placeholder='Résultat' ng-model="vm.data.trouble_sommeil.psqi")
+                br
+              .col-lg-6
+                .input-group
+                  span.input-group-btn
+                    button.btn.btn-default(type='button') Questionnaire ISI
+                  input.form-control(type='text' placeholder='Résultat' ng-model="vm.data.trouble_sommeil.isi")
+                br
+
+        //- partie 6
+        .row
+          h2 6. Troubles occulaires :
+          .form-group
+            .col-md-4
+              label.radio-inline(for='6_0-0')
+                input#6_0-0(type='radio' value="renseigne" ng-model="vm.data.trouble_occulaire.etat")
+                |       Renseigné
+              label.radio-inline(for='6_0-1')
+                input#6_0-1(type='radio' value="negatif" ng-model="vm.data.trouble_occulaire.etat")
+                |       Négatif
+              label.radio-inline(for='6_0-2')
+                input#6_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.trouble_occulaire.etat")
+                |       Non renseigné
+          hr
+          div(ng-show="vm.data.trouble_occulaire.etat == 'renseigne'")
+            textarea.form-control(ng-model="vm.data.trouble_occulaire.text" rows="3")
+
+        br
+        br
+        div
+          button.btn.btn-inverse.btn-lg.btn-register(type='submit')
+            i.fa.fa-file-o
+            | Enregistrer cette fiche
+          = ' '
+
+          a.btn.btn-default.btn-lg(href='/')
+            i.fa.fa-home
+            | Accueil
+
+
+        //- //- partie 7
+        //- .row
+        //-   h2 7. Habitudes nocives :
+        //-   .form-group
+        //-     .col-md-4
+        //-       label.radio-inline(for='7_0-0')
+        //-         input#7_0-0(type='radio' value="renseigne" ng-model="vm.data.partie7.Etat")
+        //-         |       Renseigné
+        //-       label.radio-inline(for='7_0-1')
+        //-         input#7_0-1(type='radio' value="negatif" ng-model="vm.data.partie7.Etat")
+        //-         |       Négatif
+        //-       label.radio-inline(for='7_0-2')
+        //-         input#7_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie7.Etat")
+        //-         |       Non renseigné
+        //-   hr
+        //-   div(ng-show="vm.data.partie7.Etat == 'renseigne'")
+        //-     .form-group
+        //-       label.checkbox-inline(for='7_1-0')
+        //-         input#7_1-0(type='checkbox' ng-model="vm.data.partie7.question1")
+        //-         |       Onycophagie
+        //-       label.checkbox-inline(for='7_1-1')
+        //-         input#7_1-1(type='checkbox'  ng-model="vm.data.partie7.question2")
+        //-         |       Mordillement des lèvres/stylos/objets
+        //-       label.checkbox-inline(for='7_1-2')
+        //-         input#7_1-2(type='checkbox'  ng-model="vm.data.partie7.question3")
+        //-         |       Bruxisme d'eveille
+        //-       label.checkbox-inline(for='7_1-3')
+        //-         input#7_1-3(type='checkbox' ng-model="vm.data.partie7.question4")
+        //-         |       Chewing-gum
+        //-       label.checkbox-inline(for='7_1-4')
+        //-         input#7_1-4(type='checkbox'  ng-model="vm.data.partie7.question5")
+        //-         |       Tabac
+        //-       label.checkbox-inline(for='7_1-5')
+        //-         input#7_1-5(type='checkbox'  ng-model="vm.data.partie7.question6Checker")
+        //-         |       Autres
+        //-       textarea.form-control(ng-show="vm.data.partie7.question6Checker" ng-model="vm.data.partie7.question6")
+        //-
+        //- //- partie 8
+        //- .row
+        //-   h2 8. Dysfonctionnement oraux-linguaux :
+        //-   .form-group
+        //-     .col-md-4
+        //-       label.radio-inline(for='8_0-0')
+        //-         input#8_0-0(type='radio' value="renseigne" ng-model="vm.data.partie8.Etat")
+        //-         |       Renseigné
+        //-       label.radio-inline(for='8_0-1')
+        //-         input#8_0-1(type='radio' value="negatif" ng-model="vm.data.partie8.Etat")
+        //-         |       Négatif
+        //-       label.radio-inline(for='8_0-2')
+        //-         input#8_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie8.Etat")
+        //-         |       Non renseigné
+        //-   hr
+        //-   div(ng-show="vm.data.partie8.Etat == 'renseigne'")
+        //-     .form-group
+        //-       label.checkbox-inline(for='8_1-1')
+        //-         input#8_1-1(type='checkbox' ng-model="vm.data.partie8.question1")
+        //-         |       Dysfonctionnement Orolinguaux
+        //-       label.checkbox-inline(for='8_1-2')
+        //-         input#8_1-2(type='checkbox' ng-model="vm.data.partie8.question2_0")
+        //-         |       Déglutition atypique
+        //-     .well(ng-show="vm.data.partie8.question2_0")
+        //-       .form-group
+        //-         label.checkbox-inline(for='8_2-1')
+        //-           input#8_2-1(type='checkbox' ng-model="vm.data.partie8.question2_1")
+        //-           |       Contraction excessive des muscles des lèvres
+        //-         label.checkbox-inline(for='8_2-2')
+        //-           input#8_2-2(type='checkbox' ng-model="vm.data.partie8.question2_2")
+        //-           |       Interposition linguale entre les arcades dentaires
+        //-         label.checkbox-inline(for='8_2-3')
+        //-           input#8_2-3(type='checkbox' ng-model="vm.data.partie8.question2_3")
+        //-           |       Pulsion antérieure de la pointe de la langue sur les incisives
+        //-         label.checkbox-inline(for='8_2-4')
+        //-           input#8_2-4(type='checkbox' ng-model="vm.data.partie8.question2_4")
+        //-           |       Ventilation buccale ou mixte
+        //-         label.checkbox-inline(for='8_2-5')
+        //-           input#8_2-5(type='checkbox' ng-model="vm.data.partie8.question2_5Checker")
+        //-           |       Autre...
+        //-       textarea.form-control(rows="1" ng-show="vm.data.partie8.question2_5Checker" ng-model="vm.data.partie8.question2_5" placeholder="Autre...")
+        //-     br
+        //-
+        //-     textarea.form-control(ng-model="vm.data.partie8.question3")
+        //-     br
+        //-     .row
+        //-       .col-lg-6
+        //-         .input-group
+        //-           span.input-group-btn
+        //-             button.btn.btn-default(type='button') Test de Friedman
+        //-           input.form-control(type='text' placeholder='Résultat' ng-model="vm.data.partie8.question4")
+        //-         br
+        //-       .col-lg-6
+        //-         .input-group
+        //-           span.input-group-btn
+        //-             button.btn.btn-default(type='button') Test de Mallanpati
+        //-           input.form-control(type='text' placeholder='Résultat' ng-model="vm.data.partie8.question5")
+        //-         br
+        //-
+        //- //- partie 9
+        //- .row
+        //-   h2 9. Traumatisme :
+        //-   .form-group
+        //-     .col-md-4
+        //-       label.radio-inline(for='9_0-0')
+        //-         input#9_0-0(type='radio' value="renseigne" ng-model="vm.data.partie9.Etat")
+        //-         |       Renseigné
+        //-       label.radio-inline(for='9_0-1')
+        //-         input#9_0-1(type='radio' value="negatif" ng-model="vm.data.partie9.Etat")
+        //-         |       Négatif
+        //-       label.radio-inline(for='9_0-2')
+        //-         input#9_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie9.Etat")
+        //-         |       Non renseigné
+        //-   hr
+        //-   div(ng-show="vm.data.partie9.Etat == 'renseigne'")
+        //-     textarea.form-control(ng-model="vm.data.partie9.question1")
+        //-
+        //- //- partie 10
+        //- .row
+        //-   h2 10. Observations complémentaires :
+        //-   .form-group
+        //-     .col-md-4
+        //-       label.radio-inline(for='10_0-0')
+        //-         input#10_0-0(type='radio' value="renseigne" ng-model="vm.data.partie10.Etat")
+        //-         |       Renseigné
+        //-       label.radio-inline(for='10_0-1')
+        //-         input#10_0-1(type='radio' value="negatif" ng-model="vm.data.partie10.Etat")
+        //-         |       Négatif
+        //-       label.radio-inline(for='10_0-2')
+        //-         input#10_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie10.Etat")
+        //-         |       Non renseigné
+        //-   hr
+        //-   div(ng-show="vm.data.partie10.Etat == 'renseigne'")
+        //-     textarea.form-control(ng-model="vm.data.partie10.question1")
+        //-
+        //- //- partie 11
+        //- .row
+        //-   h2 11. Palpation(s) douloureuse(s) des muscles masticateurs, des ATM, et des muscles cervico-scapulaires :
+        //-   .form-group
+        //-     .col-md-4
+        //-       label.radio-inline(for='11_0-0')
+        //-         input#11_0-0(type='radio' value="renseigne" ng-model="vm.data.partie11.Etat")
+        //-         |       Renseigné
+        //-       label.radio-inline(for='11_0-1')
+        //-         input#11_0-1(type='radio' value="negatif" ng-model="vm.data.partie11.Etat")
+        //-         |       Négatif
+        //-       label.radio-inline(for='11_0-2')
+        //-         input#11_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie11.Etat")
+        //-         |       Non renseigné
+        //-   hr
+        //-   div(ng-show="vm.data.partie11.Etat == 'renseigne'")
+        //-     table.table.table-striped.table-hover.table-responsive.table-condensed
+        //-       thead
+        //-         tr
+        //-           th
+        //-           th(colspan="3") Coté Gauche
+        //-           th(colspan="3") Coté Droit
+        //-       tbody
+        //-         tr
+        //-           td.firstCol Muscles 1Kg
+        //-           td Douleur provoquée
+        //-           td Est elle identique à la douleur habituelle ?
+        //-           td Douleur(s) référée(s)
+        //-           td Douleur provoquée
+        //-           td Est elle identique à la douleur habituelle ?
+        //-           td Douleur(s) référée(s)
+        //-         tr
+        //-           td.firstCol Temporale postérieur
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne1.question1")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne1.question2")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne1.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne1.question3 != 'autre'" ng-model="vm.data.partie11.ligne1.question3other" placeholder='Autre...', type='text')
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne1.question4")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne1.question5")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne1.question6" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne1.question6 != 'autre'" ng-model="vm.data.partie11.ligne1.question6other" placeholder='Autre...', type='text')
+        //-         tr
+        //-           td.firstCol Temporale moyen
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne2.question1")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne2.question2")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne2.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne2.question3 != 'autre'" ng-model="vm.data.partie11.ligne2.question3other" placeholder='Autre...', type='text')
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne2.question4")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne2.question5")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne2.question6" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne2.question6 != 'autre'" ng-model="vm.data.partie11.ligne2.question6other" placeholder='Autre...', type='text')
+        //-         tr
+        //-           td.firstCol Temporale antérieure
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne3.question1")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne3.question2")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne3.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne3.question3 != 'autre'" ng-model="vm.data.partie11.ligne3.question3other" placeholder='Autre...', type='text')
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne3.question4")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne3.question5")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne3.question6" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne3.question6 != 'autre'" ng-model="vm.data.partie11.ligne3.question6other" placeholder='Autre...', type='text')
+        //-         tr
+        //-           td(colspan="2")
+        //-             label.control-label(for='ligne4')
+        //-               | Est-ce que la palpation des muscles temporaux provoque des maux de tête identiques à ceux ressentis habituellement ?
+        //-           td
+        //-             label.radio-inline(for='ligne4-0')
+        //-               input#ligne4-0(type='radio' ng-model="vm.data.partie11.ligne4.question1" value='oui')
+        //-               |       Oui
+        //-           td
+        //-             label.radio-inline(for='ligne4-1')
+        //-               input#ligne4-1(type='radio'  ng-model="vm.data.partie11.ligne4.question1" value='non')
+        //-               |       Non
+        //-           td(colspan="3")
+        //-         tr
+        //-           td.firstCol Masséter (origine angle mdb)
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne5.question1")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne5.question2")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne5.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne5.question3 != 'autre'" ng-model="vm.data.partie11.ligne5.question3other" placeholder='Autre...', type='text')
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne5.question4")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne5.question5")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne5.question6" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne5.question6 != 'autre'" ng-model="vm.data.partie11.ligne5.question6other" placeholder='Autre...', type='text')
+        //-         tr
+        //-           td.firstCol Masséter (corps)
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne6.question1")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne6.question2")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne6.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne6.question3 != 'autre'" ng-model="vm.data.partie11.ligne6.question3other" placeholder='Autre...', type='text')
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne6.question4")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne6.question5")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne6.question6" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne6.question6 != 'autre'" ng-model="vm.data.partie11.ligne6.question6other" placeholder='Autre...', type='text')
+        //-         tr
+        //-           td.firstCol Masséter (insertion zygomatique)
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne7.question1")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne7.question2")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne7.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne7.question3 != 'autre'" ng-model="vm.data.partie11.ligne7.question3other" placeholder='Autre...', type='text')
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne7.question4")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne7.question5")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne7.question6" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne7.question6 != 'autre'" ng-model="vm.data.partie11.ligne7.question6other" placeholder='Autre...', type='text')
+        //-         tr
+        //-           td(colspan="7")
+        //-         tr
+        //-           th ATM
+        //-           td(colspan="6")
+        //-         tr
+        //-           td.firstCol Pôle latérale 0,5 Kg
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne8.question1")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne8.question2")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne8.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne8.question3 != 'autre'" ng-model="vm.data.partie11.ligne8.question3other" placeholder='Autre...', type='text')
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne8.question4")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne8.question5")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne8.question6" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne8.question6 != 'autre'" ng-model="vm.data.partie11.ligne8.question6other" placeholder='Autre...', type='text')
+        //-         tr
+        //-           td.firstCol Autour du pôle latéral 1Kg
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne9.question1")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne9.question2")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne9.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne9.question3 != 'autre'" ng-model="vm.data.partie11.ligne9.question3other" placeholder='Autre...', type='text')
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne9.question4")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne9.question5")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne9.question6" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne9.question6 != 'autre'" ng-model="vm.data.partie11.ligne9.question6other" placeholder='Autre...', type='text')
+        //-         tr
+        //-           th Autres muscles masticateurs
+        //-           td(colspan="6")
+        //-         tr
+        //-           td.firstCol Digastrique (région md post)
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne10.question1")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne10.question2")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne10.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne10.question3 != 'autre'" ng-model="vm.data.partie11.ligne10.question3other" placeholder='Autre...', type='text')
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne10.question4")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne10.question5")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne10.question6" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne10.question6 != 'autre'" ng-model="vm.data.partie11.ligne10.question6other" placeholder='Autre...', type='text')
+        //-         tr
+        //-           td.firstCol Ptérygoïdien médial (région submd)
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne11.question1")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne11.question2")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne11.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne11.question3 != 'autre'" ng-model="vm.data.partie11.ligne11.question3other" placeholder='Autre...', type='text')
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne11.question4")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne11.question5")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne11.question6" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne11.question6 != 'autre'" ng-model="vm.data.partie11.ligne11.question6other" placeholder='Autre...', type='text')
+        //-         tr
+        //-           td.firstCol Aire du ptérygoïdien latéral
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne12.question1")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne12.question2")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne12.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne12.question3 != 'autre'" ng-model="vm.data.partie11.ligne12.question3other" placeholder='Autre...', type='text')
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne12.question4")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne12.question5")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne12.question6" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne12.question6 != 'autre'" ng-model="vm.data.partie11.ligne12.question6other" placeholder='Autre...', type='text')
+        //-         tr
+        //-           td.firstCol Tendon du temporal
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne13.question1")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne13.question2")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne13.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne13.question3 != 'autre'" ng-model="vm.data.partie11.ligne13.question3other" placeholder='Autre...', type='text')
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne13.question4")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne13.question5")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne13.question6" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne13.question6 != 'autre'" ng-model="vm.data.partie11.ligne13.question6other" placeholder='Autre...', type='text')
+        //-         tr
+        //-           th.firstCol Autres muscles cervico-scapulaires 0,5kg
+        //-           td(colspan="6")
+        //-         tr
+        //-           td.firstCol Sterno-cléido-mastoïdien
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne14.question1")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne14.question2")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne14.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne14.question3 != 'autre'" ng-model="vm.data.partie11.ligne14.question3other" placeholder='Autre...', type='text')
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne14.question4")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne14.question5")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne14.question6" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne14.question6 != 'autre'" ng-model="vm.data.partie11.ligne14.question6other" placeholder='Autre...', type='text')
+        //-         tr
+        //-           td.firstCol Trapèze
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne15.question1")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne15.question2")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne15.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne15.question3 != 'autre'" ng-model="vm.data.partie11.ligne15.question3other" placeholder='Autre...', type='text')
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne15.question4")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne15.question5")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne15.question6" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne15.question6 != 'autre'" ng-model="vm.data.partie11.ligne15.question6other" placeholder='Autre...', type='text')
+        //-         tr
+        //-           th.firstCol Autre(s) muscle(s) :
+        //-           td(colSpan="6")
+        //-         tr
+        //-           td.firstCol
+        //-             input(type="text" ng-model="vm.data.partie11.ligne16.muscle")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne16.question1")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne16.question2")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne16.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne16.question3 != 'autre'" ng-model="vm.data.partie11.ligne16.question3other" placeholder='Autre...', type='text')
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne16.question4")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne16.question5")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne16.question6" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne16.question6 != 'autre'" ng-model="vm.data.partie11.ligne16.question6other" placeholder='Autre...', type='text')
+        //-         tr
+        //-           td.firstCol
+        //-             input(type="text" ng-model="vm.data.partie11.ligne17.muscle")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne17.question1")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne17.question2")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne17.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne17.question3 != 'autre'" ng-model="vm.data.partie11.ligne17.question3other" placeholder='Autre...', type='text')
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne17.question4")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne17.question5")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne17.question6" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne17.question6 != 'autre'" ng-model="vm.data.partie11.ligne17.question6other" placeholder='Autre...', type='text')
+        //-         tr
+        //-           td.firstCol
+        //-             input(type="text" ng-model="vm.data.partie11.ligne18.muscle")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne18.question1")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne18.question2")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne18.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne18.question3 != 'autre'" ng-model="vm.data.partie11.ligne18.question3other" placeholder='Autre...', type='text')
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne18.question4")
+        //-           td
+        //-             input(type="checkbox" ng-model="vm.data.partie11.ligne18.question5")
+        //-           td
+        //-               select.form-control( ng-model="vm.data.partie11.ligne18.question6" ng-options="item.value as item.name for item in vm.douleurs")
+        //-               br
+        //-               input.form-control(ng-disabled="vm.data.partie11.ligne18.question6 != 'autre'" ng-model="vm.data.partie11.ligne18.question6other" placeholder='Autre...', type='text')
+        //-
+        //- //- partie 12
+        //- .row
+        //-   h2 12. Rapports incisifs :
+        //-   .form-group
+        //-     .col-md-4
+        //-       label.radio-inline(for='12_0-0')
+        //-         input#12_0-0(type='radio' value="renseigne" ng-model="vm.data.partie12.Etat")
+        //-         |       Renseigné
+        //-       label.radio-inline(for='12_0-1')
+        //-         input#12_0-1(type='radio' value="negatif" ng-model="vm.data.partie12.Etat")
+        //-         |       Négatif
+        //-       label.radio-inline(for='12_0-2')
+        //-         input#12_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie12.Etat")
+        //-         |       Non renseigné
+        //-   hr
+        //-   div(ng-show="vm.data.partie12.Etat == 'renseigne'")
+        //-     .form-group
+        //-       label.col-md-4.control-label(for='12_1') Dent de référence :
+        //-       .col-md-2
+        //-         label.radio-inline(for='12_1-0')
+        //-           input#12_1-0(type='radio' value='11' ng-model="vm.data.partie12.question1")
+        //-           |       11
+        //-         label.radio-inline(for='12_1-1')
+        //-           input#12_1-1(type='radio' value='21' ng-model="vm.data.partie12.question1")
+        //-           |       21
+        //-       .col-md-2
+        //-         .input-group
+        //-           span.input-group-addon
+        //-             input(type='radio' value="autre" ng-model="vm.data.partie12.question1")
+        //-           input.form-control(ng-disabled="vm.data.partie12.question1 != 'autre'" type='text' placeholder="Autre..."  ng-model="vm.data.partie12.question1other")
+        //-     .form-group
+        //-       label.col-md-4.control-label(for='12_1') Dent de référence :
+        //-       .col-md-2
+        //-         label.radio-inline(for='12_2-0')
+        //-           input#12_2-0(type='radio' value='11' ng-model="vm.data.partie12.question2")
+        //-           |       31
+        //-         label.radio-inline(for='12_2-1')
+        //-           input#12_2-1(type='radio' value='21' ng-model="vm.data.partie12.question2")
+        //-           |       41
+        //-       .col-md-2
+        //-         .input-group
+        //-           span.input-group-addon
+        //-             input(type='radio' value="autre" ng-model="vm.data.partie12.question2")
+        //-           input.form-control(ng-disabled="vm.data.partie12.question2 != 'autre'" type='text' placeholder="Autre..."  ng-model="vm.data.partie12.question2other")
+        //-     .form-group
+        //-       label.col-md-4.control-label Surplomb horizontal :
+        //-       .col-md-2
+        //-         .input-group
+        //-           input.form-control(type='number' ng-model="vm.data.partie12.question3")
+        //-           span.input-group-addon mm
+        //-       .col-md-2
+        //-         input(type='checkbox' ng-model="vm.data.partie12.question3negatif")
+        //-         |       Cocher si négatif
+        //-     .form-group
+        //-       label.col-md-4.control-label Recouvrement Vertical :
+        //-       .col-md-2
+        //-         .input-group
+        //-           input.form-control(type='number' ng-model="vm.data.partie12.question4")
+        //-           span.input-group-addon mm
+        //-       .col-md-2
+        //-         input(type='checkbox' ng-model="vm.data.partie12.question4negatif")
+        //-         |       Cocher si négatif
+        //-     .form-group
+        //-       label.col-md-4.control-label Existe-t-il un décalage des milieux inter-incisifs ? :
+        //-       .col-md-2
+        //-         label.radio-inline(for="12_4-0")
+        //-           input#12_4-0(type='radio' value='oui' ng-model="vm.data.partie12.question4checker")
+        //-           |       Oui
+        //-         label.radio-inline(for="12_4-1")
+        //-           input#12_4-1(type='radio' value='non' ng-model="vm.data.partie12.question4checker")
+        //-           |       Non
+        //-       .col-md-2
+        //-         .input-group
+        //-           input.form-control(ng-disabled="vm.data.partie12.question4checker == 'non'" type='number' ng-model="vm.data.partie12.question4")
+        //-           span.input-group-addon mm
+        //-
+        //- //- partie 13
+        //- .row
+        //-   h2 13. Mouvements d'ouverture, latéralités et propulsion :
+        //-   .form-group
+        //-     .col-md-4
+        //-       label.radio-inline(for='13_0-0')
+        //-         input#13_0-0(type='radio' value="renseigne" ng-model="vm.data.partie13.Etat")
+        //-         |       Renseigné
+        //-       label.radio-inline(for='13_0-1')
+        //-         input#13_0-1(type='radio' value="negatif" ng-model="vm.data.partie13.Etat")
+        //-         |       Négatif
+        //-       label.radio-inline(for='13_0-2')
+        //-         input#13_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie13.Etat")
+        //-         |       Non renseigné
+        //-   hr
+        //-   div(ng-show="vm.data.partie13.Etat == 'renseigne'")
+        //-     table.table.table-striped.table-hover.table-responsive
+        //-       thead
+        //-         tr
+        //-           th
+        //-           th
+        //-             | Coté Gauche
+        //-           th
+        //-           th
+        //-           th
+        //-             | Coté Droit
+        //-           th
+        //-           th
+        //-       tbody
+        //-         tr
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 | Ouverture non douloureuse :
+        //-               input(type="number" width="20px")
+        //-               span.input-group-addon
+        //-                 | mm
+        //-           td
+        //-             | Douleur provoquée
+        //-           td
+        //-             | Est elle identique à la douleur habituelle ?
+        //-           td
+        //-             | Douleur(s) référée(s)
+        //-           td
+        //-             | Douleur provoquée
+        //-           td
+        //-             | Est elle identique à la douleur habituelle ?
+        //-           td
+        //-             | Douleur(s) référée(s)
+        //-         tr
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 | Ouv. max. non assistée :
+        //-               input(type="number" width="20px")
+        //-               span.input-group-addon
+        //-                 | mm
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 | Ouv. max. assistée :
+        //-               input(type="number" width="20px")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 | Ouv. contre résistance :
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 | Fermeture contre résistance :
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 | Latéralité droite :
+        //-               input(type="number" width="20px")
+        //-               span.input-group-addon
+        //-                 | mm
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 | Latéralité droite assistée :
+        //-               input(type="number" width="20px")
+        //-               span.input-group-addon
+        //-                 | mm
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 | Latéralité droite contre résistance :
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 | Latéralité gauche :
+        //-               input(type="text" width="20px")
+        //-               span.input-group-addon
+        //-                 | mm
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 | Latéralité gauche contre résistance :
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 | Propulsion :
+        //-               input(type="number" width="20px")
+        //-               span.input-group-addon
+        //-                 | mm
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 | Propulsion contre résistance :
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-           td
+        //-             select.form-control( ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-
+        //- //- partie 14
+        //- .row
+        //-   h2 14. Trajet d'ouverture/fermeture :
+        //-   .form-group
+        //-     .col-md-4
+        //-       label.radio-inline(for='14_0-0')
+        //-         input#14_0-0(type='radio' value="renseigne" ng-model="vm.data.partie14.Etat")
+        //-         |       Renseigné
+        //-       label.radio-inline(for='14_0-1')
+        //-         input#14_0-1(type='radio' value="negatif" ng-model="vm.data.partie14.Etat")
+        //-         |       Négatif
+        //-       label.radio-inline(for='14_0-2')
+        //-         input#14_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie14.Etat")
+        //-         |       Non renseigné
+        //-   hr
+        //-   div(ng-show="vm.data.partie14.Etat == 'renseigne'")
+        //-
+        //- //- partie 15
+        //- .row
+        //-   h2 15. Bruits articulaires lors des mouvements fonctionnels :
+        //-   .form-group
+        //-     .col-md-4
+        //-       label.radio-inline(for='15_0-0')
+        //-         input#15_0-0(type='radio' value="renseigne" ng-model="vm.data.partie15.Etat")
+        //-         |       Renseigné
+        //-       label.radio-inline(for='15_0-1')
+        //-         input#15_0-1(type='radio' value="negatif" ng-model="vm.data.partie15.Etat")
+        //-         |       Négatif
+        //-       label.radio-inline(for='15_0-2')
+        //-         input#15_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie15.Etat")
+        //-         |       Non renseigné
+        //-   hr
+        //-   div(ng-show="vm.data.partie15.Etat == 'renseigne'")
+        //-     table.table.table-striped.table-hover.table-responsive
+        //-       thead
+        //-         tr
+        //-           th
+        //-           th
+        //-           th
+        //-             | Praticien
+        //-           th
+        //-           th
+        //-           th
+        //-             | Patien
+        //-           th
+        //-           th
+        //-       tbody
+        //-         tr
+        //-           td
+        //-           td
+        //-           td
+        //-             | Claquement
+        //-           td
+        //-             | Crépitement
+        //-           td
+        //-             | Claquement
+        //-           td
+        //-             | Crépitement
+        //-           td
+        //-             | Douleur
+        //-           td
+        //-             | Douleur habituelle
+        //-         tr
+        //-           td
+        //-             | Ouverture
+        //-           td
+        //-             | ATM droite
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td(bgcolor="#FFFFFF")
+        //-           td
+        //-             | ATM gauche
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td
+        //-             | Fermeture
+        //-           td
+        //-             | ATM droite
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td(bgcolor="#FFFFFF")
+        //-           td
+        //-             | ATM gauche
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td
+        //-             | Latéralité Gauche
+        //-           td
+        //-             | ATM droite
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td(bgcolor="#FFFFFF")
+        //-           td
+        //-             | ATM gauche
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td
+        //-             | Latéralité Droite
+        //-           td
+        //-             | ATM droite
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td(bgcolor="#FFFFFF")
+        //-           td
+        //-             | ATM gauche
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td
+        //-             | Propulsion
+        //-           td
+        //-             | ATM droite
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-         tr
+        //-           td(bgcolor="#FFFFFF")
+        //-           td
+        //-             | ATM gauche
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             input(type="checkbox")
+        //-           td
+        //-             .input-group
+        //-               span.input-group-addon
+        //-                 input(type='checkbox')
+        //-               select.form-control(ng-model="selected_douleur" ng-options="item.name for item in douleur")
+        //-
+        //- //- Partie 16
+        //- .row
+        //-   h2 16. Blocage articulaire :
+        //-   .form-group
+        //-     .col-md-4
+        //-       label.radio-inline(for='16_0-0')
+        //-         input#16_0-0(type='radio' value="renseigne" ng-model="vm.data.partie16.Etat")
+        //-         |       Renseigné
+        //-       label.radio-inline(for='16_0-1')
+        //-         input#16_0-1(type='radio' value="negatif" ng-model="vm.data.partie16.Etat")
+        //-         |       Négatif
+        //-       label.radio-inline(for='16_0-2')
+        //-         input#16_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie16.Etat")
+        //-         |       Non renseigné
+        //-   hr
+        //-   div(ng-show="vm.data.partie16.Etat == 'renseigne'")
+        //-     .form-group(ng-show="16negatif")
+        //-       label.col-md-4.control-label(for='16_1') Vous est-il arrivé d'être bloqué(e) ?
+        //-       .col-md-4
+        //-         label.checkbox-inline(for='16_1-0')
+        //-           input#16_1-0(type='checkbox' ng-model="vm.data.partie16.question1")
+        //-           |       Bouche ouverte
+        //-         label.checkbox-inline(for='16_1-1')
+        //-           input#16_1-1(type='checkbox' ng-model="vm.data.partie16.question2")
+        //-           |       Bouche fermée
+        //-     .form-group
+        //-       label.col-md-4.control-label(for='16_2')
+        //-       .col-md-4
+        //-         label.checkbox-inline(for='16_2-0')
+        //-           input#16_2-0(type='checkbox' ng-model="vm.data.partie16.question3")
+        //-           |       ATM gauche
+        //-         label.checkbox-inline(for='16_2-1')
+        //-           input#16_2-1(type='checkbox' ng-model="vm.data.partie16.question4")
+        //-           |       ATM droite
+        //-     .form-group
+        //-       label.col-md-4.control-label(for='16_3') Fréquence :
+        //-       .col-md-4
+        //-         input#16_3.form-control.input-md(type='text' ng-model="vm.data.partie16.question5")
+        //-     .form-group
+        //-       label.col-md-4.control-label(for='16_4') Dernier épisode :
+        //-       .col-md-4
+        //-         input#16_4.form-control.input-md(type='text' ng-model="vm.data.partie16.question6")
+        //-
+        //- //- Partie 17
+        //- .row
+        //-   h2 17. Test du bâtonnet :
+        //-   .form-group
+        //-     .col-md-4
+        //-       label.radio-inline(for='17_0-0')
+        //-         input#17_0-0(type='radio' value="renseigne" ng-model="vm.data.partie17.Etat")
+        //-         |       Renseigné
+        //-       label.radio-inline(for='17_0-1')
+        //-         input#17_0-1(type='radio' value="negatif" ng-model="vm.data.partie17.Etat")
+        //-         |       Négatif
+        //-       label.radio-inline(for='17_0-2')
+        //-         input#17_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie17.Etat")
+        //-         |       Non renseigné
+        //-   hr
+        //-   div(ng-show="vm.data.partie17.Etat == 'renseigne'")
+        //-     .col-md-10.col-md-offset-1
+        //-       table.table.borderless
+        //-         thead
+        //-           tr
+        //-             th(rowspan="2") Bâtonnet
+        //-             th(colspan="2") Douleur
+        //-           tr
+        //-             th Gauche
+        //-             th Droite
+        //-
+        //-         tbody
+        //-           tr
+        //-             td Droite
+        //-             td
+        //-               .form-group
+        //-                 .col-md-11
+        //-                   select.form-control( ng-model="vm.data.partie17.question1" ng-options="item.value as item.name for item in vm.douleurs")
+        //-                   br
+        //-                   input.form-control(ng-disabled="vm.data.partie17.question1 != 'autre'" ng-model="vm.data.partie17.question1other" placeholder='Autre...', type='text')
+        //-             td
+        //-               .form-group
+        //-                 .col-md-11
+        //-                   select.form-control( ng-model="vm.data.partie17.question2" ng-options="item.value as item.name for item in vm.douleurs")
+        //-                   br
+        //-                   input.form-control(ng-disabled="vm.data.partie17.question2 != 'autre'" ng-model="vm.data.partie17.question2other" placeholder='Autre...', type='text')
+        //-           tr
+        //-             td Gauche
+        //-             td
+        //-               .form-group
+        //-                 .col-md-11
+        //-                   select.form-control( ng-model="vm.data.partie17.question3" ng-options="item.value as item.name for item in vm.douleurs")
+        //-                   br
+        //-                   input.form-control(ng-disabled="vm.data.partie17.question3 != 'autre'" ng-model="vm.data.partie17.question3other" placeholder='Autre...', type='text')
+        //-             td
+        //-               .form-group
+        //-                 .col-md-11
+        //-                   select.form-control( ng-model="vm.data.partie17.question4" ng-options="item.value as item.name for item in vm.douleurs")
+        //-                   br
+        //-                   input.form-control(ng-disabled="vm.data.partie17.question4 != 'autre'" ng-model="vm.data.partie17.question4other" placeholder='Autre...', type='text')
+        //-
+        //- //- Partie 18
+        //- .row
+        //-   h2 18. Elasticité articulaire :
+        //-   .form-group
+        //-     .col-md-4
+        //-       label.radio-inline(for='18_0-0')
+        //-         input#18_0-0(type='radio' value="renseigne" ng-model="vm.data.partie18.Etat")
+        //-         |       Renseigné
+        //-       label.radio-inline(for='18_0-1')
+        //-         input#18_0-1(type='radio' value="negatif" ng-model="vm.data.partie18.Etat")
+        //-         |       Négatif
+        //-       label.radio-inline(for='18_0-2')
+        //-         input#18_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie18.Etat")
+        //-         |       Non renseigné
+        //-   hr
+        //-   div(ng-show="vm.data.partie18.Etat == 'renseigne'")
+        //-     .form-group
+        //-       label.col-md-4.control-label(for='18_1') ATM Gauche :
+        //-       .col-md-4
+        //-         label.radio-inline(for='18_1-0')
+        //-           input#18_1-0(type='radio' value='souple' ng-model="vm.data.partie18.question1")
+        //-           |       Souple
+        //-         label.radio-inline(for='18_1-1')
+        //-           input#18_1-1(type='radio' value='raide'  ng-model="vm.data.partie18.question1")
+        //-           |       Raide
+        //-     .form-group
+        //-       label.col-md-4.control-label(for='18_2') ATM Droite :
+        //-       .col-md-4
+        //-         label.radio-inline(for='18_2-0')
+        //-           input#18_2-0(type='radio' value='souple'  ng-model="vm.data.partie18.question2")
+        //-           |       Souple
+        //-         label.radio-inline(for='18_2-1')
+        //-           input#18_2-1(type='radio' value='raide'  ng-model="vm.data.partie18.question2")
+        //-           |       Raide
+        //-
+        //- //- Partie 19
+        //- .row
+        //-   h2 19. Examen endo-buccal :
+        //-   .form-group
+        //-     .col-md-4
+        //-       label.radio-inline(for='19_0-0')
+        //-         input#19_0-0(type='radio' value="renseigne" ng-model="vm.data.partie19.Etat")
+        //-         |       Renseigné
+        //-       label.radio-inline(for='19_0-1')
+        //-         input#19_0-1(type='radio' value="negatif" ng-model="vm.data.partie19.Etat")
+        //-         |       Négatif
+        //-       label.radio-inline(for='19_0-2')
+        //-         input#19_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie19.Etat")
+        //-         |       Non renseigné
+        //-   hr
+        //-   div(ng-show="vm.data.partie19.Etat == 'renseigne'")
+        //-     .form-group
+        //-       label.col-md-4.control-label(for='19_2') Contacts en OIM :
+        //-       .col-md-4
+        //-         .radio
+        //-             input#19_2-0(type='radio' ng-model="vm.data.partie19.question1" value='repartis')
+        //-             |       Répartis de manière équilibré
+        //-         .radio
+        //-             input(type='radio' ng-model="vm.data.partie19.question1")
+        //-             input#19_2-1.form-control(name='19_2', type='text', placeholder='Autre...')
+        //-     br
+        //-     .form-group
+        //-       label.col-md-4.control-label(for='19_3') La position dans laquelle vous fermez vos dents vous paraît-elle confortable ?
+        //-       .col-md-4
+        //-         label.radio-inline(for='19_3-0')
+        //-           input#19_3-0(type='radio' ng-model="vm.data.partie19.question2" value='oui')
+        //-           |       Oui
+        //-         label.radio-inline(for='19_3-1')
+        //-           input#19_3-1(type='radio' ng-model="vm.data.partie19.question2" value='non')
+        //-           |       Non
+        //-     .form-group
+        //-       label.col-md-4.control-label(for='19_4') Mastication unilatérale
+        //-       .col-md-4
+        //-         label.radio-inline(for='19_4-0')
+        //-           input#19_4-0(type='radio' ng-model="vm.data.partie19.question3" value='oui')
+        //-           |       Oui
+        //-         label.radio-inline(for='19_4-1')
+        //-           input#19_4-1(type='radio' ng-model="vm.data.partie19.question3" value='non')
+        //-           |       Non
+        //-     .form-group
+        //-       label.col-md-4.control-label(for='19_5') Interférence(s) en latéralité droite :
+        //-       .col-md-4
+        //-         input#19_5.form-control.input-md(ng-model="vm.data.partie19.question4" type='text', placeholder='')
+        //-     .form-group
+        //-       label.col-md-4.control-label(for='19_6') Interférence(s) en latéralité gauche :
+        //-       .col-md-4
+        //-         input#19_6.form-control.input-md(ng-model="vm.data.partie19.question5" type='text', placeholder='')
+        //-     .form-group
+        //-       label.col-md-4.control-label(for='19_7') Interférence(s) en propulsion :
+        //-       .col-md-4
+        //-         input#19_7.form-control.input-md(ng-model="vm.data.partie19.question6" type='text', placeholder='')
+        //-     .form-group
+        //-       label.col-md-4.control-label(for='19_8') Prématurités :
+        //-       .col-md-4
+        //-         input#19_8.form-control.input-md(ng-model="vm.data.partie19.question7" type='text', placeholder='')
+        //-     h3 Différentiel ORC-OIM
+        //-     .form-group
+        //-       label.col-md-4.control-label(for='19_9') dans le sens vertical :
+        //-       .col-md-4
+        //-         input#19_9.form-control.input-md(ng-model="vm.data.partie19.question8" type='text', placeholder='')
+        //-     .form-group
+        //-       label.col-md-4.control-label(for='19_10') dans le sens antéro-postérieur :
+        //-       .col-md-4
+        //-         input#19_10.form-control.input-md(ng-model="vm.data.partie19.question9" type='text', placeholder='')
+        //-     .form-group
+        //-       label.col-md-4.control-label(for='19_11') dans le sens latéral :
+        //-       .col-md-4
+        //-         input#19_11.form-control.input-md(ng-model="vm.data.partie19.question10" type='text', placeholder='')
+        //-
+        //- //- Partie 20
+        //- .row
+        //-   h2 20. Usures dentaires / bruxismes :
+        //-   .form-group
+        //-     .col-md-4
+        //-       label.radio-inline(for='20_0-0')
+        //-         input#20_0-0(type='radio' value="renseigne" ng-model="vm.data.partie20.Etat")
+        //-         |       Renseigné
+        //-       label.radio-inline(for='20_0-1')
+        //-         input#20_0-1(type='radio' value="negatif" ng-model="vm.data.partie20.Etat")
+        //-         |       Négatif
+        //-       label.radio-inline(for='20_0-2')
+        //-         input#20_0-2(type='radio' value="nonRenseigne" ng-model="vm.data.partie20.Etat")
+        //-         |       Non renseigné
+        //-   hr
+        //-   div(ng-show="vm.data.partie20.Etat == 'renseigne'")
+        //-     .col-md-6
+        //-       .form-group
+        //-         label.col-md-6.control-label(for='20_1') Erosion
+        //-         .col-md-6
+        //-           .input-group
+        //-             span.input-group-addon
+        //-               input(type='checkbox')
+        //-             input#20_1.form-control(name='20_1', type='text', placeholder='dents')
+        //-       .form-group
+        //-         label.col-md-6.control-label(for='20_2') Abrasion
+        //-         .col-md-6
+        //-           .input-group
+        //-             span.input-group-addon
+        //-               input(type='checkbox')
+        //-             input#20_2.form-control(name='20_2', type='text', placeholder='dents')
+        //-       .form-group
+        //-         label.col-md-6.control-label(for='20_3') Attrition
+        //-         .col-md-6
+        //-           .input-group
+        //-             span.input-group-addon
+        //-               input(type='checkbox')
+        //-             input#20_3.form-control(name='20_3', type='text', placeholder='dents')
+        //-     .col-md-6
+        //-       .form-group
+        //-         label.col-md-6.control-label(for='20_4') Bruxisme de sommeil
+        //-         .col-md-6
+        //-           .input-group
+        //-             span.input-group-addon
+        //-               input(type='checkbox')
+        //-             select#20_4.form-control(name='20_4')
+        //-               option(value='possible') Diagnostic possible
+        //-               option(value='probable') Diagnostic probable
+        //-               option(value='defini') Diagnostic défini
+        //-       .form-group
+        //-         label.col-md-6.control-label(for='20_5') Bruxisme d'éveil
+        //-         .col-md-6
+        //-           .input-group
+        //-             span.input-group-addon
+        //-               input(type='checkbox')
+        //-             select#20_5.form-control(name='20_5')
+        //-               option(value='possible') Diagnostic possible
+        //-               option(value='probable') Diagnostic probable
+        //-               option(value='defini') Diagnostic défini
+        //-     .col-md-12
+        //-       .form-group
+        //-         label.col-md-3.control-label(for='20_6') Informations complémentaires :
+        //-         .col-md-9
+        //-           textarea#20_6.form-control(name='20_6')
+        //-
+        //-   .row
+        //-     hr
+        //-     .col-md-12
+        //-       h2 Examens complémentaires :
+        //-       hr
+        //-     .col-md-12
+        //-       .form-group
+        //-         label.col-md-3.control-label(for='Exam_1') Type d'examen :
+        //-         .col-md-9
+        //-           textarea#Exam_1.form-control(name='Exam_1')
+        //-           br
+        //-         .col-md-9.col-md-offset-3
+        //-           button#butAddPhoto.btn.btn-primary(name='butAddPhoto') Ajouter une photo
+        //-           hr
+        //-     #examAnchor
+        //-     .col-md-12
+        //-       .form-group
+        //-         .col-xs-3.col-xs-offset-3
+        //-           button#butaddexam.btn.btn-primary(name='butaddexam') Ajouter un examen
+        //-         .col-xs-3
+        //-           button#butdelexam.btn.btn-danger(name='butdelexam') Supprimer un examen
+        //-
+        //- //- Diagnostic
+        //- .row
+        //-   h2 Diagnostic :
+        //-   hr
+        //-   .form-group
+        //-     .col-md-10.col-md-offset-1
+        //-       textarea.form-control(ng-model="vm.data.diagnostic")
+        //-
+        //- //- Plan de traitement
+        //- .row
+        //-   h2 Plan de traitement :
+        //-   hr
+        //-   .form-group
+        //-     .col-md-10.col-md-offset-1
+        //-       textarea.form-control(ng-model="vm.data.planDeTraitement")
