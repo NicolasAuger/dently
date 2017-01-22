@@ -1,11 +1,49 @@
 .page.dam
   .contain.ng-show
+    .menu
+      .head
+        .logo
+          img(src="../../assets/images/logo-dently.png")
       .content
-          .right
-            p.white
-              | Diagnostic DAM
-
-
-            a.bouton-accueil.btn.btn-default.btn-lg(href='/')
+        ul
+          a(href="/guest")
+            li
               i.fa.fa-home
-              | Retour vers l'accueil
+              | Accueil Dashboard
+          a(href="/who-are-we")
+            li
+              i.fa.fa-hospital-o
+              | Qui sommes-nous ?
+          a(href="/why-this-site")
+            li.actual
+              i.fa.fa-question-circle-o
+              | Pourquoi ce site ?
+          a(href="/dam-diagnostic")
+            li
+              i.fa.fa-file-o
+              | Diagnostic DAM
+          a(href="/user")
+            li
+              i.fa.fa-user-md
+              | Fiches cliniques
+          a(href="/login")
+            li
+              i.fa.fa-sign-in
+              | Connexion
+          a(href="/signup")
+            li
+              i.fa.fa-user-plus
+              | Inscription
+          a(href="/contact")
+            li
+              i.fa.fa-envelope-o
+              | Contact
+
+    .right
+      p.white
+        | Diagnostic DAM
+
+
+      a.bouton-accueil.btn.btn-default.btn-lg(href='/')
+        i.fa.fa-home
+        | Retour vers l'accueil
