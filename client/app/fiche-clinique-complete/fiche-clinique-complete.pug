@@ -375,19 +375,6 @@
           div(ng-show="vm.data.observations.etat == 'renseigne'")
             textarea.form-control(ng-model="vm.data.observations.text")
 
-        br
-        .row
-          .col-md-4
-            a.btn.btn-default.btn-lg(href='/')
-              i.fa.fa-home
-              | Accueil
-          .col-md-4
-            button.btn.btn-primary.btn-lg.btn-register(type='submit')
-              i.fa.fa-file-o
-              | Enregistrer cette fiche
-            = ' '
-        br
-
 
         //- //- partie 11
         //- .row
@@ -1705,18 +1692,32 @@
         //-         .col-xs-3
         //-           button#butdelexam.btn.btn-danger(name='butdelexam') Supprimer un examen
         //-
-        //- //- Diagnostic
-        //- .row
-        //-   h2 Diagnostic :
-        //-   hr
-        //-   .form-group
-        //-     .col-md-10.col-md-offset-1
-        //-       textarea.form-control(ng-model="vm.data.diagnostic")
-        //-
-        //- //- Plan de traitement
-        //- .row
-        //-   h2 Plan de traitement :
-        //-   hr
-        //-   .form-group
-        //-     .col-md-10.col-md-offset-1
-        //-       textarea.form-control(ng-model="vm.data.planDeTraitement")
+        //- Diagnostic
+        .row
+          h2 Diagnostic :
+          hr
+          .form-group
+            .col-md-10.col-md-offset-1
+              textarea.form-control(ng-model="vm.data.diagnostic")
+
+        //- Plan de traitement
+        .row
+          h2 Plan de traitement :
+          hr
+          .form-group
+            .col-md-10.col-md-offset-1
+              textarea.form-control(ng-model="vm.data.planDeTraitement")
+
+
+        br
+        .row
+          .col-md-4
+            a.btn.btn-default.btn-lg(href='/')
+              i.fa.fa-home
+              | Accueil
+          .col-md-4
+            button.btn.btn-primary.btn-lg.btn-register(type='submit')
+              i.fa.fa-file-o
+              | Enregistrer cette fiche
+            = ' '
+        br

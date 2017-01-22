@@ -81,7 +81,9 @@ type Fiche = {
     observations: { // Partie 10 : Observations complémentaires
         etat: string,
         text: string
-    }
+    },
+    diagnostic: string,
+    planDeTraitement: string
   }
 };
 
@@ -163,7 +165,9 @@ export class FicheCliniqueCompleteComponent {
       observations: { // Partie 10 : Observations complémentaires
           etat: "",
           text: ""
-      }
+      },
+      diagnostic: "",
+      planDeTraitement: ""
     }
   };
   errors = {};
@@ -257,7 +261,9 @@ export class FicheCliniqueCompleteComponent {
             observations: { // Partie 10 : Observations complémentaires
                 etat: this.data.observations.etat,
                 text: this.data.observations.text
-            }
+            },
+            diagnostic: this.data.diagnostic,
+            planDeTraitement: this.data.planDeTraitement
         }
 
       })

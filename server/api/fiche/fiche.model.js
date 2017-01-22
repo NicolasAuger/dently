@@ -238,6 +238,14 @@ var FicheSchema = new Schema({
               type: String,
               required: false
           }
+      },
+      diagnostic: {
+          type: String,
+          required: true
+      },
+      planDeTraitement: {
+          type: String,
+          required: true
       }
   }
 });

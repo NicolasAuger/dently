@@ -78,8 +78,10 @@ class _Fiche {
         observations: { // Partie 10 : Observations complémentaires
             etat: '',
             text: ''
-        }
-        
+        },
+        diagnostic: '',
+        planDeTraitement: ''
+
     }
     $promise = undefined
 }
