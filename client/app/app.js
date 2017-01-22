@@ -49,7 +49,7 @@ import ficheCliniqueDepistageSystematique from './fiche-clinique-depistage-syste
 import './app.styl';
 
 angular.module('dentlyApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,  uiBootstrap, _Auth, _Fiche, account,
-  admin, admin_fonction, list_fiche, user, guest, whoAreWe, whyThisSite,editeurCasClinique, etudes, fichesAnnexes, ficheCliniqueComplete, protocoles, statistiques, contact, dam_diagnostic, questionnaireIsi, questionnairePsqi, ficheCliniqueDepistageSystematique,
+  admin, admin_fonction, list_fiche, user, guest, whoAreWe, whyThisSite,editeurCasClinique, etudes, fichesAnnexes, ficheCliniqueComplete, protocoles, contact, dam_diagnostic, questionnaireIsi, questionnairePsqi, ficheCliniqueDepistageSystematique,
   ,navbar, footer, main, constants, socket, util
 ])
   .config(routeConfig)
