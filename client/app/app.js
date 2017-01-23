@@ -45,11 +45,12 @@ import dam_diagnostic from './dam-diagnostic/dam-diagnostic.component';
 import questionnaireIsi from './questionnaire-isi/questionnaire-isi.component';
 import questionnairePsqi from './questionnaire-psqi/questionnaire-psqi.component';
 import ficheCliniqueDepistageSystematique from './fiche-clinique-depistage-systematique/fiche-clinique-depistage-systematique.component';
+import questionnaireDn4 from './questionnaire-dn4/questionnaire-dn4.component';
 
 import './app.styl';
 
 angular.module('dentlyApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,  uiBootstrap, _Auth, _Fiche, account,
-  admin, admin_fonction, list_fiche, user, guest, whoAreWe, whyThisSite,editeurCasClinique, etudes, fichesAnnexes, ficheCliniqueComplete, protocoles, contact, dam_diagnostic, questionnaireIsi, questionnairePsqi, ficheCliniqueDepistageSystematique,
+  admin, admin_fonction, list_fiche, user, guest, whoAreWe, whyThisSite,editeurCasClinique, etudes, fichesAnnexes, ficheCliniqueComplete, protocoles, contact, dam_diagnostic, questionnaireIsi, questionnairePsqi, ficheCliniqueDepistageSystematique, questionnaireDn4,
   ,navbar, footer, main, constants, socket, util
 ])
   .config(routeConfig)
