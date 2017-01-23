@@ -7,20 +7,20 @@ DeadLine :
 Database:
     ✔ Create User table in database MongoDB @done(2017-01-18 01:02) @project(Database)
     ✔ Sessions ? @done(2017-01-18 01:02) @project(Database)
-    ☐ Medical Files ?
+    ✔ Medical Files @done(2017-01-23 02:00) @project(Database)
 
 ------------------------------------------------------
 Simple Visitor Access:
     ✔ Access to homepage @done(2017-01-18 01:02) @project(Simple Visitor Access)
     ✔ Access to "Who are us ?" page @done(2017-01-18 01:02) @project(Simple Visitor Access)
     ✔ Access to "Why this webapp ?" page @done(2017-01-18 01:02) @project(Simple Visitor Access)
-    ☐ Access to contact page
+    ✔ Access to contact page @done(2017-01-23 01:58) @project(Simple Visitor Access)
     ☐ Complete and send contact form
-    ☐ Access to clinical files page
-        ☐ DAM
-        ☐ EDAS21
-        ☐ PSQI
-        ☐ ISI
+    ✔ Access to clinical files page @done(2017-01-23 01:58) @project(Simple Visitor Access)
+        ✔ DAM @done(2017-01-23 01:58) @project(Simple Visitor Access)
+        ✔ EDAS21 @done(2017-01-23 01:58) @project(Simple Visitor Access)
+        ✔ PSQI @done(2017-01-23 01:58) @project(Simple Visitor Access)
+        ✔ ISI @done(2017-01-23 01:58) @project(Simple Visitor Access)
     ☐ Complete and create a pdf file from consulted clinical file
     ✔ Access to the connection/Signup page @done(2017-01-18 01:03) @project(Simple Visitor Access)
 
@@ -28,41 +28,41 @@ Simple Visitor Access:
 Medical User Access:
     ✔ Same Access as Simple Visitor @done(2017-01-18 01:03) @project(Medical User Access)
     ☐ Access to his profil page
-    ☐ Allowed to modify his profil (except email)
-    ☐ Access to the medical files list (new page)
+    ✔ Allowed to modify his profil (except email) @done(2017-01-23 01:59) @project(Medical User Access)
+    ✔ Access to the medical files list (new page) @done(2017-01-23 01:59) @project(Medical User Access)
     ☐ Can find a clinical file by his directory number
-    ☐ Access to a medical file if it is registered
+    ✔ Access to a medical file if it is registered @done(2017-01-23 01:59) @project(Medical User Access)
     ☐ Modify a clinical file
     ☐ Delete a clinical file
-    ☐ Create a new clinical file
+    ✔ Create a new clinical file @done(2017-01-23 01:59) @project(Medical User Access)
         ☐ For a known record
         ☐ For a new record
     ☐ Save data, print and create pdf
-    ☐ Access to his files statistic (have to define it)
-    ☐ Access to his global files statistic (have to define it too)
+    ✔ Access to his files statistic (have to define it) @done(2017-01-23 01:59) @project(Medical User Access)
+    ✔ Access to his global files statistic (have to define it too) @done(2017-01-23 01:59) @project(Medical User Access)
 
 ------------------------------------------------------
 Admin-Medical User Access:
-    ☐ Same Access as Medical User
-    ☐ Access to profil page of all users
+    ✔ Same Access as Medical User @done(2017-01-23 02:00) @project(Admin-Medical User Access)
+    ✔ Access to profil page of all users @done(2017-01-23 02:00) @project(Admin-Medical User Access)
     ☐ Validate a profil
     ☐ Modify a profil
     ✔ Delete a profil @done(2017-01-18 01:04) @project(Admin-Medical User Access)
-    ☐ Access to the medical files list of users
+    ✔ Access to the medical files list of users @done(2017-01-23 02:00) @project(Admin-Medical User Access)
     ☐ List files by user and record number
-    ☐ Create a file
+    ✔ Create a file @done(2017-01-23 02:00) @project(Admin-Medical User Access)
         ☐ For an already known record
         ☐ For a new record
         ☐ For a specified user
     ☐ Save data, print and create pdf
-    ☐ Access to his files statistic (have to define it)
-    ☐ Access to his global files statistic (have to define it too)
+    ✔ Access to his files statistic (have to define it) @done(2017-01-23 02:00) @project(Admin-Medical User Access)
+    ✔ Access to his global files statistic (have to define it too) @done(2017-01-23 02:00) @project(Admin-Medical User Access)
     ☐ Access to statistics for a specific user
 
 ------------------------------------------------------
 Visuel :
-    ☐ Forms
-    ☐ Clinical Files Render
+    ✔ Forms @done(2017-01-23 02:00) @project(Visuel )
+    ✔ Clinical Files Render @done(2017-01-23 02:00) @project(Visuel )
     ✔ HomePage @done(2017-01-18 01:04) @project(Visuel )
     ✔ Simple Visitor Access @done(2017-01-18 01:04) @project(Visuel )
     ✔ Medical User Access @done(2017-01-18 01:04) @project(Visuel )

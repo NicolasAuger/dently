@@ -2,10 +2,10 @@
   .contain.ng-show
       .content
           .right
-            p.white
-              | Diagnostic DAM
-
-
-            a.bouton-accueil.btn.btn-default.btn-lg(href='/')
-              i.fa.fa-home
-              | Retour vers l'accueil
+              a(onclick="javascript:history.go(-1)")
+                i.fa.fa-chevron-circle-left
+                | Retour
+              br
+              br
+              p.white
+                | Diagnostic DAM
